@@ -1,0 +1,21 @@
+{
+  "name": "carmelosantana/open-veil",
+  "description": "A WordPress plugin designed to structure, collect, and share experimental protocol data and community-submitted trials.",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Carmelo Santana",
+      "email": "carmelo@carmelosantana.org",
+      "homepage": "https://carmelosantana.org"
+    }
+  ],
+  "require": {
+    "php": ">=8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "OpenVeil\\": "src/"
+    }
+  }
+}

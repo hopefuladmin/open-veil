@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+    xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:wp="http://wordpress.org/export/1.2/"
+>
+    <channel>
+        <title>Open Veil</title>
+        <link>http://localhost:9000</link>
+        <description>Experimental Protocol Data</description>
+        <pubDate>Mon, 13 Apr 2025 17:07:59 +0000</pubDate>
+        <language>en-US</language>
+        <wp:wxr_version>1.2</wp:wxr_version>
+        <wp:base_site_url>http://localhost:9000</wp:base_site_url>
+        <wp:base_blog_url>http://localhost:9000</wp:base_blog_url>
+        
+        <wp:author>
+            <wp:author_id>1</wp:author_id>
+            <wp:author_login>admin</wp:author_login>
+            <wp:author_email>admin@example.com</wp:author_email>
+            <wp:author_display_name><![CDATA[Admin]]></wp:author_display_name>
+            <wp:author_first_name><![CDATA[Admin]]></wp:author_first_name>
+            <wp:author_last_name><![CDATA[User]]></wp:author_last_name>
+        </wp:author>
+        
+        <wp:category>
+            <wp:term_id>1</wp:term_id>
+            <wp:category_nicename>uncategorized</wp:category_nicename>
+            <wp:category_parent></wp:category_parent>
+            <wp:cat_name><![CDATA[Uncategorized]]></wp:cat_name>
+        </wp:category>
+        
+        <!-- Taxonomy Terms -->
+        <wp:term>
+            <wp:term_id>100</wp:term_id>
+            <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+            <wp:term_slug>class-2</wp:term_slug>
+            <wp:term_name><![CDATA[Class 2]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>101</wp:term_id>
+            <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+            <wp:term_slug>standard</wp:term_slug>
+            <wp:term_name><![CDATA[Standard]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>102</wp:term_id>
+            <wp:term_taxonomy>equipment</wp:term_taxonomy>
+            <wp:term_slug>laser</wp:term_slug>
+            <wp:term_name><![CDATA[Laser]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>103</wp:term_id>
+            <wp:term_taxonomy>equipment</wp:term_taxonomy>
+            <wp:term_slug>tripod</wp:term_slug>
+            <wp:term_name><![CDATA[Tripod]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>104</wp:term_id>
+            <wp:term_taxonomy>equipment</wp:term_taxonomy>
+            <wp:term_slug>diffraction-grating</wp:term_slug>
+            <wp:term_name><![CDATA[Diffraction Grating]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>105</wp:term_id>
+            <wp:term_taxonomy>equipment</wp:term_taxonomy>
+            <wp:term_slug>vape-pen</wp:term_slug>
+            <wp:term_name><![CDATA[Vape Pen]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>106</wp:term_id>
+            <wp:term_taxonomy>substance</wp:term_taxonomy>
+            <wp:term_slug>nn-dmt</wp:term_slug>
+            <wp:term_name><![CDATA[N,N-DMT]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>107</wp:term_id>
+            <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+            <wp:term_slug>inhalation</wp:term_slug>
+            <wp:term_name><![CDATA[Inhalation]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>108</wp:term_id>
+            <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
+            <wp:term_slug>two-inhales</wp:term_slug>
+            <wp:term_name><![CDATA[Two inhales]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>109</wp:term_id>
+            <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+            <wp:term_slug>flat-non-reflective</wp:term_slug>
+            <wp:term_name><![CDATA[Flat non-reflective]]></wp:term_name>
+        </wp:term>
+        
+        <!-- Initial Protocol -->
+        <item>
+            <title><![CDATA[Code of Reality Protocol]]></title>
+            <link>http://localhost:9000/protocol/code-of-reality-protocol/</link>
+            <pubDate>Mon, 08 Jan 2024 12:00:00 +0000</pubDate>
+            <dc:creator><![CDATA[admin]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=protocol&#038;p=1001</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Protocol Description</h2>
+
+<p>This protocol is designed to reliably elicit a recurring visual phenomenon informally referred to as "The Code of Reality" when observing a diffracted light pattern generated by a collimated 650 nm laser under the influence of N,N-DMT.</p>
+
+<h3>Materials</h3>
+
+<ul>
+<li>650 nm Refracted Laser (Class 2) with operation power of 1 mW (12 x 35 mm)</li>
+<li>Tripod for mounting laser</li>
+<li>Diffraction Grating Lens</li>
+<li>Non-Reflective Surfaces optimized for light projection (e.g., flat closet doors or concrete poles)</li>
+<li>Vape pen loaded with 1.0 g of N-N-DMT, powered by a 3.8 V or 4.8 V battery</li>
+</ul>
+
+<h3>Health & Safety Disclaimers</h3>
+
+<ul>
+<li>Laser Safety: Only Class 2 lasers with an operating power of 1 mW or less should be used. Exposure to high-intensity laser radiation can cause permanent eye damage. Light should always be projected onto non-reflective surfaces. Participants should never look directly into the laser itself, solely laser projections.</li>
+<li>Psychedelic Safety: Use of N,N-DMT should occur under controlled conditions with appropriate oversight available. This protocol is for the purposes of reporting results and not intended for personal replication without proper precautions.</li>
+</ul>
+
+<h3>Procedure</h3>
+
+<ol>
+<li>Preparation: Participants should be seated in front of the laser projection on an optimized surface at a distance of 4-6 feet.</li>
+<li>Use of DMT: Two medium inhales after a full "launch" session.</li>
+<li>Observation: Participants should direct their attention to the light projection and report their experiences.</li>
+<li>Data Collection: Written and verbal accounts should be recorded post-session.</li>
+</ol>
+
+<h3>Expected Results</h3>
+
+<p>Participants may report seeing Japanese Katakana-like characters running within the laser diffraction lines, stable geometric structures independent of the observer's frame of reference, and persistent visibility of the phenomenon with minimal DMT doses once initially observed.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This protocol is designed to reliably elicit a recurring visual phenomenon informally referred to as "The Code of Reality" when observing a diffracted light pattern generated by a collimated 650 nm laser under the influence of N,N-DMT.]]></excerpt:encoded>
+            <wp:post_id>1001</wp:post_id>
+            <wp:post_date>2024-01-08 12:00:00</wp:post_date>
+            <wp:post_date_gmt>2024-01-08 12:00:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>code-of-reality-protocol</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>protocol</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-2</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>vape-pen</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>nn-dmt</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>inhalation</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
+                <wp:term_slug>two-inhales</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+    </channel>
+</rss>

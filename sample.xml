@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+    xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:wp="http://wordpress.org/export/1.2/"
+>
+    <channel>
+        <title>Open Veil</title>
+        <link>http://localhost:9000</link>
+        <description>Experimental Protocol Data</description>
+        <pubDate>Mon, 13 Apr 2025 17:07:59 +0000</pubDate>
+        <language>en-US</language>
+        <wp:wxr_version>1.2</wp:wxr_version>
+        <wp:base_site_url>http://localhost:9000</wp:base_site_url>
+        <wp:base_blog_url>http://localhost:9000</wp:base_blog_url>
+        
+        <wp:author>
+            <wp:author_id>1</wp:author_id>
+            <wp:author_login>admin</wp:author_login>
+            <wp:author_email>admin@example.com</wp:author_email>
+            <wp:author_display_name><![CDATA[Admin]]></wp:author_display_name>
+            <wp:author_first_name><![CDATA[Admin]]></wp:author_first_name>
+            <wp:author_last_name><![CDATA[User]]></wp:author_last_name>
+        </wp:author>
+        
+        <wp:author>
+            <wp:author_id>2</wp:author_id>
+            <wp:author_login>researcher</wp:author_login>
+            <wp:author_email>researcher@example.com</wp:author_email>
+            <wp:author_display_name><![CDATA[Researcher]]></wp:author_display_name>
+            <wp:author_first_name><![CDATA[Jane]]></wp:author_first_name>
+            <wp:author_last_name><![CDATA[Researcher]]></wp:author_last_name>
+        </wp:author>
+        
+        <wp:author>
+            <wp:author_id>3</wp:author_id>
+            <wp:author_login>participant</wp:author_login>
+            <wp:author_email>participant@example.com</wp:author_email>
+            <wp:author_display_name><![CDATA[Participant]]></wp:author_display_name>
+            <wp:author_first_name><![CDATA[John]]></wp:author_first_name>
+            <wp:author_last_name><![CDATA[Participant]]></wp:author_last_name>
+        </wp:author>
+        
+        <!-- Taxonomy Terms -->
+        <wp:term>
+            <wp:term_id>100</wp:term_id>
+            <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+            <wp:term_slug>class-2</wp:term_slug>
+            <wp:term_name><![CDATA[Class 2]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>101</wp:term_id>
+            <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+            <wp:term_slug>standard</wp:term_slug>
+            <wp:term_name><![CDATA[Standard]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>102</wp:term_id>
+            <wp:term_taxonomy>equipment</wp:term_taxonomy>
+            <wp:term_slug>laser</wp:term_slug>
+            <wp:term_name><![CDATA[Laser]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>103</wp:term_id>
+            <wp:term_taxonomy>equipment</wp:term_taxonomy>
+            <wp:term_slug>tripod</wp:term_slug>
+            <wp:term_name><![CDATA[Tripod]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>104</wp:term_id>
+            <wp:term_taxonomy>equipment</wp:term_taxonomy>
+            <wp:term_slug>diffraction-grating</wp:term_slug>
+            <wp:term_name><![CDATA[Diffraction Grating]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>105</wp:term_id>
+            <wp:term_taxonomy>equipment</wp:term_taxonomy>
+            <wp:term_slug>vape-pen</wp:term_slug>
+            <wp:term_name><![CDATA[Vape Pen]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>106</wp:term_id>
+            <wp:term_taxonomy>substance</wp:term_taxonomy>
+            <wp:term_slug>nn-dmt</wp:term_slug>
+            <wp:term_name><![CDATA[N,N-DMT]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>107</wp:term_id>
+            <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+            <wp:term_slug>inhalation</wp:term_slug>
+            <wp:term_name><![CDATA[Inhalation]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>108</wp:term_id>
+            <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
+            <wp:term_slug>two-inhales</wp:term_slug>
+            <wp:term_name><![CDATA[Two inhales]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>109</wp:term_id>
+            <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+            <wp:term_slug>flat-non-reflective</wp:term_slug>
+            <wp:term_name><![CDATA[Flat non-reflective]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>110</wp:term_id>
+            <wp:term_taxonomy>substance</wp:term_taxonomy>
+            <wp:term_slug>lsd</wp:term_slug>
+            <wp:term_name><![CDATA[LSD]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>111</wp:term_id>
+            <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+            <wp:term_slug>sublingual</wp:term_slug>
+            <wp:term_name><![CDATA[Sublingual]]></wp:term_name>
+        </wp:term>
+        
+        <wp:term>
+            <wp:term_id>112</wp:term_id>
+            <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+            <wp:term_slug>class-3r</wp:term_slug>
+            <wp:term_name><![CDATA[Class 3R]]></wp:term_name>
+        </wp:term>
+        
+        <!-- Protocol 1: Code of Reality Protocol -->
+        <item>
+            <title><![CDATA[Code of Reality Protocol]]></title>
+            <link>http://localhost:9000/protocol/code-of-reality-protocol/</link>
+            <pubDate>Mon, 15 Jan 2025 12:00:00 +0000</pubDate>
+            <dc:creator><![CDATA[admin]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=protocol&#038;p=1001</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Protocol Description</h2>
+
+<p>This protocol is designed to reliably elicit a recurring visual phenomenon informally referred to as "The Code of Reality" when observing a diffracted light pattern generated by a collimated 650 nm laser under the influence of N,N-DMT.</p>
+
+<h3>Materials</h3>
+
+<ul>
+<li>650 nm Refracted Laser (Class 2) with operation power of 1 mW (12 x 35 mm)</li>
+<li>Tripod for mounting laser</li>
+<li>Diffraction Grating Lens</li>
+<li>Non-Reflective Surfaces optimized for light projection (e.g., flat closet doors or concrete poles)</li>
+<li>Vape pen loaded with 1.0 g of N-N-DMT, powered by a 3.8 V or 4.8 V battery</li>
+</ul>
+
+<h3>Health & Safety Disclaimers</h3>
+
+<ul>
+<li>Laser Safety: Only Class 2 lasers with an operating power of 1 mW or less should be used. Exposure to high-intensity laser radiation can cause permanent eye damage. Light should always be projected onto non-reflective surfaces. Participants should never look directly into the laser itself, solely laser projections.</li>
+<li>Psychedelic Safety: Use of N,N-DMT should occur under controlled conditions with appropriate oversight available. This protocol is for the purposes of reporting results and not intended for personal replication without proper precautions.</li>
+</ul>
+
+<h3>Procedure</h3>
+
+<ol>
+<li>Preparation: Participants should be seated in front of the laser projection on an optimized surface at a distance of 4-6 feet.</li>
+<li>Use of DMT: Two medium inhales after a full "launch" session.</li>
+<li>Observation: Participants should direct their attention to the light projection and report their experiences.</li>
+<li>Data Collection: Written and verbal accounts should be recorded post-session.</li>
+</ol>
+
+<h3>Expected Results</h3>
+
+<p>Participants may report seeing Japanese Katakana-like characters running within the laser diffraction lines, stable geometric structures independent of the observer's frame of reference, and persistent visibility of the phenomenon with minimal DMT doses once initially observed.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This protocol is designed to reliably elicit a recurring visual phenomenon informally referred to as "The Code of Reality" when observing a diffracted light pattern generated by a collimated 650 nm laser under the influence of N,N-DMT.]]></excerpt:encoded>
+            <wp:post_id>1001</wp:post_id>
+            <wp:post_date>2025-01-15 12:00:00</wp:post_date>
+            <wp:post_date_gmt>2025-01-15 12:00:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>code-of-reality-protocol</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>protocol</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-2</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>vape-pen</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>nn-dmt</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>inhalation</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
+                <wp:term_slug>two-inhales</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+        
+        <!-- Protocol 2: LSD Laser Diffraction Protocol -->
+        <item>
+            <title><![CDATA[LSD Laser Diffraction Protocol]]></title>
+            <link>http://localhost:9000/protocol/lsd-laser-diffraction-protocol/</link>
+            <pubDate>Fri, 26 Jan 2025 14:30:00 +0000</pubDate>
+            <dc:creator><![CDATA[researcher]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=protocol&#038;p=1002</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Protocol Description</h2>
+
+<p>This protocol aims to investigate visual phenomena observed when viewing laser diffraction patterns under the influence of LSD, comparing results with the DMT-induced "Code of Reality" phenomenon.</p>
+
+<h3>Materials</h3>
+
+<ul>
+<li>650 nm Refracted Laser (Class 2) with operation power of 1 mW</li>
+<li>Tripod for mounting laser</li>
+<li>Diffraction Grating Lens</li>
+<li>Non-Reflective Surfaces for light projection</li>
+<li>LSD (100 micrograms per dose)</li>
+</ul>
+
+<h3>Health & Safety Disclaimers</h3>
+
+<ul>
+<li>Laser Safety: Only Class 2 lasers should be used. Never look directly into the laser.</li>
+<li>Psychedelic Safety: Use of LSD should occur under controlled conditions with appropriate oversight available.</li>
+</ul>
+
+<h3>Procedure</h3>
+
+<ol>
+<li>Preparation: Participants should be seated in front of the laser projection at a distance of 5 feet.</li>
+<li>Administration: Sublingual administration of 100 micrograms of LSD.</li>
+<li>Timing: Observation should begin 2 hours after administration and continue at 30-minute intervals.</li>
+<li>Observation: Participants should direct their attention to the light projection and report their experiences.</li>
+<li>Data Collection: Written and verbal accounts should be recorded during and post-session.</li>
+</ol>
+
+<h3>Expected Results</h3>
+
+<p>This protocol aims to determine if LSD produces similar or different visual phenomena compared to DMT when observing laser diffraction patterns.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This protocol aims to investigate visual phenomena observed when viewing laser diffraction patterns under the influence of LSD, comparing results with the DMT-induced "Code of Reality" phenomenon.]]></excerpt:encoded>
+            <wp:post_id>1002</wp:post_id>
+            <wp:post_date>2025-01-26 14:30:00</wp:post_date>
+            <wp:post_date_gmt>2025-01-26 14:30:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>lsd-laser-diffraction-protocol</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>protocol</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[0.0001]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-2</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>lsd</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>sublingual</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+        
+        <!-- Protocol 3: Enhanced Laser Power Protocol -->
+        <item>
+            <title><![CDATA[Enhanced Laser Power Protocol]]></title>
+            <link>http://localhost:9000/protocol/enhanced-laser-power-protocol/</link>
+            <pubDate>Wed, 12 Feb 2025 09:15:00 +0000</pubDate>
+            <dc:creator><![CDATA[admin]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=protocol&#038;p=1003</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Protocol Description</h2>
+
+<p>This protocol investigates whether increasing laser power affects the clarity or intensity of the "Code of Reality" phenomenon observed under the influence of N,N-DMT.</p>
+
+<h3>Materials</h3>
+
+<ul>
+<li>650 nm Refracted Laser (Class 3R) with operation power of 3 mW</li>
+<li>Tripod for mounting laser</li>
+<li>Diffraction Grating Lens</li>
+<li>Non-Reflective Surfaces for light projection</li>
+<li>Vape pen loaded with 1.0 g of N-N-DMT</li>
+</ul>
+
+<h3>Health & Safety Disclaimers</h3>
+
+<ul>
+<li>Laser Safety: Class 3R lasers require additional precautions. Never look directly into the laser or its reflections. Use protective eyewear when setting up the equipment.</li>
+<li>Psychedelic Safety: Use of N,N-DMT should occur under controlled conditions with appropriate oversight available.</li>
+</ul>
+
+<h3>Procedure</h3>
+
+<ol>
+<li>Preparation: Participants should be seated in front of the laser projection at a distance of 6 feet (increased from standard protocol).</li>
+<li>Use of DMT: Two medium inhales after a full "launch" session.</li>
+<li>Observation: Participants should direct their attention to the light projection and report their experiences.</li>
+<li>Data Collection: Written and verbal accounts should be recorded post-session, with specific attention to differences in clarity or intensity compared to the standard protocol.</li>
+</ol>
+
+<h3>Expected Results</h3>
+
+<p>This protocol aims to determine if increased laser power enhances the visibility or detail of the "Code of Reality" phenomenon.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This protocol investigates whether increasing laser power affects the clarity or intensity of the "Code of Reality" phenomenon observed under the influence of N,N-DMT.]]></excerpt:encoded>
+            <wp:post_id>1003</wp:post_id>
+            <wp:post_date>2025-02-12 09:15:00</wp:post_date>
+            <wp:post_date_gmt>2025-02-12 09:15:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>enhanced-laser-power-protocol</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>protocol</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[3]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[6]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-3r</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>vape-pen</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>nn-dmt</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>inhalation</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
+                <wp:term_slug>two-inhales</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+        
+        <!-- Protocol 4: Multiple Observer Protocol -->
+        <item>
+            <title><![CDATA[Multiple Observer Protocol]]></title>
+            <link>http://localhost:9000/protocol/multiple-observer-protocol/</link>
+            <pubDate>Tue, 04 Mar 2025 16:45:00 +0000</pubDate>
+            <dc:creator><![CDATA[researcher]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=protocol&#038;p=1004</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Protocol Description</h2>
+
+<p>This protocol is designed to investigate the consistency of the "Code of Reality" phenomenon across multiple observers simultaneously viewing the same laser diffraction pattern.</p>
+
+<h3>Materials</h3>
+
+<ul>
+<li>650 nm Refracted Laser (Class 2) with operation power of 1 mW</li>
+<li>Tripod for mounting laser</li>
+<li>Diffraction Grating Lens</li>
+<li>Large Non-Reflective Surface for projection (to accommodate multiple viewers)</li>
+<li>Vape pen loaded with 1.0 g of N-N-DMT for each participant</li>
+</ul>
+
+<h3>Health & Safety Disclaimers</h3>
+
+<ul>
+<li>Laser Safety: Only Class 2 lasers should be used. Never look directly into the laser.</li>
+<li>Psychedelic Safety: Use of N,N-DMT should occur under controlled conditions with appropriate oversight available for all participants.</li>
+<li>Group Setting: Additional considerations for group dynamics and psychological support should be made.</li>
+</ul>
+
+<h3>Procedure</h3>
+
+<ol>
+<li>Preparation: 3-5 participants should be seated in a semi-circle around the laser projection at a distance of 5 feet.</li>
+<li>Administration: Participants should take turns administering DMT, with at least one sober observer present at all times.</li>
+<li>Observation: Each participant should independently observe the light projection without discussing their observations until after the session.</li>
+<li>Data Collection: Written accounts should be recorded immediately post-session, before participants discuss their experiences with each other.</li>
+<li>Comparison: After individual accounts are recorded, a group discussion should be facilitated to compare observations.</li>
+</ol>
+
+<h3>Expected Results</h3>
+
+<p>This protocol aims to determine the consistency of the "Code of Reality" phenomenon across multiple observers and identify any patterns or symbols that are consistently reported.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This protocol is designed to investigate the consistency of the "Code of Reality" phenomenon across multiple observers simultaneously viewing the same laser diffraction pattern.]]></excerpt:encoded>
+            <wp:post_id>1004</wp:post_id>
+            <wp:post_date>2025-03-04 16:45:00</wp:post_date>
+            <wp:post_date_gmt>2025-03-04 16:45:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>multiple-observer-protocol</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>protocol</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-2</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>vape-pen</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>nn-dmt</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>inhalation</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
+                <wp:term_slug>two-inhales</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+        
+        <!-- Trial 1: First Code of Reality Trial -->
+        <item>
+            <title><![CDATA[Trial - Code of Reality - Jan 20, 2025]]></title>
+            <link>http://localhost:9000/trial/trial-code-of-reality-jan-20-2025/</link>
+            <pubDate>Sat, 20 Jan 2025 18:30:00 +0000</pubDate>
+            <dc:creator><![CDATA[participant]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1005</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Trial Description</h2>
+
+<p>This trial followed the Code of Reality Protocol exactly as specified. After two medium inhales of N,N-DMT, I observed the laser diffraction pattern projected on a flat closet door.</p>
+
+<h3>Observations</h3>
+
+<p>Within approximately 30 seconds after the second inhale, I began to notice subtle movements within the laser diffraction lines. As the effects intensified, the lines appeared to contain flowing symbols that resembled Japanese Katakana or some form of alien writing system. The symbols moved in a consistent direction, appearing to flow from left to right along the diffraction lines.</p>
+
+<p>The symbols maintained their coherence regardless of my head movements or changes in perspective. They appeared to be an intrinsic property of the light itself rather than a subjective visual distortion.</p>
+
+<p>Most interestingly, when I closed my eyes and reopened them, the same pattern of symbols would reappear in the same location, suggesting a stable phenomenon rather than random hallucination.</p>
+
+<h3>Additional Notes</h3>
+
+<p>The phenomenon lasted approximately 10 minutes before gradually fading. I was able to sketch some of the symbols immediately after the experience, though my artistic abilities may not fully capture the complexity of what I observed.</p>
+
+<p>There were no additional observers present during this trial.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This trial followed the Code of Reality Protocol exactly as specified. After two medium inhales of N,N-DMT, I observed the laser diffraction pattern projected on a flat closet door.]]></excerpt:encoded>
+            <wp:post_id>1005</wp:post_id>
+            <wp:post_date>2025-01-20 18:30:00</wp:post_date>
+            <wp:post_date_gmt>2025-01-20 18:30:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>trial-code-of-reality-jan-20-2025</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>trial</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>protocol_id</wp:meta_key>
+                <wp:meta_value><![CDATA[1001]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>administration_notes</wp:meta_key>
+                <wp:meta_value><![CDATA[Two medium inhales from a vape pen as specified in the protocol. The DMT was vaporized at approximately 180°C.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>additional_observers</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-2</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>vape-pen</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>nn-dmt</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>inhalation</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
+                <wp:term_slug>two-inhales</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+        
+        <!-- Trial 2: Second Code of Reality Trial -->
+        <item>
+            <title><![CDATA[Trial - Code of Reality - Jan 28, 2025]]></title>
+            <link>http://localhost:9000/trial/trial-code-of-reality-jan-28-2025/</link>
+            <pubDate>Tue, 28 Jan 2025 20:15:00 +0000</pubDate>
+            <dc:creator><![CDATA[admin]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1006</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Trial Description</h2>
+
+<p>This trial followed the Code of Reality Protocol with a slight variation in the laser power, which was measured at 0.9 mW instead of the specified 1.0 mW due to battery depletion.</p>
+
+<h3>Observations</h3>
+
+<p>After administering the DMT as specified in the protocol, I observed the laser diffraction pattern for approximately 15 minutes. The initial effects were subtle, with a slight "breathing" quality to the laser lines. As the DMT effects intensified (approximately 45 seconds after the second inhale), distinct symbols began to appear within the diffraction lines.</p>
+
+<p>The symbols appeared to be organized in a coherent pattern, flowing along the lines in a consistent direction. They resembled a combination of geometric shapes and alphabetic characters, somewhat similar to cuneiform or ancient writing systems. The symbols maintained their position relative to the diffraction pattern regardless of my viewing angle or head position.</p>
+
+<p>Most notably, certain symbols appeared to repeat in specific sequences, suggesting a form of language or code rather than random visual noise. I was able to identify at least three distinct "characters" that appeared multiple times in what seemed to be specific arrangements.</p>
+
+<h3>Additional Notes</h3>
+
+<p>Despite the slightly lower laser power than specified in the protocol, the phenomenon was clearly observable. This suggests that the effect may be robust across minor variations in equipment specifications.</p>
+
+<p>One additional observer was present during this trial but did not participate in the DMT administration. They reported being able to see the laser diffraction pattern normally but did not observe any symbols or unusual patterns within the light.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This trial followed the Code of Reality Protocol with a slight variation in the laser power, which was measured at 0.9 mW instead of the specified 1.0 mW due to battery depletion.]]></excerpt:encoded>
+            <wp:post_id>1006</wp:post_id>
+            <wp:post_date>2025-01-28 20:15:00</wp:post_date>
+            <wp:post_date_gmt>2025-01-28 20:15:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>trial-code-of-reality-jan-28-2025</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>trial</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>protocol_id</wp:meta_key>
+                <wp:meta_value><![CDATA[1001]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[0.9]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>administration_notes</wp:meta_key>
+                <wp:meta_value><![CDATA[Two medium inhales from a vape pen as specified. The second inhale was held for approximately 20 seconds.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>additional_observers</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-2</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>vape-pen</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>nn-dmt</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>inhalation</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
+                <wp:term_slug>two-inhales</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+        
+        <!-- Trial 3: LSD Protocol Trial -->
+        <item>
+            <title><![CDATA[Trial - LSD Laser Diffraction - Feb 02, 2025]]></title>
+            <link>http://localhost:9000/trial/trial-lsd-laser-diffraction-feb-02-2025/</link>
+            <pubDate>Sun, 02 Feb 2025 14:00:00 +0000</pubDate>
+            <dc:creator><![CDATA[researcher]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1007</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Trial Description</h2>
+
+<p>This trial followed the LSD Laser Diffraction Protocol as specified. I administered 100 micrograms of LSD sublingually and began observations 2 hours after administration.</p>
+
+<h3>Observations</h3>
+
+<p>At the 2-hour mark, the laser diffraction pattern appeared enhanced in brightness and color, with a subtle pulsing quality. The lines seemed more defined and vibrant than they would under normal perception, but no distinct symbols or characters were observed within the diffraction pattern.</p>
+
+<p>At the 2.5-hour mark, the diffraction pattern began to exhibit a flowing quality, with the lines appearing to breathe or undulate. The spaces between the lines seemed to contain subtle geometric patterns, primarily consisting of nested triangles and hexagons.</p>
+
+<p>At the 3-hour mark (peak effects), the diffraction pattern exhibited complex geometric overlays, with fractal-like patterns extending outward from the main lines. However, unlike the DMT trials, no distinct symbols or character-like formations were observed. The patterns were more consistent with typical LSD visual effects: geometric, fractal, and flowing, but not linguistic or symbolic in nature.</p>
+
+<p>Observations continued at 30-minute intervals until the 6-hour mark, with gradually diminishing visual effects but no emergence of symbol-like patterns at any point.</p>
+
+<h3>Additional Notes</h3>
+
+<p>The visual effects observed during this trial were qualitatively different from those reported in the DMT trials. While the LSD produced enhanced perception and geometric patterns, it did not generate the distinct symbol-like formations that characterize the "Code of Reality" phenomenon.</p>
+
+<p>This suggests that the "Code of Reality" effect may be specific to DMT rather than a general property of psychedelic substances interacting with laser diffraction patterns.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This trial followed the LSD Laser Diffraction Protocol as specified. I administered 100 micrograms of LSD sublingually and began observations 2 hours after administration.]]></excerpt:encoded>
+            <wp:post_id>1007</wp:post_id>
+            <wp:post_date>2025-02-02 14:00:00</wp:post_date>
+            <wp:post_date_gmt>2025-02-02 14:00:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>trial-lsd-laser-diffraction-feb-02-2025</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>trial</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>protocol_id</wp:meta_key>
+                <wp:meta_value><![CDATA[1002]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[0.0001]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>administration_notes</wp:meta_key>
+                <wp:meta_value><![CDATA[100 micrograms of LSD administered sublingually. Held under tongue for 15 minutes before swallowing.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>additional_observers</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-2</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>lsd</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>sublingual</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+        
+        <!-- Trial 4: Enhanced Laser Power Trial -->
+        <item>
+            <title><![CDATA[Trial - Enhanced Laser Power - Feb 15, 2025]]></title>
+            <link>http://localhost:9000/trial/trial-enhanced-laser-power-feb-15-2025/</link>
+            <pubDate>Sat, 15 Feb 2025 19:30:00 +0000</pubDate>
+            <dc:creator><![CDATA[admin]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1008</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Trial Description</h2>
+
+<p>This trial followed the Enhanced Laser Power Protocol using a Class 3R laser with 3 mW power to investigate whether increased power affects the clarity or intensity of the "Code of Reality" phenomenon.</p>
+
+<h3>Observations</h3>
+
+<p>After administering DMT as specified in the protocol, I observed the laser diffraction pattern projected at a distance of 6 feet. The initial effects were similar to previous trials with the standard protocol, but with notable differences in intensity and clarity.</p>
+
+<p>The symbols appeared approximately 40 seconds after the second inhale, which is slightly faster than in previous trials with the standard 1 mW laser. The symbols were significantly more defined and exhibited greater contrast against the diffraction lines. Individual characters were easier to distinguish from one another, and their movement along the lines appeared more fluid.</p>
+
+<p>Most notably, I was able to observe what appeared to be a hierarchical structure to the symbols, with certain larger or more complex characters appearing to organize smaller characters around them. This level of detail was not apparent in previous trials with the lower-powered laser.</p>
+
+<p>The phenomenon lasted approximately 12 minutes before gradually fading, which is slightly longer than the duration observed in standard protocol trials.</p>
+
+<h3>Additional Notes</h3>
+
+<p>The increased laser power appears to enhance both the clarity and duration of the "Code of Reality" phenomenon. The symbols were more distinct and exhibited greater complexity in their organization. This suggests that the phenomenon may be sensitive to the intensity of the light stimulus.</p>
+
+<p>Safety note: Despite using a Class 3R laser, appropriate precautions were taken to ensure that the laser was only directed at non-reflective surfaces, and protective eyewear was worn during setup.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This trial followed the Enhanced Laser Power Protocol using a Class 3R laser with 3 mW power to investigate whether increased power affects the clarity or intensity of the "Code of Reality" phenomenon.]]></excerpt:encoded>
+            <wp:post_id>1008</wp:post_id>
+            <wp:post_date>2025-02-15 19:30:00</wp:post_date>
+            <wp:post_date_gmt>2025-02-15 19:30:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>trial-enhanced-laser-power-feb-15-2025</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>trial</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>protocol_id</wp:meta_key>
+                <wp:meta_value><![CDATA[1003]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[3]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[6]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>administration_notes</wp:meta_key>
+                <wp:meta_value><![CDATA[Two medium inhales from a vape pen. Used a higher quality vaporizer than previous trials to ensure consistent dosing.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>additional_observers</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-3r</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>vape-pen</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>nn-dmt</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>inhalation</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
+                <wp:term_slug>two-inhales</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+        
+        <!-- Trial 5: Multiple Observer Trial -->
+        <item>
+            <title><![CDATA[Trial - Multiple Observer - Mar 10, 2025]]></title>
+            <link>http://localhost:9000/trial/trial-multiple-observer-mar-10-2025/</link>
+            <pubDate>Mon, 10 Mar 2025 15:00:00 +0000</pubDate>
+            <dc:creator><![CDATA[researcher]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1009</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Trial Description</h2>
+
+<p>This trial followed the Multiple Observer Protocol with four participants observing the same laser diffraction pattern while taking turns administering DMT.</p>
+
+<h3>Observations</h3>
+
+<p>All four participants observed the laser diffraction pattern independently and recorded their observations before discussing them as a group. The results were remarkably consistent across all participants:</p>
+
+<ul>
+<li>All four participants reported seeing symbol-like formations within the diffraction lines.</li>
+<li>Three of the four participants specifically described the symbols as resembling Japanese Katakana or some form of Asian writing system.</li>
+<li>All participants reported that the symbols appeared to flow in a consistent direction along the diffraction lines.</li>
+<li>All participants noted that the symbols maintained their position relative to the diffraction pattern regardless of viewing angle.</li>
+<li>Three of the four participants were able to identify and sketch specific recurring symbols that appeared multiple times.</li>
+</ul>
+
+<p>When the participants' sketches were compared, there was significant overlap in the types of symbols drawn, with at least five distinct symbols being independently recorded by multiple participants.</p>
+
+<h3>Additional Notes</h3>
+
+<p>The consistency of observations across multiple independent observers strongly suggests that the "Code of Reality" phenomenon is not purely subjective but represents a consistent perceptual experience induced by the combination of DMT and laser diffraction patterns.</p>
+
+<p>The fact that participants were able to independently identify and sketch similar symbols further strengthens the case that these are not random hallucinations but a structured phenomenon with consistent properties.</p>
+
+<p>This trial provides compelling evidence for the intersubjective validity of the "Code of Reality" phenomenon and warrants further investigation with larger groups of participants.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This trial followed the Multiple Observer Protocol with four participants observing the same laser diffraction pattern while taking turns administering DMT.]]></excerpt:encoded>
+            <wp:post_id>1009</wp:post_id>
+            <wp:post_date>2025-03-10 15:00:00</wp:post_date>
+            <wp:post_date_gmt>2025-03-10 15:00:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>trial-multiple-observer-mar-10-2025</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>trial</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>protocol_id</wp:meta_key>
+                <wp:meta_value><![CDATA[1004]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>administration_notes</wp:meta_key>
+                <wp:meta_value><![CDATA[Each participant took two medium inhales from a vape pen. Participants took turns with at least 30 minutes between each person's session.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>additional_observers</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-2</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>vape-pen</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>nn-dmt</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>inhalation</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
+                <wp:term_slug>two-inhales</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+        
+        <!-- Trial 6: Second LSD Protocol Trial -->
+        <item>
+            <title><![CDATA[Trial - LSD Laser Diffraction - Mar 20, 2025]]></title>
+            <link>http://localhost:9000/trial/trial-lsd-laser-diffraction-mar-20-2025/</link>
+            <pubDate>Thu, 20 Mar 2025 13:45:00 +0000</pubDate>
+            <dc:creator><![CDATA[participant]]></dc:creator>
+            <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1010</guid>
+            <description></description>
+            <content:encoded><![CDATA[<h2>Trial Description</h2>
+
+<p>This trial followed the LSD Laser Diffraction Protocol as specified, with observations conducted at 30-minute intervals starting 2 hours after administration of 100 micrograms of LSD.</p>
+
+<h3>Observations</h3>
+
+<p>At the 2-hour mark, the laser diffraction pattern appeared more vibrant than normal, with enhanced color saturation and a slight pulsing quality. The lines seemed to breathe or undulate slightly, but maintained their basic structure.</p>
+
+<p>At the 2.5-hour mark, geometric patterns began to form in the spaces between the diffraction lines. These patterns primarily consisted of interlocking hexagons and triangles that seemed to flow and morph into one another.</p>
+
+<p>At the 3-hour mark (peak effects), the entire diffraction pattern was surrounded by a halo of geometric patterns that extended several inches beyond the actual light projection. The diffraction lines themselves appeared to be composed of smaller, fractal-like patterns that constantly shifted and evolved.</p>
+
+<p>Throughout the entire observation period (2-6 hours), no distinct symbol-like or character-like formations were observed within the diffraction pattern. The visual effects were consistent with typical LSD visuals: geometric, fractal, flowing, and colorful, but not linguistic or symbolic in nature.</p>
+
+<h3>Additional Notes</h3>
+
+<p>This trial confirms the findings of the previous LSD trial, suggesting that the "Code of Reality" phenomenon is specific to DMT and not a general property of psychedelic substances interacting with laser diffraction patterns.</p>
+
+<p>The visual effects observed with LSD were qualitatively different from those reported in DMT trials, focusing on geometric and fractal patterns rather than symbol-like formations. This provides further evidence that the "Code of Reality" phenomenon represents a unique perceptual experience specific to DMT.</p>]]></content:encoded>
+            <excerpt:encoded><![CDATA[This trial followed the LSD Laser Diffraction Protocol as specified, with observations conducted at 30-minute intervals starting 2 hours after administration of 100 micrograms of LSD.]]></excerpt:encoded>
+            <wp:post_id>1010</wp:post_id>
+            <wp:post_date>2025-03-20 13:45:00</wp:post_date>
+            <wp:post_date_gmt>2025-03-20 13:45:00</wp:post_date_gmt>
+            <wp:comment_status>open</wp:comment_status>
+            <wp:ping_status>open</wp:ping_status>
+            <wp:post_name>trial-lsd-laser-diffraction-mar-20-2025</wp:post_name>
+            <wp:status>publish</wp:status>
+            <wp:post_parent>0</wp:post_parent>
+            <wp:menu_order>0</wp:menu_order>
+            <wp:post_type>trial</wp:post_type>
+            <wp:post_password></wp:post_password>
+            <wp:is_sticky>0</wp:is_sticky>
+            
+            <wp:postmeta>
+                <wp:meta_key>protocol_id</wp:meta_key>
+                <wp:meta_value><![CDATA[1002]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_wavelength</wp:meta_key>
+                <wp:meta_value><![CDATA[650]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>substance_dose</wp:meta_key>
+                <wp:meta_value><![CDATA[0.0001]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>projection_distance</wp:meta_key>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>administration_notes</wp:meta_key>
+                <wp:meta_value><![CDATA[100 micrograms of LSD administered sublingually. Held under tongue for 15 minutes before swallowing.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>additional_observers</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            
+            <wp:term_relationship>
+                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
+                <wp:term_slug>class-2</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
+                <wp:term_slug>standard</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>laser</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>tripod</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>equipment</wp:term_taxonomy>
+                <wp:term_slug>diffraction-grating</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>substance</wp:term_taxonomy>
+                <wp:term_slug>lsd</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
+                <wp:term_slug>sublingual</wp:term_slug>
+            </wp:term_relationship>
+            <wp:term_relationship>
+                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
+                <wp:term_slug>flat-non-reflective</wp:term_slug>
+            </wp:term_relationship>
+        </item>
+    </channel>
+</rss>

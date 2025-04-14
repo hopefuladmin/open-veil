@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Open Veil API Schema",
+  "description": "Schema for Open Veil API input/output",
+  "type": "object",
+  "definitions": {
+    "protocol": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Protocol title"
+        },
+        "content": {
+          "type": "string",
+          "description": "Protocol content"
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "laser_wavelength": {
+              "type": "integer",
+              "description": "Laser wavelength in nanometers",
+              "minimum": 400,
+              "maximum": 700
+            },
+            "laser_power": {
+              "type": "number",
+              "description": "Laser power in milliwatts",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "substance_dose": {
+              "type": "number",
+              "description": "Substance dose in grams",
+              "minimum": 0
+            },
+            "projection_distance": {
+              "type": "number",
+              "description": "Projection distance in feet",
+              "minimum": 1,
+              "maximum": 20
+            }
+          },
+          "required": ["laser_wavelength", "laser_power", "substance_dose", "projection_distance"]
+        },
+        "tax_input": {
+          "type": "object",
+          "properties": {
+            "laser_class": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "diffraction_grating_spec": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "equipment": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "substance": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "administration_method": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "administration_protocol": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "projection_surface": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": ["title", "meta"]
+    },
+    "trial": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Trial title"
+        },
+        "content": {
+          "type": "string",
+          "description": "Trial content"
+        },
+        "meta": {
+          "type": "object",
+          "properties": {
+            "protocol_id": {
+              "type": "integer",
+              "description": "ID of the protocol this trial is based on"
+            },
+            "laser_wavelength": {
+              "type": "integer",
+              "description": "Laser wavelength in nanometers",
+              "minimum": 400,
+              "maximum": 700
+            },
+            "laser_power": {
+              "type": "number",
+              "description": "Laser power in milliwatts",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "substance_dose": {
+              "type": "number",
+              "description": "Substance dose in grams",
+              "minimum": 0
+            },
+            "projection_distance": {
+              "type": "number",
+              "description": "Projection distance in feet",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "administration_notes": {
+              "type": "string",
+              "description": "Notes about the administration method"
+            },
+            "additional_observers": {
+              "type": "boolean",
+              "description": "Whether there were additional observers"
+            }
+          },
+          "required": ["protocol_id", "laser_wavelength", "laser_power", "substance_dose", "projection_distance"]
+        },
+        "tax_input": {
+          "type": "object",
+          "properties": {
+            "laser_class": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "diffraction_grating_spec": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "equipment": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "substance": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "administration_method": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "administration_protocol": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "projection_surface": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": ["title", "meta"]
+    }
+  }
+}

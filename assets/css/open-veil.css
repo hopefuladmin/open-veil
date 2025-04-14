@@ -1,0 +1,259 @@
+/**
+ * Open Veil Styles
+ *
+ * @package OpenVeil
+ */
+
+/* General Styles */
+.open-veil-archive,
+.open-veil-single {
+  margin: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Protocol Archive */
+.protocol-filters,
+.trial-filters {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.protocols-grid,
+.trials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.protocol-card,
+.trial-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.protocol-header,
+.trial-header {
+  margin-bottom: 1rem;
+}
+
+.protocol-title,
+.trial-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.protocol-meta,
+.trial-meta {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.protocol-content,
+.trial-content {
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.protocol-specs,
+.trial-specs {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.spec-item {
+  margin-bottom: 0.5rem;
+}
+
+.spec-label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.protocol-footer,
+.trial-footer {
+  margin-top: auto;
+}
+
+/* Protocol Single */
+.protocol-specs,
+.trial-comparison,
+.trial-details {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+
+.specs-grid,
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.spec-group {
+  margin-bottom: 1.5rem;
+}
+
+.spec-group h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.equipment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.equipment-list li {
+  margin-bottom: 0.25rem;
+}
+
+.protocol-trials {
+  margin: 2rem 0;
+}
+
+.trials-list {
+  margin-bottom: 2rem;
+}
+
+.trial-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.trial-item h3 {
+  margin-top: 0;
+}
+
+.more-trials {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.submit-trial {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Trial Single */
+.protocol-link {
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.comparison-table {
+  overflow-x: auto;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.comparison-table th {
+  background: #f0f0f0;
+}
+
+.trial-comments {
+  margin-top: 2rem;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background: #0073aa;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.button:hover {
+  background: #005f8b;
+  color: white;
+}
+
+.button-secondary {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.button-secondary:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.button-small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-group {
+    flex: 100%;
+  }
+
+  .specs-grid,
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}

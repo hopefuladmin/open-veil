@@ -1,0 +1,234 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+    "name": "Open Veil API",
+    "description": "API endpoints for the Open Veil WordPress plugin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:9000",
+      "type": "string"
+    },
+    {
+      "key": "wp_nonce",
+      "value": "your_wp_nonce_here",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Protocols",
+      "item": [
+        {
+          "name": "Get All Protocols",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/protocol",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "protocol"]
+            },
+            "description": "Get all protocols"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocol by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/protocol/1001",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "protocol", "1001"]
+            },
+            "description": "Get a protocol by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocol by Slug",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/protocol/name/code-of-reality-protocol",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "protocol", "name", "code-of-reality-protocol"]
+            },
+            "description": "Get a protocol by slug"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocol Trials",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/protocol/trials/1001",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "protocol", "trials", "1001"]
+            },
+            "description": "Get all trials for a protocol"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocols by Author",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/protocol/author/1",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "protocol", "author", "1"]
+            },
+            "description": "Get protocols by author ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocol CSL",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/protocol/1001/csl",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "protocol", "1001", "csl"]
+            },
+            "description": "Get CSL-JSON for a protocol"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Protocol",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-WP-Nonce",
+                "value": "{{wp_nonce}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"New Protocol Test\",\n  \"content\": \"This is a test protocol created via the API.\",\n  \"meta\": {\n    \"laser_wavelength\": 650,\n    \"laser_power\": 1.0,\n    \"substance_dose\": 1.0,\n    \"projection_distance\": 5\n  },\n  \"tax_input\": {\n    \"laser_class\": [\"Class 2\"],\n    \"diffraction_grating_spec\": [\"Standard\"],\n    \"equipment\": [\"Laser\", \"Tripod\"],\n    \"substance\": [\"N,N-DMT\"],\n    \"administration_method\": [\"Inhalation\"],\n    \"administration_protocol\": [\"Two inhales\"],\n    \"projection_surface\": [\"Flat non-reflective\"]\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/protocol",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "protocol"]
+            },
+            "description": "Create a new protocol"
+          },
+          "response": []
+        }
+      ],
+      "description": "Endpoints for managing protocols"
+    },
+    {
+      "name": "Trials",
+      "item": [
+        {
+          "name": "Get All Trials",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/trial",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "trial"]
+            },
+            "description": "Get all trials"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trial by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/trial/1002",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "trial", "1002"]
+            },
+            "description": "Get a trial by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trial CSL",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/trial/1002/csl",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "trial", "1002", "csl"]
+            },
+            "description": "Get CSL-JSON for a trial"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Trial",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-WP-Nonce",
+                "value": "{{wp_nonce}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Trial – 2025-04-01\",\n  \"content\": \"Felt presence and geometric visuals after two inhales.\",\n  \"meta\": {\n    \"protocol_id\": 1001,\n    \"laser_wavelength\": 650,\n    \"laser_power\": 0.8,\n    \"substance_dose\": 1.1,\n    \"projection_distance\": 6,\n    \"administration_notes\": \"Deep inhale using a quartz pipe.\",\n    \"additional_observers\": true\n  },\n  \"tax_input\": {\n    \"laser_class\": [\"Class 2\"],\n    \"diffraction_grating_spec\": [\"Standard\"],\n    \"equipment\": [\"Laser\", \"Tripod\"],\n    \"substance\": [\"N,N-DMT\"],\n    \"administration_method\": [\"Inhalation\"],\n    \"administration_protocol\": [\"Two inhales\"],\n    \"projection_surface\": [\"Flat non-reflective\"]\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/trial",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "trial"]
+            },
+            "description": "Create a new trial"
+          },
+          "response": []
+        }
+      ],
+      "description": "Endpoints for managing trials"
+    },
+    {
+      "name": "Schema",
+      "item": [
+        {
+          "name": "Get Schema",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/schema",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "schema"]
+            },
+            "description": "Get schema information"
+          },
+          "response": []
+        }
+      ],
+      "description": "Endpoints for schema information"
+    }
+  ]
+}
