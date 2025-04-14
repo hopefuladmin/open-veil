@@ -63,7 +63,15 @@ class Rest {
             'methods' => 'POST',
             'callback' => [$this, 'create_protocol'],
             'permission_callback' => function() {
-                return current_user_can('edit_posts');
+                $api_access = \OpenVeil\ACF\Options::get_option('api_access', 'public');
+        
+                if ($api_access === 'admin') {
+                    return current_user_can('manage_options');
+                } elseif ($api_access === 'logged_in') {
+                    return is_user_logged_in();
+                }
+        
+                return true;
             },
         ]);
         
@@ -96,7 +104,16 @@ class Rest {
             'methods' => 'POST',
             'callback' => [$this, 'create_trial'],
             'permission_callback' => function() {
-                return true; // Allow guest submissions
+                $api_access = \OpenVeil\ACF\Options::get_option('api_access', 'public');
+                $guest_submissions = \OpenVeil\ACF\Options::get_option('guest_submissions', true);
+        
+                if ($api_access === 'admin') {
+                    return current_user_can('manage_options');
+                } elseif ($api_access === 'logged_in') {
+                    return is_user_logged_in();
+                }
+        
+                return $guest_submissions || is_user_logged_in();
             },
         ]);
         
@@ -402,7 +419,8 @@ class Rest {
         if (!is_user_logged_in()) {
             $claim_token = wp_generate_password(32, false);
             update_post_meta($trial_id, '_claim_token', $claim_token);
-            update_post_meta($trial_id, '_claim_token_expiry', time() + (7 * DAY_IN_SECONDS)); // 7 days expiry
+            $claim_token_expiry = \OpenVeil\ACF\Options::get_option('claim_token_expiry', 7);
+            update_post_meta($trial_id, '_claim_token_expiry', time() + ($claim_token_expiry * DAY_IN_SECONDS));
             $claim_url = add_query_arg(['claim_token' => $claim_token], $results_url);
         }
         

@@ -3,7 +3,7 @@
  * Plugin Name: Open Veil
  * Plugin URI: https://carmelosantana.org/openveil
  * Description: A WordPress plugin designed to structure, collect, and share experimental protocol data and community-submitted trials.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: Carmelo Santana
  * Author URI: https://carmelosantana.org
  * License: GPL-3.0
@@ -20,7 +20,7 @@ if (!defined('WPINC')) {
 }
 
 // Define plugin constants
-define('OPEN_VEIL_VERSION', '0.1.0');
+define('OPEN_VEIL_VERSION', '0.1.1');
 define('OPEN_VEIL_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('OPEN_VEIL_PLUGIN_URL', plugin_dir_url(__FILE__));
 
@@ -48,10 +48,8 @@ function open_veil_init() {
     // Register ACF fields
     if (class_exists('ACF')) {
         new \OpenVeil\ACF\Fields();
+        new \OpenVeil\ACF\Options();
     }
-    
-    // Register admin pages
-    new \OpenVeil\Admin\Settings();
     
     // Register templates
     new \OpenVeil\Template\Loader();

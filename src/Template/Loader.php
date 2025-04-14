@@ -1,6 +1,8 @@
 <?php
 namespace OpenVeil\Template;
 
+use OpenVeil\ACF\Options;
+
 /**
  * Template Loader
  * 
