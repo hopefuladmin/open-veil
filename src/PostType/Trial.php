@@ -189,7 +189,7 @@ class Trial {
          'laser_power_source' => 'string',
          'accessories_used' => 'string',
          'set_and_setting' => 'string',
-         'experiment_time' => 'string',
+         'experiment_datetime' => 'string',
          'lighting_conditions' => 'string',
          'surfaces_used' => 'string',
          'additional_setup_info' => 'string',
@@ -209,8 +209,6 @@ class Trial {
      
      // Substances Used section
      $substances_used_fields = [
-         'main_substance' => 'string',
-         'route_of_administration' => 'string',
          'other_substances' => 'string',
          'intoxication_level' => 'integer',
          'visual_mental_effects' => 'string',

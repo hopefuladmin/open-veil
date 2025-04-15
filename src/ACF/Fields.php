@@ -321,12 +321,15 @@ class Fields {
                    'required' => 0,
                ],
                [
-                   'key' => 'field_experiment_time',
-                   'label' => __('Time of Experiment', 'open-veil'),
-                   'name' => 'experiment_time',
-                   'type' => 'text',
+                   'key' => 'field_experiment_datetime',
+                   'label' => __('Date + Time of Experiment', 'open-veil'),
+                   'name' => 'experiment_datetime',
+                   'type' => 'date_time_picker',
                    'instructions' => __('When did you conduct the experiment?', 'open-veil'),
                    'required' => 0,
+                   'display_format' => 'F j, Y g:i a',
+                   'return_format' => 'Y-m-d H:i:s',
+                   'first_day' => 1,
                ],
                [
                    'key' => 'field_lighting_conditions',
@@ -378,22 +381,6 @@ class Fields {
            'key' => 'group_questionnaire_substances_used',
            'title' => __('Questionnaire: Substances Used', 'open-veil'),
            'fields' => [
-               [
-                   'key' => 'field_main_substance',
-                   'label' => __('Main Substance', 'open-veil'),
-                   'name' => 'main_substance',
-                   'type' => 'text',
-                   'instructions' => __('What was the primary substance used?', 'open-veil'),
-                   'required' => 0,
-               ],
-               [
-                   'key' => 'field_route_of_administration',
-                   'label' => __('Route of Administration', 'open-veil'),
-                   'name' => 'route_of_administration',
-                   'type' => 'text',
-                   'instructions' => __('How was the substance administered?', 'open-veil'),
-                   'required' => 0,
-               ],
                [
                    'key' => 'field_other_substances',
                    'label' => __('Other Substances Taken Concurrently', 'open-veil'),
