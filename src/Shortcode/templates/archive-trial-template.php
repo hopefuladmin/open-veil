@@ -1,11 +1,45 @@
 <?php
-/**
- * The template for displaying trial archives
- *
- * @package OpenVeil
- */
+// Get posts_per_page from shortcode attributes
+$posts_per_page = isset($atts['posts_per_page']) ? intval($atts['posts_per_page']) : 10;
 
-get_header();
+// Set up the query
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$args = [
+    'post_type' => 'trial',
+    'posts_per_page' => $posts_per_page,
+    'paged' => $paged,
+    'post_status' => 'publish',
+];
+
+// Add meta query for protocol_id if present
+if (isset($_GET['protocol_id']) && !empty($_GET['protocol_id'])) {
+    $args['meta_query'][] = [
+        'key' => 'protocol_id',
+        'value' => intval($_GET['protocol_id']),
+        'compare' => '=',
+    ];
+}
+
+// Add taxonomy filters if present
+if (isset($_GET['substance']) && !empty($_GET['substance'])) {
+    $args['tax_query'][] = [
+        'taxonomy' => 'substance',
+        'field' => 'slug',
+        'terms' => sanitize_text_field($_GET['substance']),
+    ];
+}
+
+// Add meta query for additional_observers if present
+if (isset($_GET['additional_observers']) && $_GET['additional_observers'] !== '') {
+    $args['meta_query'][] = [
+        'key' => 'additional_observers',
+        'value' => intval($_GET['additional_observers']),
+        'compare' => '=',
+    ];
+}
+
+// Run the query
+$trials_query = new WP_Query($args);
 ?>
 
 <div class="open-veil-archive trial-archive">
@@ -82,46 +116,9 @@ get_header();
             </form>
         </div>
 
-        <?php
-        // Modify the query based on filters
-        global $wp_query;
-        
-        if (isset($_GET['protocol_id']) && !empty($_GET['protocol_id'])) {
-            $wp_query->set('meta_query', [
-                [
-                    'key' => 'protocol_id',
-                    'value' => intval($_GET['protocol_id']),
-                    'compare' => '=',
-                ]
-            ]);
-        }
-        
-        if (isset($_GET['substance']) && !empty($_GET['substance'])) {
-            $wp_query->set('tax_query', [
-                [
-                    'taxonomy' => 'substance',
-                    'field' => 'slug',
-                    'terms' => sanitize_text_field($_GET['substance']),
-                ]
-            ]);
-        }
-        
-        if (isset($_GET['additional_observers']) && $_GET['additional_observers'] !== '') {
-            $wp_query->set('meta_query', [
-                [
-                    'key' => 'additional_observers',
-                    'value' => intval($_GET['additional_observers']),
-                    'compare' => '=',
-                ]
-            ]);
-        }
-        
-        $wp_query->get_posts();
-        ?>
-
-        <?php if (have_posts()) : ?>
+        <?php if ($trials_query->have_posts()) : ?>
             <div class="trials-grid">
-                <?php while (have_posts()) : the_post(); ?>
+                <?php while ($trials_query->have_posts()) : $trials_query->the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('trial-card'); ?>>
                         <header class="trial-header">
                             <h2 class="trial-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -184,14 +181,26 @@ get_header();
                 <?php endwhile; ?>
             </div>
 
-            <?php the_posts_pagination(); ?>
+            <?php
+            // Pagination
+            $big = 999999999;
+            echo '<div class="pagination">';
+            echo paginate_links([
+                'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                'format' => '?paged=%#%',
+                'current' => max(1, $paged),
+                'total' => $trials_query->max_num_pages,
+                'prev_text' => '&laquo; ' . __('Previous', 'open-veil'),
+                'next_text' => __('Next', 'open-veil') . ' &raquo;',
+            ]);
+            echo '</div>';
+            ?>
         <?php else : ?>
             <div class="no-trials">
                 <p><?php _e('No trials found.', 'open-veil'); ?></p>
             </div>
         <?php endif; ?>
+        
+        <?php wp_reset_postdata(); ?>
     </div>
 </div>
-
-<?php
-get_footer();

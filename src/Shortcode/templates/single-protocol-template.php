@@ -1,13 +1,3 @@
-<?php
-/**
- * The template for displaying single protocol
- *
- * @package OpenVeil
- */
-
-get_header();
-?>
-
 <div class="open-veil-single protocol-single">
     <div class="container">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -62,7 +52,7 @@ get_header();
                         <h3><?php _e('Substance', 'open-veil'); ?></h3>
                         
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Type:', 'open-veil'); ?></span>
+                            <span class="spec-label"><?php _e('Substance:', 'open-veil'); ?></span>
                             <span class="spec-value">
                                 <?php
                                 $substances = get_the_terms(get_the_ID(), 'substance');
@@ -90,11 +80,11 @@ get_header();
                                 <?php
                                 $administration_methods = get_the_terms(get_the_ID(), 'administration_method');
                                 if (!empty($administration_methods) && !is_wp_error($administration_methods)) {
-                                    $administration_method_names = [];
-                                    foreach ($administration_methods as $administration_method) {
-                                        $administration_method_names[] = $administration_method->name;
+                                    $method_names = [];
+                                    foreach ($administration_methods as $method) {
+                                        $method_names[] = $method->name;
                                     }
-                                    echo implode(', ', $administration_method_names);
+                                    echo implode(', ', $method_names);
                                 } else {
                                     _e('Not specified', 'open-veil');
                                 }
@@ -108,56 +98,11 @@ get_header();
                                 <?php
                                 $administration_protocols = get_the_terms(get_the_ID(), 'administration_protocol');
                                 if (!empty($administration_protocols) && !is_wp_error($administration_protocols)) {
-                                    $administration_protocol_names = [];
-                                    foreach ($administration_protocols as $administration_protocol) {
-                                        $administration_protocol_names[] = $administration_protocol->name;
+                                    $protocol_names = [];
+                                    foreach ($administration_protocols as $protocol) {
+                                        $protocol_names[] = $protocol->name;
                                     }
-                                    echo implode(', ', $administration_protocol_names);
-                                } else {
-                                    _e('Not specified', 'open-veil');
-                                }
-                                ?>
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="spec-group">
-                        <h3><?php _e('Projection', 'open-veil'); ?></h3>
-                        
-                        <div class="spec-item">
-                            <span class="spec-label"><?php _e('Distance:', 'open-veil'); ?></span>
-                            <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'projection_distance', true); ?> feet</span>
-                        </div>
-                        
-                        <div class="spec-item">
-                            <span class="spec-label"><?php _e('Surface:', 'open-veil'); ?></span>
-                            <span class="spec-value">
-                                <?php
-                                $projection_surfaces = get_the_terms(get_the_ID(), 'projection_surface');
-                                if (!empty($projection_surfaces) && !is_wp_error($projection_surfaces)) {
-                                    $projection_surface_names = [];
-                                    foreach ($projection_surfaces as $projection_surface) {
-                                        $projection_surface_names[] = $projection_surface->name;
-                                    }
-                                    echo implode(', ', $projection_surface_names);
-                                } else {
-                                    _e('Not specified', 'open-veil');
-                                }
-                                ?>
-                            </span>
-                        </div>
-                        
-                        <div class="spec-item">
-                            <span class="spec-label"><?php _e('Diffraction Grating:', 'open-veil'); ?></span>
-                            <span class="spec-value">
-                                <?php
-                                $diffraction_grating_specs = get_the_terms(get_the_ID(), 'diffraction_grating_spec');
-                                if (!empty($diffraction_grating_specs) && !is_wp_error($diffraction_grating_specs)) {
-                                    $diffraction_grating_spec_names = [];
-                                    foreach ($diffraction_grating_specs as $diffraction_grating_spec) {
-                                        $diffraction_grating_spec_names[] = $diffraction_grating_spec->name;
-                                    }
-                                    echo implode(', ', $diffraction_grating_spec_names);
+                                    echo implode(', ', $protocol_names);
                                 } else {
                                     _e('Not specified', 'open-veil');
                                 }
@@ -170,6 +115,7 @@ get_header();
                         <h3><?php _e('Equipment', 'open-veil'); ?></h3>
                         
                         <div class="spec-item">
+                            <span class="spec-label"><?php _e('Equipment:', 'open-veil'); ?></span>
                             <span class="spec-value">
                                 <?php
                                 $equipment = get_the_terms(get_the_ID(), 'equipment');
@@ -185,6 +131,47 @@ get_header();
                                 ?>
                             </span>
                         </div>
+                        
+                        <div class="spec-item">
+                            <span class="spec-label"><?php _e('Diffraction Grating:', 'open-veil'); ?></span>
+                            <span class="spec-value">
+                                <?php
+                                $diffraction_gratings = get_the_terms(get_the_ID(), 'diffraction_grating_spec');
+                                if (!empty($diffraction_gratings) && !is_wp_error($diffraction_gratings)) {
+                                    $grating_names = [];
+                                    foreach ($diffraction_gratings as $grating) {
+                                        $grating_names[] = $grating->name;
+                                    }
+                                    echo implode(', ', $grating_names);
+                                } else {
+                                    _e('Not specified', 'open-veil');
+                                }
+                                ?>
+                            </span>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <span class="spec-label"><?php _e('Projection Distance:', 'open-veil'); ?></span>
+                            <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'projection_distance', true); ?> feet</span>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <span class="spec-label"><?php _e('Projection Surface:', 'open-veil'); ?></span>
+                            <span class="spec-value">
+                                <?php
+                                $projection_surfaces = get_the_terms(get_the_ID(), 'projection_surface');
+                                if (!empty($projection_surfaces) && !is_wp_error($projection_surfaces)) {
+                                    $surface_names = [];
+                                    foreach ($projection_surfaces as $surface) {
+                                        $surface_names[] = $surface->name;
+                                    }
+                                    echo implode(', ', $surface_names);
+                                } else {
+                                    _e('Not specified', 'open-veil');
+                                }
+                                ?>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -195,11 +182,13 @@ get_header();
             </div>
 
             <div class="protocol-trials">
-                <h2><?php _e('Trials', 'open-veil'); ?></h2>
+                <h2><?php _e('Related Trials', 'open-veil'); ?></h2>
                 
                 <?php
                 $trials = get_posts([
                     'post_type' => 'trial',
+                    'posts_per_page' => 3,
+                    'post_status' => 'publish',
                     'meta_query' => [
                         [
                             'key' => 'protocol_id',
@@ -207,31 +196,32 @@ get_header();
                             'compare' => '=',
                         ]
                     ],
-                    'posts_per_page' => 5,
-                    'post_status' => 'publish',
                 ]);
                 
-                if (!empty($trials)) {
-                    echo '<div class="trials-list">';
-                    foreach ($trials as $trial) {
-                        ?>
-                        <article class="trial-item">
-                            <h3><a href="<?php echo get_permalink($trial->ID); ?>"><?php echo get_the_title($trial->ID); ?></a></h3>
-                            <div class="trial-meta">
-                                <span class="trial-author"><?php _e('By', 'open-veil'); ?> <?php echo get_the_author_meta('display_name', $trial->post_author); ?></span>
-                                <span class="trial-date"><?php echo get_the_date('', $trial->ID); ?></span>
+                if (!empty($trials)) :
+                ?>
+                    <div class="trials-list">
+                        <?php foreach ($trials as $trial) : ?>
+                            <div class="trial-item">
+                                <h3><a href="<?php echo get_permalink($trial->ID); ?>"><?php echo get_the_title($trial->ID); ?></a></h3>
+                                <div class="trial-meta">
+                                    <span class="trial-author"><?php _e('By', 'open-veil'); ?> <?php echo get_the_author_meta('display_name', $trial->post_author); ?></span>
+                                    <span class="trial-date"><?php echo get_the_date('', $trial->ID); ?></span>
+                                </div>
+                                <div class="trial-excerpt">
+                                    <?php echo get_the_excerpt($trial->ID); ?>
+                                </div>
+                                <a href="<?php echo get_permalink($trial->ID); ?>" class="button button-small"><?php _e('View Trial', 'open-veil'); ?></a>
                             </div>
-                            <div class="trial-excerpt">
-                                <?php echo get_the_excerpt($trial->ID); ?>
-                            </div>
-                            <a href="<?php echo get_permalink($trial->ID); ?>" class="button button-small"><?php _e('View Trial', 'open-veil'); ?></a>
-                        </article>
-                        <?php
-                    }
-                    echo '</div>';
+                        <?php endforeach; ?>
+                    </div>
                     
-                    $trials_count = count(get_posts([
+                    <?php
+                    $total_trials = count(get_posts([
                         'post_type' => 'trial',
+                        'posts_per_page' => -1,
+                        'fields' => 'ids',
+                        'post_status' => 'publish',
                         'meta_query' => [
                             [
                                 'key' => 'protocol_id',
@@ -239,32 +229,33 @@ get_header();
                                 'compare' => '=',
                             ]
                         ],
-                        'posts_per_page' => -1,
-                        'post_status' => 'publish',
-                        'fields' => 'ids',
                     ]));
                     
-                    if ($trials_count > 5) {
-                        echo '<div class="more-trials">';
-                        echo '<a href="' . esc_url(add_query_arg(['protocol_id' => get_the_ID()], get_post_type_archive_link('trial'))) . '" class="button">' . sprintf(__('View All %d Trials', 'open-veil'), $trials_count) . '</a>';
-                        echo '</div>';
-                    }
-                } else {
-                    echo '<div class="no-trials">';
-                    echo '<p>' . __('No trials have been submitted for this protocol yet.', 'open-veil') . '</p>';
-                    echo '</div>';
-                }
-                ?>
+                    if ($total_trials > 3) :
+                    ?>
+                        <div class="more-trials">
+                            <a href="<?php echo add_query_arg(['protocol_id' => get_the_ID()], get_post_type_archive_link('trial')); ?>" class="button"><?php _e('View All Trials', 'open-veil'); ?></a>
+                        </div>
+                    <?php endif; ?>
+                <?php else : ?>
+                    <div class="no-trials">
+                        <p><?php _e('No trials found for this protocol.', 'open-veil'); ?></p>
+                    </div>
+                <?php endif; ?>
                 
                 <div class="submit-trial">
                     <h3><?php _e('Submit Your Trial', 'open-veil'); ?></h3>
-                    <p><?php _e('Have you conducted this protocol? Share your experience by submitting a trial.', 'open-veil'); ?></p>
-                    <a href="<?php echo esc_url(add_query_arg(['protocol_id' => get_the_ID()], home_url('/submit-trial/'))); ?>" class="button"><?php _e('Submit Trial', 'open-veil'); ?></a>
+                    <p><?php _e('Have you conducted a trial based on this protocol? Share your results with the community.', 'open-veil'); ?></p>
+                    <a href="<?php echo add_query_arg(['protocol_id' => get_the_ID()], get_permalink(get_page_by_path('submit-trial'))); ?>" class="button"><?php _e('Submit Trial', 'open-veil'); ?></a>
                 </div>
             </div>
+
+            <?php if (comments_open() || get_comments_number()) : ?>
+                <div class="protocol-comments">
+                    <h2><?php _e('Discussion', 'open-veil'); ?></h2>
+                    <?php comments_template(); ?>
+                </div>
+            <?php endif; ?>
         </article>
     </div>
 </div>
-
-<?php
-get_footer();

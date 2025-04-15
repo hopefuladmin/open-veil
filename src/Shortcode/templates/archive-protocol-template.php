@@ -1,11 +1,43 @@
 <?php
-/**
- * The template for displaying protocol archives
- *
- * @package OpenVeil
- */
+// Get posts_per_page from shortcode attributes
+$posts_per_page = isset($atts['posts_per_page']) ? intval($atts['posts_per_page']) : 10;
 
-get_header();
+// Set up the query
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$args = [
+    'post_type' => 'protocol',
+    'posts_per_page' => $posts_per_page,
+    'paged' => $paged,
+    'post_status' => 'publish',
+];
+
+// Add taxonomy filters if present
+if (isset($_GET['substance']) && !empty($_GET['substance'])) {
+    $args['tax_query'][] = [
+        'taxonomy' => 'substance',
+        'field' => 'slug',
+        'terms' => sanitize_text_field($_GET['substance']),
+    ];
+}
+
+if (isset($_GET['laser_class']) && !empty($_GET['laser_class'])) {
+    $args['tax_query'][] = [
+        'taxonomy' => 'laser_class',
+        'field' => 'slug',
+        'terms' => sanitize_text_field($_GET['laser_class']),
+    ];
+}
+
+if (isset($_GET['administration_method']) && !empty($_GET['administration_method'])) {
+    $args['tax_query'][] = [
+        'taxonomy' => 'administration_method',
+        'field' => 'slug',
+        'terms' => sanitize_text_field($_GET['administration_method']),
+    ];
+}
+
+// Run the query
+$protocols_query = new WP_Query($args);
 ?>
 
 <div class="open-veil-archive protocol-archive">
@@ -94,9 +126,9 @@ get_header();
             </form>
         </div>
 
-        <?php if (have_posts()) : ?>
+        <?php if ($protocols_query->have_posts()) : ?>
             <div class="protocols-grid">
-                <?php while (have_posts()) : the_post(); ?>
+                <?php while ($protocols_query->have_posts()) : $protocols_query->the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('protocol-card'); ?>>
                         <header class="protocol-header">
                             <h2 class="protocol-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -164,14 +196,26 @@ get_header();
                 <?php endwhile; ?>
             </div>
 
-            <?php the_posts_pagination(); ?>
+            <?php
+            // Pagination
+            $big = 999999999;
+            echo '<div class="pagination">';
+            echo paginate_links([
+                'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                'format' => '?paged=%#%',
+                'current' => max(1, $paged),
+                'total' => $protocols_query->max_num_pages,
+                'prev_text' => '&laquo; ' . __('Previous', 'open-veil'),
+                'next_text' => __('Next', 'open-veil') . ' &raquo;',
+            ]);
+            echo '</div>';
+            ?>
         <?php else : ?>
             <div class="no-protocols">
                 <p><?php _e('No protocols found.', 'open-veil'); ?></p>
             </div>
         <?php endif; ?>
+        
+        <?php wp_reset_postdata(); ?>
     </div>
 </div>
-
-<?php
-get_footer();

@@ -1,12 +1,4 @@
 <?php
-/**
- * The template for displaying single trial
- *
- * @package OpenVeil
- */
-
-get_header();
-
 $protocol_id = get_post_meta(get_the_ID(), 'protocol_id', true);
 $protocol = $protocol_id ? get_post($protocol_id) : null;
 ?>
@@ -297,6 +289,3 @@ $protocol = $protocol_id ? get_post($protocol_id) : null;
         </article>
     </div>
 </div>
-
-<?php
-get_footer();
