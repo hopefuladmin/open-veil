@@ -1,23 +1,28 @@
 <?php
+declare(strict_types=1);
 namespace OpenVeil\API;
 
 /**
  * REST API
  * 
- * Registers REST API endpoints for Protocol and Trial post types
+ * Registers REST API endpoints for Protocol and Trial post types.
+ * 
+ * @package OpenVeil\API
  */
 class Rest {
     /**
-     * Constructor
+     * Sets up action to register REST API routes.
      */
     public function __construct() {
         add_action('rest_api_init', [$this, 'register_routes']);
     }
     
     /**
-     * Register REST API routes
+     * Sets up all REST API endpoints for protocols and trials.
+     *
+     * @return void
      */
-    public function register_routes() {
+    public function register_routes(): void {
         // Protocol endpoints
         register_rest_route('open-veil', '/protocol/(?P<id>\d+)', [
             'methods' => 'GET',
@@ -136,9 +141,12 @@ class Rest {
     }
     
     /**
-     * Get a protocol by ID
+     * Retrieves a protocol by its ID.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array|\WP_Error Protocol data or error
      */
-    public function get_protocol($request) {
+    public function get_protocol(\WP_REST_Request $request) {
         $protocol_id = $request['id'];
         $protocol = get_post($protocol_id);
         
@@ -150,9 +158,12 @@ class Rest {
     }
     
     /**
-     * Get a protocol by slug
+     * Retrieves a protocol by its slug.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array|\WP_Error Protocol data or error
      */
-    public function get_protocol_by_slug($request) {
+    public function get_protocol_by_slug(\WP_REST_Request $request) {
         $protocol_slug = $request['slug'];
         $protocol = get_page_by_path($protocol_slug, OBJECT, 'protocol');
         
@@ -164,9 +175,12 @@ class Rest {
     }
     
     /**
-     * Get all protocols
+     * Retrieves all published protocols.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array Array of protocols
      */
-    public function get_protocols($request) {
+    public function get_protocols(\WP_REST_Request $request): array {
         $args = [
             'post_type' => 'protocol',
             'posts_per_page' => -1,
@@ -184,7 +198,10 @@ class Rest {
     }
     
     /**
-     * Get all trials for a protocol
+     * Retrieves all trials associated with a specific protocol.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array|\WP_Error Array of trials or error
      */
     public function get_protocol_trials($request) {
         $protocol_id = $request['id'];
@@ -218,7 +235,10 @@ class Rest {
     }
     
     /**
-     * Get protocols by author
+     * Retrieves all protocols created by a specific author.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array Array of protocols
      */
     public function get_protocols_by_author($request) {
         $author_id = $request['author_id'];
@@ -241,9 +261,12 @@ class Rest {
     }
     
     /**
-     * Create a new protocol
+     * Creates a new protocol.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array|\WP_Error Created protocol or error
      */
-    public function create_protocol($request) {
+    public function create_protocol(\WP_REST_Request $request) {
         $params = $request->get_params();
         
         // Validate required fields
@@ -286,7 +309,10 @@ class Rest {
     }
     
     /**
-     * Get CSL-JSON for a protocol
+     * Retrieves citation data for a protocol in CSL-JSON format.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array|\WP_Error CSL-JSON data or error
      */
     public function get_protocol_csl($request) {
         $protocol_id = $request['id'];
@@ -322,7 +348,10 @@ class Rest {
     }
     
     /**
-     * Get all trials
+     * Retrieves all published trials.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array Array of trials
      */
     public function get_trials($request) {
         $args = [
@@ -342,7 +371,10 @@ class Rest {
     }
     
     /**
-     * Get a trial by ID
+     * Retrieves a trial by its ID.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array|\WP_Error Trial data or error
      */
     public function get_trial($request) {
         $trial_id = $request['id'];
@@ -356,7 +388,10 @@ class Rest {
     }
     
     /**
-     * Create a new trial
+     * Creates a new trial.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array|\WP_Error Created trial or error
      */
     public function create_trial($request) {
         $params = $request->get_params();
@@ -438,7 +473,10 @@ class Rest {
     }
     
     /**
-     * Get CSL-JSON for a trial
+     * Retrieves citation data for a trial in CSL-JSON format.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array|\WP_Error CSL-JSON data or error
      */
     public function get_trial_csl($request) {
         $trial_id = $request['id'];
@@ -479,7 +517,9 @@ class Rest {
     }
     
     /**
-     * Get schema information
+     * Retrieves schema information including available taxonomies and metadata fields.
+     *
+     * @return array Schema information
      */
     public function get_schema() {
         $taxonomies = [
@@ -579,9 +619,12 @@ class Rest {
     }
     
     /**
-     * Prepare protocol response
+     * Formats protocol data for API response.
+     *
+     * @param \WP_Post $protocol Protocol post object
+     * @return array Formatted protocol data
      */
-    private function prepare_protocol_response($protocol) {
+    private function prepare_protocol_response(\WP_Post $protocol): array {
         $response = [
             'id' => $protocol->ID,
             'title' => $protocol->post_title,
@@ -635,9 +678,12 @@ class Rest {
     }
     
     /**
-     * Prepare trial response
+     * Formats trial data for API response.
+     *
+     * @param \WP_Post $trial Trial post object
+     * @return array Formatted trial data
      */
-    private function prepare_trial_response($trial) {
+    private function prepare_trial_response(\WP_Post $trial): array {
         $protocol_id = get_post_meta($trial->ID, 'protocol_id', true);
         $protocol = $protocol_id ? get_post($protocol_id) : null;
         

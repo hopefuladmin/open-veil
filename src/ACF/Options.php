@@ -1,14 +1,17 @@
 <?php
+declare(strict_types=1);
 namespace OpenVeil\ACF;
 
 /**
-* ACF Options
-* 
-* Registers ACF options page for Open Veil
-*/
+ * ACF Options
+ * 
+ * Registers ACF options page for Open Veil plugin settings.
+ * 
+ * @package OpenVeil\ACF
+ */
 class Options {
     /**
-     * Constructor
+     * Sets up actions to register the options page and fields.
      */
     public function __construct() {
         add_action('acf/init', [$this, 'register_options_page']);
@@ -16,9 +19,11 @@ class Options {
     }
     
     /**
-     * Register options page
+     * Creates the ACF options page for plugin settings.
+     *
+     * @return void
      */
-    public function register_options_page() {
+    public function register_options_page(): void {
         if (function_exists('acf_add_options_page')) {
             acf_add_options_page([
                 'page_title'    => __('Open Veil Settings', 'open-veil'),
@@ -35,9 +40,11 @@ class Options {
     }
     
     /**
-     * Register option fields
+     * Registers all ACF fields for the plugin settings page.
+     *
+     * @return void
      */
-    public function register_option_fields() {
+    public function register_option_fields(): void {
         if (function_exists('acf_add_local_field_group')) {
             acf_add_local_field_group([
                 'key' => 'group_open_veil_settings',
@@ -89,6 +96,16 @@ class Options {
                         'default_value' => 'public',
                         'return_format' => 'value',
                     ],
+                    [
+                        'key' => 'field_taxonomy_term_check',
+                        'label' => __('Taxonomy Term Check', 'open-veil'),
+                        'name' => 'taxonomy_term_check',
+                        'type' => 'true_false',
+                        'instructions' => __('If enabled, the plugin will check and create default taxonomy terms on each load. Disable for better performance on production sites.', 'open-veil'),
+                        'required' => 0,
+                        'default_value' => 1,
+                        'ui' => 1,
+                    ],
                 ],
                 'location' => [
                     [
@@ -112,13 +129,13 @@ class Options {
     }
     
     /**
-     * Get option
-     * 
-     * @param string $option Option name
-     * @param mixed $default Default value
-     * @return mixed Option value
+     * Retrieves an option value from ACF options or returns default.
+     *
+     * @param string $option Option name to retrieve
+     * @param mixed $default Default value if option doesn't exist
+     * @return mixed Option value or default
      */
-    public static function get_option($option, $default = '') {
+    public static function get_option(string $option, $default = '') {
         if (function_exists('get_field')) {
             $value = get_field($option, 'option');
             return $value !== null ? $value : $default;

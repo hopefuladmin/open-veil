@@ -1,23 +1,28 @@
 <?php
+declare(strict_types=1);
 namespace OpenVeil\ACF;
 
 /**
  * ACF Fields
  * 
- * Registers ACF fields for Protocol and Trial post types
+ * Registers Advanced Custom Fields for Protocol and Trial post types.
+ * 
+ * @package OpenVeil\ACF
  */
 class Fields {
     /**
-     * Constructor
+     * Sets up actions to register ACF fields.
      */
     public function __construct() {
         add_action('acf/init', [$this, 'register_fields']);
     }
     
     /**
-     * Register ACF fields
+     * Registers all custom fields for Protocol and Trial post types using ACF.
+     *
+     * @return void
      */
-    public function register_fields() {
+    public function register_fields(): void {
         // Protocol fields
         acf_add_local_field_group([
             'key' => 'group_protocol',
