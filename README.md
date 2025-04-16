@@ -2,6 +2,39 @@
 
 A WordPress plugin designed to structure, collect, and share experimental protocol data and community-submitted trials.
 
+- [Description](#description)
+- [Features](#features)
+- [Installation](#installation)
+- [Requirements](#requirements)
+- [Configuration](#configuration)
+  - [Plugin Settings](#plugin-settings)
+- [REST API](#rest-api)
+  - [Base URL](#base-url)
+  - [Authentication](#authentication)
+  - [Protocol Endpoints](#protocol-endpoints)
+    - [Get All Protocols](#get-all-protocols)
+    - [Get Protocol by ID](#get-protocol-by-id)
+    - [Get Protocol by Slug](#get-protocol-by-slug)
+    - [Get Protocol Trials](#get-protocol-trials)
+    - [Get Protocols by Author](#get-protocols-by-author)
+    - [Get Protocol CSL](#get-protocol-csl)
+    - [Create Protocol](#create-protocol)
+  - [Trial Endpoints](#trial-endpoints)
+    - [Get All Trials](#get-all-trials)
+    - [Get Trial by ID](#get-trial-by-id)
+    - [Get Trial CSL](#get-trial-csl)
+    - [Create Trial](#create-trial)
+  - [Schema Endpoint](#schema-endpoint)
+    - [Get Schema](#get-schema)
+- [Postman Collection](#postman-collection)
+- [Sample Data](#sample-data)
+- [Templates](#templates)
+- [Development](#development)
+  - [Extending the Plugin](#extending-the-plugin)
+  - [Building from Source](#building-from-source)
+- [License](#license)
+- [Community](#community)
+
 ## Description
 
 Open Veil provides a structured framework for documenting experimental protocols and collecting trial data from community members. It's designed to facilitate scientific research by standardizing data collection and making it accessible through a user-friendly interface and comprehensive API.
@@ -48,9 +81,7 @@ Open Veil provides a comprehensive REST API for accessing and manipulating proto
 
 All API endpoints are prefixed with:
 
-\`\`\`
-/wp-json/open-veil/
-\`\`\`
+`/wp-json/open-veil/v1/`
 
 ### Authentication
 
@@ -66,57 +97,57 @@ For endpoints that create or modify data, you'll need to include a WordPress non
 
 #### Get All Protocols
 
-\`\`\`
+```json
 GET /protocol
-\`\`\`
+```
 
 Returns an array of all published protocols.
 
 #### Get Protocol by ID
 
-\`\`\`
+```json
 GET /protocol/{id}
-\`\`\`
+```
 
 Returns a single protocol by its ID.
 
 #### Get Protocol by Slug
 
-\`\`\`
+```json
 GET /protocol/name/{slug}
-\`\`\`
+```
 
 Returns a single protocol by its slug.
 
 #### Get Protocol Trials
 
-\`\`\`
+```json
 GET /protocol/trials/{id}
-\`\`\`
+```
 
 Returns all trials associated with a specific protocol.
 
 #### Get Protocols by Author
 
-\`\`\`
+```json
 GET /protocol/author/{author_id}
-\`\`\`
+```
 
 Returns all protocols created by a specific author.
 
 #### Get Protocol CSL
 
-\`\`\`
+```json
 GET /protocol/{id}/csl
-\`\`\`
+```
 
 Returns citation data for a protocol in CSL-JSON format.
 
 #### Create Protocol
 
-\`\`\`
+```json
 POST /protocol
-\`\`\`
+```
 
 Creates a new protocol. Required fields:
 
@@ -133,7 +164,7 @@ Optional fields:
 
 Example request:
 
-\`\`\`json
+```json
 {
   "title": "New Protocol Test",
   "content": "This is a test protocol created via the API.",
@@ -153,39 +184,39 @@ Example request:
     "projection_surface": ["Flat non-reflective"]
   }
 }
-\`\`\`
+```
 
 ### Trial Endpoints
 
 #### Get All Trials
 
-\`\`\`
+```json
 GET /trial
-\`\`\`
+```
 
 Returns an array of all published trials.
 
 #### Get Trial by ID
 
-\`\`\`
+```json
 GET /trial/{id}
-\`\`\`
+```
 
 Returns a single trial by its ID.
 
 #### Get Trial CSL
 
-\`\`\`
+```json
 GET /trial/{id}/csl
-\`\`\`
+```
 
 Returns citation data for a trial in CSL-JSON format.
 
 #### Create Trial
 
-\`\`\`
+```json
 POST /trial
-\`\`\`
+```
 
 Creates a new trial. Required fields:
 
@@ -206,7 +237,7 @@ Optional fields:
 
 Example request:
 
-\`\`\`json
+```json
 {
   "title": "Trial – 2025-04-01",
   "content": "Felt presence and geometric visuals after two inhales.",
@@ -229,15 +260,15 @@ Example request:
     "projection_surface": ["Flat non-reflective"]
   }
 }
-\`\`\`
+```
 
 ### Schema Endpoint
 
 #### Get Schema
 
-\`\`\`
+```json
 GET /schema
-\`\`\`
+```
 
 Returns schema information including available taxonomies and metadata fields.
 
@@ -245,9 +276,9 @@ Returns schema information including available taxonomies and metadata fields.
 
 A Postman collection is included in the plugin to help you test and explore the API. The collection file is located at:
 
-\`\`\`
+```
 open-veil-postman-collection.json
-\`\`\`
+```
 
 To use the collection:
 
@@ -297,19 +328,18 @@ If you want to modify the plugin, you'll need to set up a development environmen
 
 1. Clone the repository
 2. Install dependencies with Composer:
-   \`\`\`
-   composer install
-   \`\`\`
+`composer install`
 3. Make your changes
 4. Build the plugin:
-   \`\`\`
-   composer build
-   \`\`\`
+`composer build`
 
 ## License
 
 This plugin is licensed under the GPL v3 or later.
 
-## Credits
+## Community
 
-Developed by Carmelo Santana (https://carmelosantana.org)
+Join our community to share your experiences, ask questions, and contribute!
+
+- [Discord](https://discord.gg/codeofreality)
+- [Code of Reality](https://codeofreality.com)

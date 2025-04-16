@@ -713,6 +713,7 @@ class Rest {
                 'additional_observers' => get_post_meta($trial->ID, 'additional_observers', true),
             ],
             'taxonomies' => [],
+            'questionnaire' => $this->get_trial_questionnaire_data($trial->ID),
         ];
         
         // Get taxonomy terms
@@ -745,5 +746,67 @@ class Rest {
         }
         
         return $response;
+    }
+    
+    /**
+     * Gets questionnaire data for a trial.
+     *
+     * @param int $trial_id Trial post ID
+     * @return array Questionnaire data
+     */
+    private function get_trial_questionnaire_data(int $trial_id): array {
+        $questionnaire = [
+            'about_you' => [
+                'participant_name' => get_post_meta($trial_id, 'participant_name', true),
+                'participant_email' => get_post_meta($trial_id, 'participant_email', true),
+                'psychedelic_experience_level' => get_post_meta($trial_id, 'psychedelic_experience_level', true),
+                'dmt_experience_level' => get_post_meta($trial_id, 'dmt_experience_level', true),
+                'simulation_theory_interest' => get_post_meta($trial_id, 'simulation_theory_interest', true),
+                'how_found_us' => get_post_meta($trial_id, 'how_found_us', true),
+            ],
+            'experiment_setup' => [
+                'received_laser_from_us' => get_post_meta($trial_id, 'received_laser_from_us', true),
+                'beam_shape' => get_post_meta($trial_id, 'beam_shape', true),
+                'laser_power_source' => get_post_meta($trial_id, 'laser_power_source', true),
+                'accessories_used' => get_post_meta($trial_id, 'accessories_used', true),
+                'set_and_setting' => get_post_meta($trial_id, 'set_and_setting', true),
+                'experiment_datetime' => get_post_meta($trial_id, 'experiment_datetime', true),
+                'lighting_conditions' => get_post_meta($trial_id, 'lighting_conditions', true),
+                'surfaces_used' => get_post_meta($trial_id, 'surfaces_used', true),
+                'additional_setup_info' => get_post_meta($trial_id, 'additional_setup_info', true),
+            ],
+            'substances_used' => [
+                'other_substances' => get_post_meta($trial_id, 'other_substances', true),
+                'intoxication_level' => get_post_meta($trial_id, 'intoxication_level', true),
+                'visual_mental_effects' => get_post_meta($trial_id, 'visual_mental_effects', true),
+                'additional_substance_info' => get_post_meta($trial_id, 'additional_substance_info', true),
+            ],
+            'visual_effects' => [
+                'beam_changed' => get_post_meta($trial_id, 'beam_changed', true),
+                'beam_changes_description' => get_post_meta($trial_id, 'beam_changes_description', true),
+                'saw_code_of_reality' => get_post_meta($trial_id, 'saw_code_of_reality', true),
+                'symbols_seen' => get_post_meta($trial_id, 'symbols_seen', true),
+                'symbols_description' => get_post_meta($trial_id, 'symbols_description', true),
+                'code_moving' => get_post_meta($trial_id, 'code_moving', true),
+                'movement_direction' => get_post_meta($trial_id, 'movement_direction', true),
+                'characters_tiny' => get_post_meta($trial_id, 'characters_tiny', true),
+                'size_changed' => get_post_meta($trial_id, 'size_changed', true),
+                'code_clarity' => get_post_meta($trial_id, 'code_clarity', true),
+                'code_behaved_like_object' => get_post_meta($trial_id, 'code_behaved_like_object', true),
+                'could_influence_code' => get_post_meta($trial_id, 'could_influence_code', true),
+                'influence_description' => get_post_meta($trial_id, 'influence_description', true),
+                'code_persisted_without_laser' => get_post_meta($trial_id, 'code_persisted_without_laser', true),
+                'persisted_when_looked_away' => get_post_meta($trial_id, 'persisted_when_looked_away', true),
+                'persisted_after_turning_off' => get_post_meta($trial_id, 'persisted_after_turning_off', true),
+                'where_else_seen' => get_post_meta($trial_id, 'where_else_seen', true),
+            ],
+            'other_phenomena' => [
+                'noticed_anything_else' => get_post_meta($trial_id, 'noticed_anything_else', true),
+                'experiment_duration' => get_post_meta($trial_id, 'experiment_duration', true),
+                'questions_comments_suggestions' => get_post_meta($trial_id, 'questions_comments_suggestions', true),
+            ],
+        ];
+        
+        return $questionnaire;
     }
 }
