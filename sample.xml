@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
     xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
     xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -7,15 +7,15 @@
     xmlns:wp="http://wordpress.org/export/1.2/"
 >
     <channel>
-        <title>Open Veil</title>
+        <title><![CDATA[Open Veil]]></title>
         <link>http://localhost:9000</link>
-        <description>Experimental Protocol Data</description>
+        <description><![CDATA[Experimental Protocol Data]]></description>
         <pubDate>Mon, 13 Apr 2025 17:07:59 +0000</pubDate>
         <language>en-US</language>
         <wp:wxr_version>1.2</wp:wxr_version>
         <wp:base_site_url>http://localhost:9000</wp:base_site_url>
         <wp:base_blog_url>http://localhost:9000</wp:base_blog_url>
-        
+
         <wp:author>
             <wp:author_id>1</wp:author_id>
             <wp:author_login>admin</wp:author_login>
@@ -24,7 +24,7 @@
             <wp:author_first_name><![CDATA[Admin]]></wp:author_first_name>
             <wp:author_last_name><![CDATA[User]]></wp:author_last_name>
         </wp:author>
-        
+
         <wp:author>
             <wp:author_id>2</wp:author_id>
             <wp:author_login>researcher</wp:author_login>
@@ -33,7 +33,7 @@
             <wp:author_first_name><![CDATA[Jane]]></wp:author_first_name>
             <wp:author_last_name><![CDATA[Researcher]]></wp:author_last_name>
         </wp:author>
-        
+
         <wp:author>
             <wp:author_id>3</wp:author_id>
             <wp:author_login>participant</wp:author_login>
@@ -42,7 +42,7 @@
             <wp:author_first_name><![CDATA[John]]></wp:author_first_name>
             <wp:author_last_name><![CDATA[Participant]]></wp:author_last_name>
         </wp:author>
-        
+
         <!-- Taxonomy Terms -->
         <wp:term>
             <wp:term_id>100</wp:term_id>
@@ -50,91 +50,91 @@
             <wp:term_slug>class-2</wp:term_slug>
             <wp:term_name><![CDATA[Class 2]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>101</wp:term_id>
             <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
             <wp:term_slug>standard</wp:term_slug>
             <wp:term_name><![CDATA[Standard]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>102</wp:term_id>
             <wp:term_taxonomy>equipment</wp:term_taxonomy>
             <wp:term_slug>laser</wp:term_slug>
             <wp:term_name><![CDATA[Laser]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>103</wp:term_id>
             <wp:term_taxonomy>equipment</wp:term_taxonomy>
             <wp:term_slug>tripod</wp:term_slug>
             <wp:term_name><![CDATA[Tripod]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>104</wp:term_id>
             <wp:term_taxonomy>equipment</wp:term_taxonomy>
             <wp:term_slug>diffraction-grating</wp:term_slug>
             <wp:term_name><![CDATA[Diffraction Grating]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>105</wp:term_id>
             <wp:term_taxonomy>equipment</wp:term_taxonomy>
             <wp:term_slug>vape-pen</wp:term_slug>
             <wp:term_name><![CDATA[Vape Pen]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>106</wp:term_id>
             <wp:term_taxonomy>substance</wp:term_taxonomy>
             <wp:term_slug>nn-dmt</wp:term_slug>
             <wp:term_name><![CDATA[N,N-DMT]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>107</wp:term_id>
             <wp:term_taxonomy>administration_method</wp:term_taxonomy>
             <wp:term_slug>inhalation</wp:term_slug>
             <wp:term_name><![CDATA[Inhalation]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>108</wp:term_id>
             <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
             <wp:term_slug>two-inhales</wp:term_slug>
             <wp:term_name><![CDATA[Two inhales]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>109</wp:term_id>
             <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
             <wp:term_slug>flat-non-reflective</wp:term_slug>
             <wp:term_name><![CDATA[Flat non-reflective]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>110</wp:term_id>
             <wp:term_taxonomy>substance</wp:term_taxonomy>
             <wp:term_slug>lsd</wp:term_slug>
             <wp:term_name><![CDATA[LSD]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>111</wp:term_id>
             <wp:term_taxonomy>administration_method</wp:term_taxonomy>
             <wp:term_slug>sublingual</wp:term_slug>
             <wp:term_name><![CDATA[Sublingual]]></wp:term_name>
         </wp:term>
-        
+
         <wp:term>
             <wp:term_id>112</wp:term_id>
             <wp:term_taxonomy>laser_class</wp:term_taxonomy>
             <wp:term_slug>class-3r</wp:term_slug>
             <wp:term_name><![CDATA[Class 3R]]></wp:term_name>
         </wp:term>
-        
+
         <!-- Protocol 1: Code of Reality Protocol -->
         <item>
             <title><![CDATA[Code of Reality Protocol]]></title>
@@ -142,7 +142,7 @@
             <pubDate>Mon, 15 Jan 2025 12:00:00 +0000</pubDate>
             <dc:creator><![CDATA[admin]]></dc:creator>
             <guid isPermaLink="false">http://localhost:9000/?post_type=protocol&#038;p=1001</guid>
-            <description></description>
+            <description><![CDATA[]]></description>
             <content:encoded><![CDATA[<h2>Protocol Description</h2>
 
 <p>This protocol is designed to reliably elicit a recurring visual phenomenon informally referred to as "The Code of Reality" when observing a diffracted light pattern generated by a collimated 650 nm laser under the influence of N,N-DMT.</p>
@@ -157,7 +157,7 @@
 <li>Vape pen loaded with 1.0 g of N-N-DMT, powered by a 3.8 V or 4.8 V battery</li>
 </ul>
 
-<h3>Health & Safety Disclaimers</h3>
+<h3>Health &amp; Safety Disclaimers</h3>
 
 <ul>
 <li>Laser Safety: Only Class 2 lasers with an operating power of 1 mW or less should be used. Exposure to high-intensity laser radiation can cause permanent eye damage. Light should always be projected onto non-reflective surfaces. Participants should never look directly into the laser itself, solely laser projections.</li>
@@ -189,7 +189,7 @@
             <wp:post_type>protocol</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
-            
+
             <wp:postmeta>
                 <wp:meta_key>laser_wavelength</wp:meta_key>
                 <wp:meta_value><![CDATA[650]]></wp:meta_value>
@@ -206,7 +206,7 @@
                 <wp:meta_key>projection_distance</wp:meta_key>
                 <wp:meta_value><![CDATA[5]]></wp:meta_value>
             </wp:postmeta>
-            
+
             <wp:term_relationship>
                 <wp:term_taxonomy>laser_class</wp:term_taxonomy>
                 <wp:term_slug>class-2</wp:term_slug>
@@ -248,7 +248,7 @@
                 <wp:term_slug>flat-non-reflective</wp:term_slug>
             </wp:term_relationship>
         </item>
-        
+
         <!-- Protocol 2: LSD Laser Diffraction Protocol -->
         <item>
             <title><![CDATA[LSD Laser Diffraction Protocol]]></title>
@@ -256,7 +256,7 @@
             <pubDate>Fri, 26 Jan 2025 14:30:00 +0000</pubDate>
             <dc:creator><![CDATA[researcher]]></dc:creator>
             <guid isPermaLink="false">http://localhost:9000/?post_type=protocol&#038;p=1002</guid>
-            <description></description>
+            <description><![CDATA[]]></description>
             <content:encoded><![CDATA[<h2>Protocol Description</h2>
 
 <p>This protocol aims to investigate visual phenomena observed when viewing laser diffraction patterns under the influence of LSD, comparing results with the DMT-induced "Code of Reality" phenomenon.</p>
@@ -271,7 +271,7 @@
 <li>LSD (100 micrograms per dose)</li>
 </ul>
 
-<h3>Health & Safety Disclaimers</h3>
+<h3>Health &amp; Safety Disclaimers</h3>
 
 <ul>
 <li>Laser Safety: Only Class 2 lasers should be used. Never look directly into the laser.</li>
@@ -304,7 +304,7 @@
             <wp:post_type>protocol</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
-            
+
             <wp:postmeta>
                 <wp:meta_key>laser_wavelength</wp:meta_key>
                 <wp:meta_value><![CDATA[650]]></wp:meta_value>
@@ -321,7 +321,7 @@
                 <wp:meta_key>projection_distance</wp:meta_key>
                 <wp:meta_value><![CDATA[5]]></wp:meta_value>
             </wp:postmeta>
-            
+
             <wp:term_relationship>
                 <wp:term_taxonomy>laser_class</wp:term_taxonomy>
                 <wp:term_slug>class-2</wp:term_slug>
@@ -355,7 +355,7 @@
                 <wp:term_slug>flat-non-reflective</wp:term_slug>
             </wp:term_relationship>
         </item>
-        
+
         <!-- Protocol 3: Enhanced Laser Power Protocol -->
         <item>
             <title><![CDATA[Enhanced Laser Power Protocol]]></title>
@@ -363,7 +363,7 @@
             <pubDate>Wed, 12 Feb 2025 09:15:00 +0000</pubDate>
             <dc:creator><![CDATA[admin]]></dc:creator>
             <guid isPermaLink="false">http://localhost:9000/?post_type=protocol&#038;p=1003</guid>
-            <description></description>
+            <description><![CDATA[]]></description>
             <content:encoded><![CDATA[<h2>Protocol Description</h2>
 
 <p>This protocol investigates whether increasing laser power affects the clarity or intensity of the "Code of Reality" phenomenon observed under the influence of N,N-DMT.</p>
@@ -378,7 +378,7 @@
 <li>Vape pen loaded with 1.0 g of N-N-DMT</li>
 </ul>
 
-<h3>Health & Safety Disclaimers</h3>
+<h3>Health &amp; Safety Disclaimers</h3>
 
 <ul>
 <li>Laser Safety: Class 3R lasers require additional precautions. Never look directly into the laser or its reflections. Use protective eyewear when setting up the equipment.</li>
@@ -410,7 +410,7 @@
             <wp:post_type>protocol</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
-            
+
             <wp:postmeta>
                 <wp:meta_key>laser_wavelength</wp:meta_key>
                 <wp:meta_value><![CDATA[650]]></wp:meta_value>
@@ -427,7 +427,7 @@
                 <wp:meta_key>projection_distance</wp:meta_key>
                 <wp:meta_value><![CDATA[6]]></wp:meta_value>
             </wp:postmeta>
-            
+
             <wp:term_relationship>
                 <wp:term_taxonomy>laser_class</wp:term_taxonomy>
                 <wp:term_slug>class-3r</wp:term_slug>
@@ -469,7 +469,7 @@
                 <wp:term_slug>flat-non-reflective</wp:term_slug>
             </wp:term_relationship>
         </item>
-        
+
         <!-- Protocol 4: Multiple Observer Protocol -->
         <item>
             <title><![CDATA[Multiple Observer Protocol]]></title>
@@ -477,7 +477,7 @@
             <pubDate>Tue, 04 Mar 2025 16:45:00 +0000</pubDate>
             <dc:creator><![CDATA[researcher]]></dc:creator>
             <guid isPermaLink="false">http://localhost:9000/?post_type=protocol&#038;p=1004</guid>
-            <description></description>
+            <description><![CDATA[]]></description>
             <content:encoded><![CDATA[<h2>Protocol Description</h2>
 
 <p>This protocol is designed to investigate the consistency of the "Code of Reality" phenomenon across multiple observers simultaneously viewing the same laser diffraction pattern.</p>
@@ -492,7 +492,7 @@
 <li>Vape pen loaded with 1.0 g of N-N-DMT for each participant</li>
 </ul>
 
-<h3>Health & Safety Disclaimers</h3>
+<h3>Health &amp; Safety Disclaimers</h3>
 
 <ul>
 <li>Laser Safety: Only Class 2 lasers should be used. Never look directly into the laser.</li>
@@ -526,7 +526,7 @@
             <wp:post_type>protocol</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
-            
+
             <wp:postmeta>
                 <wp:meta_key>laser_wavelength</wp:meta_key>
                 <wp:meta_value><![CDATA[650]]></wp:meta_value>
@@ -543,7 +543,7 @@
                 <wp:meta_key>projection_distance</wp:meta_key>
                 <wp:meta_value><![CDATA[5]]></wp:meta_value>
             </wp:postmeta>
-            
+
             <wp:term_relationship>
                 <wp:term_taxonomy>laser_class</wp:term_taxonomy>
                 <wp:term_slug>class-2</wp:term_slug>
@@ -585,7 +585,7 @@
                 <wp:term_slug>flat-non-reflective</wp:term_slug>
             </wp:term_relationship>
         </item>
-        
+
         <!-- Trial 1: First Code of Reality Trial -->
         <item>
             <title><![CDATA[Trial - Code of Reality - Jan 20, 2025]]></title>
@@ -593,7 +593,7 @@
             <pubDate>Sat, 20 Jan 2025 18:30:00 +0000</pubDate>
             <dc:creator><![CDATA[participant]]></dc:creator>
             <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1005</guid>
-            <description></description>
+            <description><![CDATA[]]></description>
             <content:encoded><![CDATA[<h2>Trial Description</h2>
 
 <p>This trial followed the Code of Reality Protocol exactly as specified. After two medium inhales of N,N-DMT, I observed the laser diffraction pattern projected on a flat closet door.</p>
@@ -624,7 +624,7 @@
             <wp:post_type>trial</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
-            
+
             <wp:postmeta>
                 <wp:meta_key>protocol_id</wp:meta_key>
                 <wp:meta_value><![CDATA[1001]]></wp:meta_value>
@@ -653,7 +653,96 @@
                 <wp:meta_key>additional_observers</wp:meta_key>
                 <wp:meta_value><![CDATA[0]]></wp:meta_value>
             </wp:postmeta>
-            
+
+            <wp:postmeta>
+                <wp:meta_key>participant_name</wp:meta_key>
+                <wp:meta_value><![CDATA[Alex Johnson]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>participant_email</wp:meta_key>
+                <wp:meta_value><![CDATA[alex.j@example.com]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>psychedelic_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[7]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>dmt_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[5]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>simulation_theory_interest</wp:meta_key>
+                <wp:meta_value><![CDATA[Highly interested since reading Nick Bostrom's paper. I've been exploring the intersection of consciousness and reality simulation for about 3 years.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>how_found_us</wp:meta_key>
+                <wp:meta_value><![CDATA[Reddit r/Psychonaut community post]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changes_description</wp:meta_key>
+                <wp:meta_value><![CDATA[The beam appeared to expand and contract rhythmically. The edges became more defined and seemed to contain microscopic structures.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>saw_code_of_reality</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>symbols_seen</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>symbols_description</wp:meta_key>
+                <wp:meta_value><![CDATA[Symbols resembled a combination of Japanese Katakana and cuneiform writing. They appeared to be organized in sequences of 3-7 characters, repeating in patterns. Some symbols transformed into others while maintaining structural similarity.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_moving</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>movement_direction</wp:meta_key>
+                <wp:meta_value><![CDATA[Left to right, occasionally pulsing in and out of the projection surface]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>characters_tiny</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>size_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_clarity</wp:meta_key>
+                <wp:meta_value><![CDATA[8]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_behaved_like_object</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>could_influence_code</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_persisted_without_laser</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>noticed_anything_else</wp:meta_key>
+                <wp:meta_value><![CDATA[There was a distinct geometric framework underlying the symbols, like a grid or lattice that the characters were anchored to. When focusing on individual symbols, they seemed to contain smaller versions of similar patterns (fractal-like).]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>experiment_duration</wp:meta_key>
+                <wp:meta_value><![CDATA[25]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>questions_comments_suggestions</wp:meta_key>
+                <wp:meta_value><![CDATA[]]></wp:meta_value>
+            </wp:postmeta>
+
             <wp:term_relationship>
                 <wp:term_taxonomy>laser_class</wp:term_taxonomy>
                 <wp:term_slug>class-2</wp:term_slug>
@@ -695,7 +784,7 @@
                 <wp:term_slug>flat-non-reflective</wp:term_slug>
             </wp:term_relationship>
         </item>
-        
+
         <!-- Trial 2: Second Code of Reality Trial -->
         <item>
             <title><![CDATA[Trial - Code of Reality - Jan 28, 2025]]></title>
@@ -703,7 +792,7 @@
             <pubDate>Tue, 28 Jan 2025 20:15:00 +0000</pubDate>
             <dc:creator><![CDATA[admin]]></dc:creator>
             <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1006</guid>
-            <description></description>
+            <description><![CDATA[]]></description>
             <content:encoded><![CDATA[<h2>Trial Description</h2>
 
 <p>This trial followed the Code of Reality Protocol with a slight variation in the laser power, which was measured at 0.9 mW instead of the specified 1.0 mW due to battery depletion.</p>
@@ -734,7 +823,7 @@
             <wp:post_type>trial</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
-            
+
             <wp:postmeta>
                 <wp:meta_key>protocol_id</wp:meta_key>
                 <wp:meta_value><![CDATA[1001]]></wp:meta_value>
@@ -763,7 +852,132 @@
                 <wp:meta_key>additional_observers</wp:meta_key>
                 <wp:meta_value><![CDATA[1]]></wp:meta_value>
             </wp:postmeta>
-            
+
+            <wp:postmeta>
+                <wp:meta_key>participant_name</wp:meta_key>
+                <wp:meta_value><![CDATA[Chris Walters]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>participant_email</wp:meta_key>
+                <wp:meta_value><![CDATA[c.walters@example.com]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>psychedelic_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[8]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>dmt_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[6]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>simulation_theory_interest</wp:meta_key>
+                <wp:meta_value><![CDATA[Moderate interest. I find the philosophical implications fascinating.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>how_found_us</wp:meta_key>
+                <wp:meta_value><![CDATA[Academic colleague referral]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>received_laser_from_us</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_shape</wp:meta_key>
+                <wp:meta_value><![CDATA[Circular dot with slight diffraction pattern]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>laser_power_source</wp:meta_key>
+                <wp:meta_value><![CDATA[AAA batteries (fresh Energizer)]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>set_and_setting</wp:meta_key>
+                <wp:meta_value><![CDATA[Quiet room with minimal ambient light. Calm mindset after 20 minutes of meditation. One trusted friend present as observer/sitter.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>experiment_datetime</wp:meta_key>
+                <wp:meta_value><![CDATA[2025-01-28 20:15:00]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>lighting_conditions</wp:meta_key>
+                <wp:meta_value><![CDATA[Near complete darkness with only a small red LED night light in far corner of room]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>surfaces_used</wp:meta_key>
+                <wp:meta_value><![CDATA[White matte wall]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>other_substances</wp:meta_key>
+                <wp:meta_value><![CDATA[No other substances within 72 hours of experiment. Last caffeine consumption was 8 hours prior.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>intoxication_level</wp:meta_key>
+                <wp:meta_value><![CDATA[8]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>visual_mental_effects</wp:meta_key>
+                <wp:meta_value><![CDATA[Strong geometric visuals with eyes closed. Enhanced pattern recognition. Time dilation. Sense of presence/entities. Maintained cognitive clarity throughout experience.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changes_description</wp:meta_key>
+                <wp:meta_value><![CDATA[The beam appeared to develop a pulsating quality and seemed to expand beyond its physical boundaries.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>saw_code_of_reality</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>symbols_seen</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>symbols_description</wp:meta_key>
+                <wp:meta_value><![CDATA[Geometric glyphs with some resemblance to ancient writing systems. Three distinct symbols appeared repeatedly in specific sequences.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_moving</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>movement_direction</wp:meta_key>
+                <wp:meta_value><![CDATA[Left to right along diffraction lines]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>characters_tiny</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>size_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_clarity</wp:meta_key>
+                <wp:meta_value><![CDATA[8]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_behaved_like_object</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>could_influence_code</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_persisted_without_laser</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>experiment_duration</wp:meta_key>
+                <wp:meta_value><![CDATA[30]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>questions_comments_suggestions</wp:meta_key>
+                <wp:meta_value><![CDATA[]]></wp:meta_value>
+            </wp:postmeta>
+
             <wp:term_relationship>
                 <wp:term_taxonomy>laser_class</wp:term_taxonomy>
                 <wp:term_slug>class-2</wp:term_slug>
@@ -805,7 +1019,7 @@
                 <wp:term_slug>flat-non-reflective</wp:term_slug>
             </wp:term_relationship>
         </item>
-        
+
         <!-- Trial 3: LSD Protocol Trial -->
         <item>
             <title><![CDATA[Trial - LSD Laser Diffraction - Feb 02, 2025]]></title>
@@ -813,7 +1027,7 @@
             <pubDate>Sun, 02 Feb 2025 14:00:00 +0000</pubDate>
             <dc:creator><![CDATA[researcher]]></dc:creator>
             <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1007</guid>
-            <description></description>
+            <description><![CDATA[]]></description>
             <content:encoded><![CDATA[<h2>Trial Description</h2>
 
 <p>This trial followed the LSD Laser Diffraction Protocol as specified. I administered 100 micrograms of LSD sublingually and began observations 2 hours after administration.</p>
@@ -846,7 +1060,7 @@
             <wp:post_type>trial</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
-            
+
             <wp:postmeta>
                 <wp:meta_key>protocol_id</wp:meta_key>
                 <wp:meta_value><![CDATA[1002]]></wp:meta_value>
@@ -875,7 +1089,116 @@
                 <wp:meta_key>additional_observers</wp:meta_key>
                 <wp:meta_value><![CDATA[1]]></wp:meta_value>
             </wp:postmeta>
-            
+
+            <wp:postmeta>
+                <wp:meta_key>participant_name</wp:meta_key>
+                <wp:meta_value><![CDATA[Morgan Taylor]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>participant_email</wp:meta_key>
+                <wp:meta_value><![CDATA[m.taylor@example.com]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>psychedelic_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[9]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>dmt_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[4]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>simulation_theory_interest</wp:meta_key>
+                <wp:meta_value><![CDATA[Moderate interest. I've read several books on the topic but remain skeptical of strong simulation arguments.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>how_found_us</wp:meta_key>
+                <wp:meta_value><![CDATA[Academic journal publication]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>received_laser_from_us</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_shape</wp:meta_key>
+                <wp:meta_value><![CDATA[Standard circular beam]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>accessories_used</wp:meta_key>
+                <wp:meta_value><![CDATA[Standard diffraction grating (1000 lines/mm), tripod with adjustable height, white projection screen]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>set_and_setting</wp:meta_key>
+                <wp:meta_value><![CDATA[Comfortable laboratory setting with controlled lighting and temperature]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>experiment_datetime</wp:meta_key>
+                <wp:meta_value><![CDATA[2025-02-02 14:00:00]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>lighting_conditions</wp:meta_key>
+                <wp:meta_value><![CDATA[Dimmed room lighting with blackout curtains]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>surfaces_used</wp:meta_key>
+                <wp:meta_value><![CDATA[White matte wall, approximately 5 feet from seated position]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changes_description</wp:meta_key>
+                <wp:meta_value><![CDATA[The beam appeared to have a rainbow-like halo around it that pulsated with my heartbeat. The diffraction pattern seemed to breathe and flow like a liquid.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>saw_code_of_reality</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>symbols_seen</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_moving</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>characters_tiny</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>size_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_clarity</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_behaved_like_object</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>could_influence_code</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_persisted_without_laser</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>noticed_anything_else</wp:meta_key>
+                <wp:meta_value><![CDATA[While I did not observe the "Code of Reality" phenomenon reported with DMT, I did notice intricate geometric patterns forming in the spaces between the diffraction lines. These patterns were primarily composed of interlocking hexagons and triangles that seemed to flow and morph into one another. The patterns were distinctly different from the symbol-like formations reported in DMT trials.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>experiment_duration</wp:meta_key>
+                <wp:meta_value><![CDATA[240]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>questions_comments_suggestions</wp:meta_key>
+                <wp:meta_value><![CDATA[Would it be valuable to conduct a trial with combined substances (e.g., LSD+DMT) to see if this affects the visibility or clarity of the Code of Reality phenomenon? Also, has anyone attempted to record the laser projections during these experiences to see if any anomalies are captured?]]></wp:meta_value>
+            </wp:postmeta>
+
             <wp:term_relationship>
                 <wp:term_taxonomy>laser_class</wp:term_taxonomy>
                 <wp:term_slug>class-2</wp:term_slug>
@@ -909,7 +1232,7 @@
                 <wp:term_slug>flat-non-reflective</wp:term_slug>
             </wp:term_relationship>
         </item>
-        
+
         <!-- Trial 4: Enhanced Laser Power Trial -->
         <item>
             <title><![CDATA[Trial - Enhanced Laser Power - Feb 15, 2025]]></title>
@@ -917,7 +1240,7 @@
             <pubDate>Sat, 15 Feb 2025 19:30:00 +0000</pubDate>
             <dc:creator><![CDATA[admin]]></dc:creator>
             <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1008</guid>
-            <description></description>
+            <description><![CDATA[]]></description>
             <content:encoded><![CDATA[<h2>Trial Description</h2>
 
 <p>This trial followed the Enhanced Laser Power Protocol using a Class 3R laser with 3 mW power to investigate whether increased power affects the clarity or intensity of the "Code of Reality" phenomenon.</p>
@@ -926,7 +1249,7 @@
 
 <p>After administering DMT as specified in the protocol, I observed the laser diffraction pattern projected at a distance of 6 feet. The initial effects were similar to previous trials with the standard protocol, but with notable differences in intensity and clarity.</p>
 
-<p>The symbols appeared approximately 40 seconds after the second inhale, which is slightly faster than in previous trials with the standard 1 mW laser. The symbols were significantly more defined and exhibited greater contrast against the diffraction lines. Individual characters were easier to distinguish from one another, and their movement along the lines appeared more fluid.</p>
+<p>The symbols appeared approximately 40 seconds after the second inhale, which is slightly faster than in previous trials with the standard 1 mW laser. The symbols were significantly more defined and exhibited greater contrast against the diffraction lines. Individual characters were easier to distinguish from one another, and their movement along the lines appeared more fluid.
 
 <p>Most notably, I was able to observe what appeared to be a hierarchical structure to the symbols, with certain larger or more complex characters appearing to organize smaller characters around them. This level of detail was not apparent in previous trials with the lower-powered laser.</p>
 
@@ -950,7 +1273,7 @@
             <wp:post_type>trial</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
-            
+
             <wp:postmeta>
                 <wp:meta_key>protocol_id</wp:meta_key>
                 <wp:meta_value><![CDATA[1003]]></wp:meta_value>
@@ -979,7 +1302,116 @@
                 <wp:meta_key>additional_observers</wp:meta_key>
                 <wp:meta_value><![CDATA[0]]></wp:meta_value>
             </wp:postmeta>
-            
+
+            <wp:postmeta>
+                <wp:meta_key>participant_name</wp:meta_key>
+                <wp:meta_value><![CDATA[Chris Walters]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>participant_email</wp:meta_key>
+                <wp:meta_value><![CDATA[c.walters@example.com]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>psychedelic_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[8]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>dmt_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[7]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>simulation_theory_interest</wp:meta_key>
+                <wp:meta_value><![CDATA[High interest. I've been researching simulation theory for several years and have a background in computer science which informs my perspective.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>how_found_us</wp:meta_key>
+                <wp:meta_value><![CDATA[Conference presentation]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>received_laser_from_us</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_shape</wp:meta_key>
+                <wp:meta_value><![CDATA[Circular dot with enhanced brightness due to higher power rating]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>set_and_setting</wp:meta_key>
+                <wp:meta_value><![CDATA[Dedicated room with controlled lighting and temperature. Comfortable seating arrangement with proper back support. Calm mindset after 30 minutes of meditation.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>lighting_conditions</wp:meta_key>
+                <wp:meta_value><![CDATA[Complete darkness except for a single dim red LED positioned behind the observer]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>surfaces_used</wp:meta_key>
+                <wp:meta_value><![CDATA[Matte white projection screen specifically designed for laser projection]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changes_description</wp:meta_key>
+                <wp:meta_value><![CDATA[The beam appeared to develop a complex internal structure, with what looked like concentric rings or layers within the main beam. The diffraction pattern became more defined and exhibited a pulsating quality that seemed synchronized with my breathing.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>saw_code_of_reality</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>symbols_seen</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>symbols_description</wp:meta_key>
+                <wp:meta_value><![CDATA[The symbols appeared more defined and complex than in previous trials with lower power lasers. They resembled a combination of geometric glyphs and flowing script, with distinct hierarchical organization. Larger, more complex symbols appeared to contain or organize smaller symbols around them in what seemed like meaningful patterns or sentences.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_moving</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>movement_direction</wp:meta_key>
+                <wp:meta_value><![CDATA[Primarily left to right, with occasional vertical movements between different "lines" of symbols]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>characters_tiny</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>size_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_clarity</wp:meta_key>
+                <wp:meta_value><![CDATA[9]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_behaved_like_object</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>could_influence_code</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>influence_description</wp:meta_key>
+                <wp:meta_value><![CDATA[When I focused my attention on specific symbols, they appeared to expand or become more prominent. When I mentally "asked" for certain patterns to repeat or change, they sometimes responded accordingly, though this effect was inconsistent.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_persisted_without_laser</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>experiment_duration</wp:meta_key>
+                <wp:meta_value><![CDATA[35]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>questions_comments_suggestions</wp:meta_key>
+                <wp:meta_value><![CDATA[Would it be worth exploring even higher power lasers (with appropriate safety precautions) to see if the effect continues to intensify?]]></wp:meta_value>
+            </wp:postmeta>
+
             <wp:term_relationship>
                 <wp:term_taxonomy>laser_class</wp:term_taxonomy>
                 <wp:term_slug>class-3r</wp:term_slug>
@@ -1021,7 +1453,7 @@
                 <wp:term_slug>flat-non-reflective</wp:term_slug>
             </wp:term_relationship>
         </item>
-        
+
         <!-- Trial 5: Multiple Observer Trial -->
         <item>
             <title><![CDATA[Trial - Multiple Observer - Mar 10, 2025]]></title>
@@ -1029,7 +1461,7 @@
             <pubDate>Mon, 10 Mar 2025 15:00:00 +0000</pubDate>
             <dc:creator><![CDATA[researcher]]></dc:creator>
             <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1009</guid>
-            <description></description>
+            <description><![CDATA[]]></description>
             <content:encoded><![CDATA[<h2>Trial Description</h2>
 
 <p>This trial followed the Multiple Observer Protocol with four participants observing the same laser diffraction pattern while taking turns administering DMT.</p>
@@ -1068,7 +1500,7 @@
             <wp:post_type>trial</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
-            
+
             <wp:postmeta>
                 <wp:meta_key>protocol_id</wp:meta_key>
                 <wp:meta_value><![CDATA[1004]]></wp:meta_value>
@@ -1097,7 +1529,116 @@
                 <wp:meta_key>additional_observers</wp:meta_key>
                 <wp:meta_value><![CDATA[1]]></wp:meta_value>
             </wp:postmeta>
-            
+
+            <wp:postmeta>
+                <wp:meta_key>participant_name</wp:meta_key>
+                <wp:meta_value><![CDATA[Research Group A]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>participant_email</wp:meta_key>
+                <wp:meta_value><![CDATA[research.team@example.org]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>psychedelic_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[8]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>dmt_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[7]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>simulation_theory_interest</wp:meta_key>
+                <wp:meta_value><![CDATA[Varied among participants. Two participants had strong interest in simulation theory, one had moderate interest, and one was skeptical but open-minded.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>how_found_us</wp:meta_key>
+                <wp:meta_value><![CDATA[Academic research network]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>received_laser_from_us</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_shape</wp:meta_key>
+                <wp:meta_value><![CDATA[Standard circular beam]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>set_and_setting</wp:meta_key>
+                <wp:meta_value><![CDATA[Controlled laboratory environment with comfortable seating arranged in a semi-circle. Ambient temperature maintained at 72°F. Participants were given 30 minutes of quiet preparation time before the session began.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>experiment_datetime</wp:meta_key>
+                <wp:meta_value><![CDATA[2025-03-10 15:00:00]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>lighting_conditions</wp:meta_key>
+                <wp:meta_value><![CDATA[Minimal ambient lighting with blackout curtains and a single dim red light positioned behind participants.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>surfaces_used</wp:meta_key>
+                <wp:meta_value><![CDATA[Large (6' x 4') matte white projection screen positioned at a distance of 5 feet from participants.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changes_description</wp:meta_key>
+                <wp:meta_value><![CDATA[All participants reported similar changes to the beam appearance, describing it as developing an internal structure with flowing patterns. Three participants reported seeing the beam expand beyond its physical boundaries.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>saw_code_of_reality</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>symbols_seen</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>symbols_description</wp:meta_key>
+                <wp:meta_value><![CDATA[All participants reported seeing symbol-like formations within the diffraction pattern. Three participants specifically described them as resembling Asian writing systems (two mentioned Japanese Katakana, one compared them to ancient Chinese characters). The fourth participant described them as "geometric glyphs" with a mathematical quality. When participants sketched the symbols they observed, there was significant overlap in the forms drawn, with five distinct symbols being independently recorded by multiple participants.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_moving</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>movement_direction</wp:meta_key>
+                <wp:meta_value><![CDATA[All participants reported left-to-right movement of the symbols, with two participants also noting occasional vertical movements between different "lines" of symbols.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>characters_tiny</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>size_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_clarity</wp:meta_key>
+                <wp:meta_value><![CDATA[7]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_behaved_like_object</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>could_influence_code</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_persisted_without_laser</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>experiment_duration</wp:meta_key>
+                <wp:meta_value><![CDATA[180]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>questions_comments_suggestions</wp:meta_key>
+                <wp:meta_value><![CDATA[The consistency of observations across multiple participants suggests this phenomenon warrants further investigation with larger sample sizes and more controlled conditions. Future studies should consider recording participants' descriptions in real-time during the experience, rather than relying on post-session reports. Additionally, it may be valuable to include participants with no prior knowledge of the "Code of Reality" phenomenon to control for expectation bias.]]></wp:meta_value>
+            </wp:postmeta>
+
             <wp:term_relationship>
                 <wp:term_taxonomy>laser_class</wp:term_taxonomy>
                 <wp:term_slug>class-2</wp:term_slug>
@@ -1139,7 +1680,7 @@
                 <wp:term_slug>flat-non-reflective</wp:term_slug>
             </wp:term_relationship>
         </item>
-        
+
         <!-- Trial 6: Second LSD Protocol Trial -->
         <item>
             <title><![CDATA[Trial - LSD Laser Diffraction - Mar 20, 2025]]></title>
@@ -1147,7 +1688,7 @@
             <pubDate>Thu, 20 Mar 2025 13:45:00 +0000</pubDate>
             <dc:creator><![CDATA[participant]]></dc:creator>
             <guid isPermaLink="false">http://localhost:9000/?post_type=trial&#038;p=1010</guid>
-            <description></description>
+            <description><![CDATA[]]></description>
             <content:encoded><![CDATA[<h2>Trial Description</h2>
 
 <p>This trial followed the LSD Laser Diffraction Protocol as specified, with observations conducted at 30-minute intervals starting 2 hours after administration of 100 micrograms of LSD.</p>
@@ -1180,7 +1721,7 @@
             <wp:post_type>trial</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
-            
+
             <wp:postmeta>
                 <wp:meta_key>protocol_id</wp:meta_key>
                 <wp:meta_value><![CDATA[1002]]></wp:meta_value>
@@ -1209,7 +1750,120 @@
                 <wp:meta_key>additional_observers</wp:meta_key>
                 <wp:meta_value><![CDATA[0]]></wp:meta_value>
             </wp:postmeta>
-            
+
+            <wp:postmeta>
+                <wp:meta_key>participant_name</wp:meta_key>
+                <wp:meta_value><![CDATA[Jamie Rodriguez]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>participant_email</wp:meta_key>
+                <wp:meta_value><![CDATA[j.rodriguez@example.com]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>psychedelic_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[8]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>dmt_experience_level</wp:meta_key>
+                <wp:meta_value><![CDATA[3]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>simulation_theory_interest</wp:meta_key>
+                <wp:meta_value><![CDATA[Moderate interest. I find the philosophical implications fascinating but remain agnostic about the likelihood of our reality being a simulation.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>how_found_us</wp:meta_key>
+                <wp:meta_value><![CDATA[Online forum discussion]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>received_laser_from_us</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_shape</wp:meta_key>
+                <wp:meta_value><![CDATA[Standard circular beam]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>set_and_setting</wp:meta_key>
+                <wp:meta_value><![CDATA[Comfortable home environment with familiar surroundings. Soft ambient music playing at low volume. Relaxed mindset with positive expectations.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>experiment_datetime</wp:meta_key>
+                <wp:meta_value><![CDATA[2025-03-20 13:45:00]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>lighting_conditions</wp:meta_key>
+                <wp:meta_value><![CDATA[Dimmed room lighting with blackout curtains. Small lamp with blue filter in corner of room.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>surfaces_used</wp:meta_key>
+                <wp:meta_value><![CDATA[White matte wall]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[1]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>beam_changes_description</wp:meta_key>
+                <wp:meta_value><![CDATA[The beam appeared to have enhanced color saturation with rainbow-like halos. The diffraction pattern seemed to breathe and pulse in rhythm with music playing in the background.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>saw_code_of_reality</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>symbols_seen</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_moving</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>characters_tiny</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>size_changed</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_clarity</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_behaved_like_object</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>could_influence_code</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>code_persisted_without_laser</wp:meta_key>
+                <wp:meta_value><![CDATA[0]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>intoxication_level</wp:meta_key>
+                <wp:meta_value><![CDATA[7]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>visual_mental_effects</wp:meta_key>
+                <wp:meta_value><![CDATA[Enhanced colors and pattern recognition. Flowing geometric visuals with eyes open and closed. Synesthesia between music and visual patterns. Time dilation and enhanced introspection.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>noticed_anything_else</wp:meta_key>
+                <wp:meta_value><![CDATA[The geometric patterns observed were distinctly different from the symbol-like formations reported in DMT trials. They were more fluid, fractal, and lacked the linguistic or symbolic qualities described in the Code of Reality phenomenon. The patterns seemed to respond to music, changing in complexity and movement with the rhythm and tone of the audio.]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>experiment_duration</wp:meta_key>
+                <wp:meta_value><![CDATA[240]]></wp:meta_value>
+            </wp:postmeta>
+            <wp:postmeta>
+                <wp:meta_key>questions_comments_suggestions</wp:meta_key>
+                <wp:meta_value><![CDATA[Would it be interesting to try different wavelengths of laser light with LSD to see if that produces different effects?]]></wp:meta_value>
+            </wp:postmeta>
+
             <wp:term_relationship>
                 <wp:term_taxonomy>laser_class</wp:term_taxonomy>
                 <wp:term_slug>class-2</wp:term_slug>
