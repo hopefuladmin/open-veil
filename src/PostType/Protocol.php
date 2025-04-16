@@ -9,24 +9,24 @@ namespace OpenVeil\PostType;
  * 
  * @package OpenVeil\PostType
  */
-class Protocol {
+class Protocol extends AbstractPostType {
+  
   /**
-   * Sets up actions and filters for the Protocol post type.
+   * Get the post type name.
+   * 
+   * @return string Post type name
    */
-  public function __construct() {
-      add_action('init', [$this, 'register']);
-      add_action('init', [$this, 'register_meta']);
-      add_filter('manage_protocol_posts_columns', [$this, 'add_columns']);
-      add_action('manage_protocol_posts_custom_column', [$this, 'render_columns'], 10, 2);
+  protected function getPostTypeName(): string {
+      return 'protocol';
   }
   
   /**
-   * Creates the Protocol custom post type with all required labels and settings.
-   *
-   * @return void
+   * Set up post type labels.
+   * 
+   * @return array Labels array
    */
-  public function register(): void {
-      $labels = [
+  protected function setupLabels(): array {
+      return [
           'name'                  => _x('Protocols', 'Post type general name', 'open-veil'),
           'singular_name'         => _x('Protocol', 'Post type singular name', 'open-veil'),
           'menu_name'             => _x('Protocols', 'Admin Menu text', 'open-veil'),
@@ -52,92 +52,18 @@ class Protocol {
           'items_list_navigation' => _x('Protocols list navigation', 'Screen reader text for the pagination heading on the post type listing screen', 'open-veil'),
           'items_list'            => _x('Protocols list', 'Screen reader text for the items list heading on the post type listing screen', 'open-veil'),
       ];
-      
-      $args = [
-          'labels'             => $labels,
-          'public'             => true,
-          'publicly_queryable' => true,
-          'show_ui'            => true,
-          'show_in_menu'       => true,
-          'query_var'          => true,
-          'rewrite'            => ['slug' => 'protocol'],
-          'capability_type'    => 'post',
-          'has_archive'        => true,
-          'hierarchical'       => false,
-          'menu_position'      => null,
-          'menu_icon'          => 'dashicons-clipboard',
-          'supports'           => ['title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions'],
-          'show_in_rest'       => true,
-      ];
-      
-      register_post_type('protocol', $args);
   }
   
   /**
-   * Registers metadata fields to expose them in the REST API.
-   *
-   * @return void
-   */
-  public function register_meta(): void {
-      register_post_meta('protocol', 'laser_wavelength', [
-          'show_in_rest' => true,
-          'single' => true,
-          'type' => 'integer',
-          'sanitize_callback' => [$this, 'sanitize_integer'],
-          'auth_callback' => function() {
-              return current_user_can('edit_posts');
-          }
-      ]);
-      
-      register_post_meta('protocol', 'laser_power', [
-          'show_in_rest' => true,
-          'single' => true,
-          'type' => 'number',
-          'sanitize_callback' => [$this, 'sanitize_float'],
-          'auth_callback' => function() {
-              return current_user_can('edit_posts');
-          }
-      ]);
-      
-      register_post_meta('protocol', 'substance_dose', [
-          'show_in_rest' => true,
-          'single' => true,
-          'type' => 'number',
-          'sanitize_callback' => [$this, 'sanitize_float'],
-          'auth_callback' => function() {
-              return current_user_can('edit_posts');
-          }
-      ]);
-      
-      register_post_meta('protocol', 'projection_distance', [
-          'show_in_rest' => true,
-          'single' => true,
-          'type' => 'number',
-          'sanitize_callback' => [$this, 'sanitize_float'],
-          'auth_callback' => function() {
-              return current_user_can('edit_posts');
-          }
-      ]);
-  }
-  
-  /**
-   * Sanitizes an integer value.
+   * Set up post type arguments.
    * 
-   * @param mixed $value The value to sanitize
-   * @return int Sanitized value
+   * @return array Arguments array
    */
-  public function sanitize_integer($value): int {
-      return absint($value);
-  }
-  
-  /**
-   * Sanitizes a float value.
-   * 
-   * @param mixed $value The value to sanitize
-   * @return float Sanitized value
-   */
-  public function sanitize_float($value): float {
-      return floatval($value);
+  protected function setupArgs(): array {
+      $args = parent::setupArgs();
+      $args['menu_icon'] = 'dashicons-clipboard';
+      
+      return $args;
   }
   
   /**
