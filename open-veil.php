@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -35,11 +36,12 @@ require_once OPEN_VEIL_PLUGIN_DIR . 'vendor/autoload.php';
  *
  * @return void
  */
-function open_veil_init(): void {
+function open_veil_init(): void
+{
     // Register post types
     new \OpenVeil\PostType\Protocol();
     new \OpenVeil\PostType\Trial();
-    
+
     // Register taxonomies
     new \OpenVeil\Taxonomy\Equipment();
     new \OpenVeil\Taxonomy\LaserClass();
@@ -48,16 +50,16 @@ function open_veil_init(): void {
     new \OpenVeil\Taxonomy\AdministrationMethod();
     new \OpenVeil\Taxonomy\AdministrationProtocol();
     new \OpenVeil\Taxonomy\ProjectionSurface();
-    
+
     // Register REST API
     new \OpenVeil\API\Rest();
-    
+
     // Register ACF fields
     if (class_exists('ACF')) {
         new \OpenVeil\ACF\Fields();
         new \OpenVeil\ACF\Options();
     }
-    
+
     // Register JSON-LD and CSL-JSON support
     new \OpenVeil\Template\Loader();
 
@@ -66,7 +68,7 @@ function open_veil_init(): void {
         new \OpenVeil\BlockEditor\TemplateSupport();
         new \OpenVeil\BlockEditor\TemplateParts();
     }
-    
+
     // Register shortcodes
     new \OpenVeil\Shortcode\Shortcodes();
 
@@ -76,11 +78,11 @@ function open_veil_init(): void {
 add_action('plugins_loaded', 'open_veil_init');
 
 // Activation hook
-register_activation_hook(__FILE__, function(): void {
+register_activation_hook(__FILE__, function (): void {
     // Create custom post types
     new \OpenVeil\PostType\Protocol();
     new \OpenVeil\PostType\Trial();
-    
+
     // Create taxonomies
     new \OpenVeil\Taxonomy\Equipment();
     new \OpenVeil\Taxonomy\LaserClass();
@@ -89,13 +91,13 @@ register_activation_hook(__FILE__, function(): void {
     new \OpenVeil\Taxonomy\AdministrationMethod();
     new \OpenVeil\Taxonomy\AdministrationProtocol();
     new \OpenVeil\Taxonomy\ProjectionSurface();
-    
+
     // Flush rewrite rules
     flush_rewrite_rules();
 });
 
 // Deactivation hook
-register_deactivation_hook(__FILE__, function(): void {
+register_deactivation_hook(__FILE__, function (): void {
     // Flush rewrite rules
     flush_rewrite_rules();
 });

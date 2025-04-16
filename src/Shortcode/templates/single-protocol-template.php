@@ -14,21 +14,21 @@
 
             <div class="protocol-specs">
                 <h2><?php _e('Protocol Specifications', 'open-veil'); ?></h2>
-                
+
                 <div class="specs-grid">
                     <div class="spec-group">
                         <h3><?php _e('Laser', 'open-veil'); ?></h3>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Wavelength:', 'open-veil'); ?></span>
                             <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'laser_wavelength', true); ?> nm</span>
                         </div>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Power:', 'open-veil'); ?></span>
                             <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'laser_power', true); ?> mW</span>
                         </div>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Class:', 'open-veil'); ?></span>
                             <span class="spec-value">
@@ -47,10 +47,10 @@
                             </span>
                         </div>
                     </div>
-                    
+
                     <div class="spec-group">
                         <h3><?php _e('Substance', 'open-veil'); ?></h3>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Substance:', 'open-veil'); ?></span>
                             <span class="spec-value">
@@ -68,12 +68,12 @@
                                 ?>
                             </span>
                         </div>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Dose:', 'open-veil'); ?></span>
                             <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'substance_dose', true); ?> g</span>
                         </div>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Administration Method:', 'open-veil'); ?></span>
                             <span class="spec-value">
@@ -91,7 +91,7 @@
                                 ?>
                             </span>
                         </div>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Administration Protocol:', 'open-veil'); ?></span>
                             <span class="spec-value">
@@ -110,10 +110,10 @@
                             </span>
                         </div>
                     </div>
-                    
+
                     <div class="spec-group">
                         <h3><?php _e('Equipment', 'open-veil'); ?></h3>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Equipment:', 'open-veil'); ?></span>
                             <span class="spec-value">
@@ -131,7 +131,7 @@
                                 ?>
                             </span>
                         </div>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Diffraction Grating:', 'open-veil'); ?></span>
                             <span class="spec-value">
@@ -149,12 +149,12 @@
                                 ?>
                             </span>
                         </div>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Projection Distance:', 'open-veil'); ?></span>
                             <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'projection_distance', true); ?> feet</span>
                         </div>
-                        
+
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Projection Surface:', 'open-veil'); ?></span>
                             <span class="spec-value">
@@ -183,7 +183,7 @@
 
             <div class="protocol-trials">
                 <h2><?php _e('Related Trials', 'open-veil'); ?></h2>
-                
+
                 <?php
                 $trials = get_posts([
                     'post_type' => 'trial',
@@ -197,7 +197,7 @@
                         ]
                     ],
                 ]);
-                
+
                 if (!empty($trials)) :
                 ?>
                     <div class="trials-list">
@@ -215,7 +215,7 @@
                             </div>
                         <?php endforeach; ?>
                     </div>
-                    
+
                     <?php
                     $total_trials = count(get_posts([
                         'post_type' => 'trial',
@@ -230,7 +230,7 @@
                             ]
                         ],
                     ]));
-                    
+
                     if ($total_trials > 3) :
                     ?>
                         <div class="more-trials">
@@ -242,7 +242,7 @@
                         <p><?php _e('No trials found for this protocol.', 'open-veil'); ?></p>
                     </div>
                 <?php endif; ?>
-                
+
                 <div class="submit-trial">
                     <h3><?php _e('Submit Your Trial', 'open-veil'); ?></h3>
                     <p><?php _e('Have you conducted a trial based on this protocol? Share your results with the community.', 'open-veil'); ?></p>

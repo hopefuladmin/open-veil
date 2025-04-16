@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 namespace OpenVeil\ACF;
 
 /**
@@ -9,21 +11,24 @@ namespace OpenVeil\ACF;
  * 
  * @package OpenVeil\ACF
  */
-class Options {
+class Options
+{
     /**
      * Sets up actions to register the options page and fields.
      */
-    public function __construct() {
+    public function __construct()
+    {
         add_action('acf/init', [$this, 'register_options_page']);
         add_action('acf/init', [$this, 'register_option_fields']);
     }
-    
+
     /**
      * Creates the ACF options page for plugin settings.
      *
      * @return void
      */
-    public function register_options_page(): void {
+    public function register_options_page(): void
+    {
         if (function_exists('acf_add_options_page')) {
             acf_add_options_page([
                 'page_title'    => __('Open Veil Settings', 'open-veil'),
@@ -38,13 +43,14 @@ class Options {
             ]);
         }
     }
-    
+
     /**
      * Registers all ACF fields for the plugin settings page.
      *
      * @return void
      */
-    public function register_option_fields(): void {
+    public function register_option_fields(): void
+    {
         if (function_exists('acf_add_local_field_group')) {
             acf_add_local_field_group([
                 'key' => 'group_open_veil_settings',
@@ -127,7 +133,7 @@ class Options {
             ]);
         }
     }
-    
+
     /**
      * Retrieves an option value from ACF options or returns default.
      *
@@ -135,12 +141,13 @@ class Options {
      * @param mixed $default Default value if option doesn't exist
      * @return mixed Option value or default
      */
-    public static function get_option(string $option, $default = '') {
+    public static function get_option(string $option, $default = '')
+    {
         if (function_exists('get_field')) {
             $value = get_field($option, 'option');
             return $value !== null ? $value : $default;
         }
-        
+
         return $default;
     }
 }

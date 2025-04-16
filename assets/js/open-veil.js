@@ -4,7 +4,7 @@
  * @package OpenVeil
  */
 
-;(($) => {
+; (($) => {
   // Make sure jQuery is available
   if (typeof jQuery === "undefined") {
     console.error("jQuery is required for this script.")

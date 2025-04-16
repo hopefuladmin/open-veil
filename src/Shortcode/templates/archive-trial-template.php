@@ -62,21 +62,21 @@ $trials_query = new WP_Query($args);
                             'posts_per_page' => -1,
                             'post_status' => 'publish',
                         ]);
-                        
+
                         if (!empty($protocols)) {
                             echo '<select name="protocol_id" id="protocol_id">';
                             echo '<option value="">' . __('All Protocols', 'open-veil') . '</option>';
-                            
+
                             foreach ($protocols as $protocol) {
                                 $selected = isset($_GET['protocol_id']) && $_GET['protocol_id'] == $protocol->ID ? 'selected' : '';
                                 echo '<option value="' . esc_attr($protocol->ID) . '" ' . $selected . '>' . esc_html($protocol->post_title) . '</option>';
                             }
-                            
+
                             echo '</select>';
                         }
                         ?>
                     </div>
-                    
+
                     <div class="filter-group">
                         <label for="substance"><?php _e('Substance', 'open-veil'); ?></label>
                         <?php
@@ -84,21 +84,21 @@ $trials_query = new WP_Query($args);
                             'taxonomy' => 'substance',
                             'hide_empty' => true,
                         ]);
-                        
+
                         if (!empty($substances) && !is_wp_error($substances)) {
                             echo '<select name="substance" id="substance">';
                             echo '<option value="">' . __('All Substances', 'open-veil') . '</option>';
-                            
+
                             foreach ($substances as $substance) {
                                 $selected = isset($_GET['substance']) && $_GET['substance'] === $substance->slug ? 'selected' : '';
                                 echo '<option value="' . esc_attr($substance->slug) . '" ' . $selected . '>' . esc_html($substance->name) . '</option>';
                             }
-                            
+
                             echo '</select>';
                         }
                         ?>
                     </div>
-                    
+
                     <div class="filter-group">
                         <label for="additional_observers"><?php _e('Additional Observers', 'open-veil'); ?></label>
                         <select name="additional_observers" id="additional_observers">
@@ -137,14 +137,14 @@ $trials_query = new WP_Query($args);
                             $protocol_id = get_post_meta(get_the_ID(), 'protocol_id', true);
                             $protocol = $protocol_id ? get_post($protocol_id) : null;
                             ?>
-                            
+
                             <?php if ($protocol) : ?>
                                 <div class="spec-item">
                                     <span class="spec-label"><?php _e('Protocol:', 'open-veil'); ?></span>
                                     <span class="spec-value"><a href="<?php echo get_permalink($protocol_id); ?>"><?php echo get_the_title($protocol_id); ?></a></span>
                                 </div>
                             <?php endif; ?>
-                            
+
                             <div class="spec-item">
                                 <span class="spec-label"><?php _e('Substance:', 'open-veil'); ?></span>
                                 <span class="spec-value">
@@ -162,7 +162,7 @@ $trials_query = new WP_Query($args);
                                     ?>
                                 </span>
                             </div>
-                            
+
                             <div class="spec-item">
                                 <span class="spec-label"><?php _e('Additional Observers:', 'open-veil'); ?></span>
                                 <span class="spec-value">
@@ -200,7 +200,7 @@ $trials_query = new WP_Query($args);
                 <p><?php _e('No trials found.', 'open-veil'); ?></p>
             </div>
         <?php endif; ?>
-        
+
         <?php wp_reset_postdata(); ?>
     </div>
 </div>

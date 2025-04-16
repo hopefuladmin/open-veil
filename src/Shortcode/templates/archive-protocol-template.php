@@ -59,21 +59,21 @@ $protocols_query = new WP_Query($args);
                             'taxonomy' => 'substance',
                             'hide_empty' => true,
                         ]);
-                        
+
                         if (!empty($substances) && !is_wp_error($substances)) {
                             echo '<select name="substance" id="substance">';
                             echo '<option value="">' . __('All Substances', 'open-veil') . '</option>';
-                            
+
                             foreach ($substances as $substance) {
                                 $selected = isset($_GET['substance']) && $_GET['substance'] === $substance->slug ? 'selected' : '';
                                 echo '<option value="' . esc_attr($substance->slug) . '" ' . $selected . '>' . esc_html($substance->name) . '</option>';
                             }
-                            
+
                             echo '</select>';
                         }
                         ?>
                     </div>
-                    
+
                     <div class="filter-group">
                         <label for="laser_class"><?php _e('Laser Class', 'open-veil'); ?></label>
                         <?php
@@ -81,21 +81,21 @@ $protocols_query = new WP_Query($args);
                             'taxonomy' => 'laser_class',
                             'hide_empty' => true,
                         ]);
-                        
+
                         if (!empty($laser_classes) && !is_wp_error($laser_classes)) {
                             echo '<select name="laser_class" id="laser_class">';
                             echo '<option value="">' . __('All Laser Classes', 'open-veil') . '</option>';
-                            
+
                             foreach ($laser_classes as $laser_class) {
                                 $selected = isset($_GET['laser_class']) && $_GET['laser_class'] === $laser_class->slug ? 'selected' : '';
                                 echo '<option value="' . esc_attr($laser_class->slug) . '" ' . $selected . '>' . esc_html($laser_class->name) . '</option>';
                             }
-                            
+
                             echo '</select>';
                         }
                         ?>
                     </div>
-                    
+
                     <div class="filter-group">
                         <label for="administration_method"><?php _e('Administration Method', 'open-veil'); ?></label>
                         <?php
@@ -103,16 +103,16 @@ $protocols_query = new WP_Query($args);
                             'taxonomy' => 'administration_method',
                             'hide_empty' => true,
                         ]);
-                        
+
                         if (!empty($administration_methods) && !is_wp_error($administration_methods)) {
                             echo '<select name="administration_method" id="administration_method">';
                             echo '<option value="">' . __('All Administration Methods', 'open-veil') . '</option>';
-                            
+
                             foreach ($administration_methods as $administration_method) {
                                 $selected = isset($_GET['administration_method']) && $_GET['administration_method'] === $administration_method->slug ? 'selected' : '';
                                 echo '<option value="' . esc_attr($administration_method->slug) . '" ' . $selected . '>' . esc_html($administration_method->name) . '</option>';
                             }
-                            
+
                             echo '</select>';
                         }
                         ?>
@@ -147,7 +147,7 @@ $protocols_query = new WP_Query($args);
                                 <span class="spec-label"><?php _e('Laser:', 'open-veil'); ?></span>
                                 <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'laser_wavelength', true); ?> nm</span>
                             </div>
-                            
+
                             <div class="spec-item">
                                 <span class="spec-label"><?php _e('Substance:', 'open-veil'); ?></span>
                                 <span class="spec-value">
@@ -165,7 +165,7 @@ $protocols_query = new WP_Query($args);
                                     ?>
                                 </span>
                             </div>
-                            
+
                             <div class="spec-item">
                                 <span class="spec-label"><?php _e('Trials:', 'open-veil'); ?></span>
                                 <span class="spec-value">
@@ -182,7 +182,7 @@ $protocols_query = new WP_Query($args);
                                         'posts_per_page' => -1,
                                         'fields' => 'ids',
                                     ]);
-                                    
+
                                     echo count($trials);
                                     ?>
                                 </span>
@@ -215,7 +215,7 @@ $protocols_query = new WP_Query($args);
                 <p><?php _e('No protocols found.', 'open-veil'); ?></p>
             </div>
         <?php endif; ?>
-        
+
         <?php wp_reset_postdata(); ?>
     </div>
 </div>
