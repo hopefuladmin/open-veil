@@ -81,7 +81,9 @@ Open Veil provides a comprehensive REST API for accessing and manipulating proto
 
 All API endpoints are prefixed with:
 
-`/wp-json/open-veil/v1/`
+```plaintext
+/wp-json/open-veil/v1/
+```
 
 ### Authentication
 
@@ -97,7 +99,7 @@ For endpoints that create or modify data, you'll need to include a WordPress non
 
 #### Get All Protocols
 
-```json
+```plaintext
 GET /protocol
 ```
 
@@ -105,7 +107,7 @@ Returns an array of all published protocols.
 
 #### Get Protocol by ID
 
-```json
+```plaintext
 GET /protocol/{id}
 ```
 
@@ -113,7 +115,7 @@ Returns a single protocol by its ID.
 
 #### Get Protocol by Slug
 
-```json
+```plaintext
 GET /protocol/name/{slug}
 ```
 
@@ -121,7 +123,7 @@ Returns a single protocol by its slug.
 
 #### Get Protocol Trials
 
-```json
+```plaintext
 GET /protocol/trials/{id}
 ```
 
@@ -129,7 +131,7 @@ Returns all trials associated with a specific protocol.
 
 #### Get Protocols by Author
 
-```json
+```plaintext
 GET /protocol/author/{author_id}
 ```
 
@@ -137,7 +139,7 @@ Returns all protocols created by a specific author.
 
 #### Get Protocol CSL
 
-```json
+```plaintext
 GET /protocol/{id}/csl
 ```
 
@@ -145,7 +147,7 @@ Returns citation data for a protocol in CSL-JSON format.
 
 #### Create Protocol
 
-```json
+```plaintext
 POST /protocol
 ```
 
@@ -159,6 +161,7 @@ Creates a new protocol. Required fields:
   - `projection_distance`: Projection distance in feet (1-20)
 
 Optional fields:
+
 - `content`: Protocol description/content
 - `tax_input`: Object containing taxonomy terms to assign
 
@@ -190,7 +193,7 @@ Example request:
 
 #### Get All Trials
 
-```json
+```plaintext
 GET /trial
 ```
 
@@ -198,7 +201,7 @@ Returns an array of all published trials.
 
 #### Get Trial by ID
 
-```json
+```plaintext
 GET /trial/{id}
 ```
 
@@ -206,7 +209,7 @@ Returns a single trial by its ID.
 
 #### Get Trial CSL
 
-```json
+```plaintext
 GET /trial/{id}/csl
 ```
 
@@ -214,7 +217,7 @@ Returns citation data for a trial in CSL-JSON format.
 
 #### Create Trial
 
-```json
+```plaintext
 POST /trial
 ```
 
@@ -229,6 +232,7 @@ Creates a new trial. Required fields:
   - `projection_distance`: Projection distance in feet (1-20)
 
 Optional fields:
+
 - `content`: Trial description/content
 - `meta`: Additional metadata
   - `administration_notes`: Notes about the administration method
@@ -266,7 +270,7 @@ Example request:
 
 #### Get Schema
 
-```json
+```plaintext
 GET /schema
 ```
 
@@ -276,7 +280,7 @@ Returns schema information including available taxonomies and metadata fields.
 
 A Postman collection is included in the plugin to help you test and explore the API. The collection file is located at:
 
-```
+```plaintext
 open-veil-postman-collection.json
 ```
 
