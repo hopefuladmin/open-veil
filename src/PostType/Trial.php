@@ -9,24 +9,24 @@ namespace OpenVeil\PostType;
 * 
 * @package OpenVeil\PostType
 */
-class Trial {
+class Trial extends AbstractPostType {
+ 
  /**
-  * Sets up actions and filters for the Trial post type.
+  * Get the post type name.
+  * 
+  * @return string Post type name
   */
- public function __construct() {
-     add_action('init', [$this, 'register']);
-     add_action('init', [$this, 'register_meta']);
-     add_filter('manage_trial_posts_columns', [$this, 'add_columns']);
-     add_action('manage_trial_posts_custom_column', [$this, 'render_columns'], 10, 2);
+ protected function getPostTypeName(): string {
+     return 'trial';
  }
  
  /**
-  * Creates the Trial custom post type with all required labels and settings.
-  *
-  * @return void
+  * Set up post type labels.
+  * 
+  * @return array Labels array
   */
- public function register(): void {
-     $labels = [
+ protected function setupLabels(): array {
+     return [
          'name'                  => _x('Trials', 'Post type general name', 'open-veil'),
          'singular_name'         => _x('Trial', 'Post type singular name', 'open-veil'),
          'menu_name'             => _x('Trials', 'Admin Menu text', 'open-veil'),
@@ -52,264 +52,20 @@ class Trial {
          'items_list_navigation' => _x('Trials list navigation', 'Screen reader text for the pagination heading on the post type listing screen', 'open-veil'),
          'items_list'            => _x('Trials list', 'Screen reader text for the items list heading on the post type listing screen', 'open-veil'),
      ];
-     
-     $args = [
-         'labels'             => $labels,
-         'public'             => true,
-         'publicly_queryable' => true,
-         'show_ui'            => true,
-         'show_in_menu'       => true,
-         'query_var'          => true,
-         'rewrite'            => ['slug' => 'trial'],
-         'capability_type'    => 'post',
-         'has_archive'        => true,
-         'hierarchical'       => false,
-         'menu_position'      => null,
-         'menu_icon'          => 'dashicons-chart-area',
-         'supports'           => ['title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions'],
-         'show_in_rest'       => true,
-     ];
-     
-     register_post_type('trial', $args);
  }
  
  /**
-  * Registers metadata fields to expose them in the REST API.
-  *
-  * @return void
-  */
- public function register_meta(): void {
-     // Basic trial fields
-     register_post_meta('trial', 'protocol_id', [
-         'show_in_rest' => true,
-         'single' => true,
-         'type' => 'integer',
-         'sanitize_callback' => [$this, 'sanitize_integer'],
-         'auth_callback' => function() {
-             return current_user_can('edit_posts');
-         }
-     ]);
-     
-     register_post_meta('trial', 'laser_wavelength', [
-         'show_in_rest' => true,
-         'single' => true,
-         'type' => 'integer',
-         'sanitize_callback' => [$this, 'sanitize_integer'],
-         'auth_callback' => function() {
-             return current_user_can('edit_posts');
-         }
-     ]);
-     
-     register_post_meta('trial', 'laser_power', [
-         'show_in_rest' => true,
-         'single' => true,
-         'type' => 'number',
-         'sanitize_callback' => [$this, 'sanitize_float'],
-         'auth_callback' => function() {
-             return current_user_can('edit_posts');
-         }
-     ]);
-     
-     register_post_meta('trial', 'substance_dose', [
-         'show_in_rest' => true,
-         'single' => true,
-         'type' => 'number',
-         'sanitize_callback' => [$this, 'sanitize_float'],
-         'auth_callback' => function() {
-             return current_user_can('edit_posts');
-         }
-     ]);
-     
-     register_post_meta('trial', 'projection_distance', [
-         'show_in_rest' => true,
-         'single' => true,
-         'type' => 'number',
-         'sanitize_callback' => [$this, 'sanitize_float'],
-         'auth_callback' => function() {
-             return current_user_can('edit_posts');
-         }
-     ]);
-     
-     register_post_meta('trial', 'administration_notes', [
-         'show_in_rest' => true,
-         'single' => true,
-         'type' => 'string',
-         'sanitize_callback' => 'sanitize_text_field',
-         'auth_callback' => function() {
-             return current_user_can('edit_posts');
-         }
-     ]);
-     
-     register_post_meta('trial', 'additional_observers', [
-         'show_in_rest' => true,
-         'single' => true,
-         'type' => 'boolean',
-         'sanitize_callback' => [$this, 'sanitize_boolean'],
-         'auth_callback' => function() {
-             return current_user_can('edit_posts');
-         }
-     ]);
-     
-     // Register questionnaire fields for REST API
-     $this->register_questionnaire_meta();
- }
- 
- /**
-  * Registers questionnaire metadata fields to expose them in the REST API.
-  *
-  * @return void
-  */
- private function register_questionnaire_meta(): void {
-     // About You section
-     $about_you_fields = [
-         'participant_name' => 'string',
-         'participant_email' => 'string',
-         'psychedelic_experience_level' => 'integer',
-         'dmt_experience_level' => 'integer',
-         'simulation_theory_interest' => 'string',
-         'how_found_us' => 'string',
-     ];
-     
-     foreach ($about_you_fields as $field => $type) {
-         register_post_meta('trial', $field, [
-             'show_in_rest' => true,
-             'single' => true,
-             'type' => $type,
-             'sanitize_callback' => $type === 'string' ? 'sanitize_text_field' : [$this, 'sanitize_' . $type],
-             'auth_callback' => function() {
-                 return current_user_can('edit_posts');
-             }
-         ]);
-     }
-     
-     // Experiment Setup section
-     $experiment_setup_fields = [
-         'received_laser_from_us' => 'boolean',
-         'beam_shape' => 'string',
-         'laser_power_source' => 'string',
-         'accessories_used' => 'string',
-         'set_and_setting' => 'string',
-         'experiment_datetime' => 'string',
-         'lighting_conditions' => 'string',
-         'surfaces_used' => 'string',
-         'additional_setup_info' => 'string',
-     ];
-     
-     foreach ($experiment_setup_fields as $field => $type) {
-         register_post_meta('trial', $field, [
-             'show_in_rest' => true,
-             'single' => true,
-             'type' => $type,
-             'sanitize_callback' => $type === 'string' ? 'sanitize_text_field' : [$this, 'sanitize_' . $type],
-             'auth_callback' => function() {
-                 return current_user_can('edit_posts');
-             }
-         ]);
-     }
-     
-     // Substances Used section
-     $substances_used_fields = [
-         'other_substances' => 'string',
-         'intoxication_level' => 'integer',
-         'visual_mental_effects' => 'string',
-         'additional_substance_info' => 'string',
-     ];
-     
-     foreach ($substances_used_fields as $field => $type) {
-         register_post_meta('trial', $field, [
-             'show_in_rest' => true,
-             'single' => true,
-             'type' => $type,
-             'sanitize_callback' => $type === 'string' ? 'sanitize_text_field' : [$this, 'sanitize_' . $type],
-             'auth_callback' => function() {
-                 return current_user_can('edit_posts');
-             }
-         ]);
-     }
-     
-     // Visual Effects and Laser Interaction section
-     $visual_effects_fields = [
-         'beam_changed' => 'boolean',
-         'beam_changes_description' => 'string',
-         'saw_code_of_reality' => 'boolean',
-         'symbols_seen' => 'boolean',
-         'symbols_description' => 'string',
-         'code_moving' => 'boolean',
-         'movement_direction' => 'string',
-         'characters_tiny' => 'boolean',
-         'size_changed' => 'boolean',
-         'code_clarity' => 'integer',
-         'code_behaved_like_object' => 'boolean',
-         'could_influence_code' => 'boolean',
-         'influence_description' => 'string',
-         'code_persisted_without_laser' => 'boolean',
-         'persisted_when_looked_away' => 'boolean',
-         'persisted_after_turning_off' => 'boolean',
-         'where_else_seen' => 'string',
-     ];
-     
-     foreach ($visual_effects_fields as $field => $type) {
-         register_post_meta('trial', $field, [
-             'show_in_rest' => true,
-             'single' => true,
-             'type' => $type,
-             'sanitize_callback' => $type === 'string' ? 'sanitize_text_field' : [$this, 'sanitize_' . $type],
-             'auth_callback' => function() {
-                 return current_user_can('edit_posts');
-             }
-         ]);
-     }
-     
-     // Other Visual Phenomena section
-     $other_phenomena_fields = [
-         'noticed_anything_else' => 'string',
-         'experiment_duration' => 'integer',
-         'questions_comments_suggestions' => 'string',
-     ];
-     
-     foreach ($other_phenomena_fields as $field => $type) {
-         register_post_meta('trial', $field, [
-             'show_in_rest' => true,
-             'single' => true,
-             'type' => $type,
-             'sanitize_callback' => $type === 'string' ? 'sanitize_text_field' : [$this, 'sanitize_' . $type],
-             'auth_callback' => function() {
-                 return current_user_can('edit_posts');
-             }
-         ]);
-     }
- }
- 
- /**
-  * Sanitizes an integer value.
+  * Set up post type arguments.
   * 
-  * @param mixed $value The value to sanitize
-  * @return int Sanitized value
+  * @return array Arguments array
   */
- public function sanitize_integer($value): int {
-     return absint($value);
+ protected function setupArgs(): array {
+     $args = parent::setupArgs();
+     $args['menu_icon'] = 'dashicons-chart-area';
+     
+     return $args;
  }
- 
- /**
-  * Sanitizes a float value.
-  * 
-  * @param mixed $value The value to sanitize
-  * @return float Sanitized value
-  */
- public function sanitize_float($value): float {
-     return floatval($value);
- }
- 
- /**
-  * Sanitizes a boolean value.
-  * 
-  * @param mixed $value The value to sanitize
-  * @return bool Sanitized value
-  */
- public function sanitize_boolean($value): bool {
-     return (bool) $value;
- }
- 
+
  /**
   * Adds custom columns to the Trial post type admin list.
   * 
