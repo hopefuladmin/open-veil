@@ -57,7 +57,13 @@
             "url": {
               "raw": "{{base_url}}/wp-json/open-veil/protocol/name/code-of-reality-protocol",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "protocol", "name", "code-of-reality-protocol"]
+              "path": [
+                "wp-json",
+                "open-veil",
+                "protocol",
+                "name",
+                "code-of-reality-protocol"
+              ]
             },
             "description": "Get a protocol by slug"
           },

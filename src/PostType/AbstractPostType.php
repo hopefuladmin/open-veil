@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 namespace OpenVeil\PostType;
 
 /**
@@ -9,60 +11,63 @@ namespace OpenVeil\PostType;
  * 
  * @package OpenVeil\PostType
  */
-abstract class AbstractPostType {
+abstract class AbstractPostType
+{
     /**
      * Post type name/key.
      *
      * @var string
      */
     protected string $postType;
-    
+
     /**
      * Post type settings.
      *
      * @var array
      */
     protected array $args = [];
-    
+
     /**
      * Post type labels.
      *
      * @var array
      */
     protected array $labels = [];
-    
+
     /**
      * Sets up actions and filters for the post type.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->postType = $this->getPostTypeName();
-        
+
         add_action('init', [$this, 'register']);
         add_filter('manage_' . $this->postType . '_posts_columns', [$this, 'add_columns']);
         add_action('manage_' . $this->postType . '_posts_custom_column', [$this, 'render_columns'], 10, 2);
         add_filter('use_block_editor_for_post_type', [$this, 'disable_block_editor'], 10, 2);
     }
-    
+
     /**
      * Get the post type name.
      * 
      * @return string Post type name
      */
     abstract protected function getPostTypeName(): string;
-    
+
     /**
      * Set up post type labels.
      * 
      * @return array Labels array
      */
     abstract protected function setupLabels(): array;
-    
+
     /**
      * Set up post type arguments.
      * 
      * @return array Arguments array
      */
-    protected function setupArgs(): array {
+    protected function setupArgs(): array
+    {
         return [
             'labels'             => $this->setupLabels(),
             'public'             => true,
@@ -79,17 +84,18 @@ abstract class AbstractPostType {
             'show_in_rest'       => true,  // Enable REST API
         ];
     }
-    
+
     /**
      * Register the post type.
      * 
      * @return void
      */
-    public function register(): void {
+    public function register(): void
+    {
         $this->args = $this->setupArgs();
         register_post_type($this->postType, $this->args);
     }
-    
+
     /**
      * Disable block editor for this post type.
      *
@@ -97,13 +103,14 @@ abstract class AbstractPostType {
      * @param string $post_type The post type being checked
      * @return bool Whether to use block editor
      */
-    public function disable_block_editor(bool $use_block_editor, string $post_type): bool {
+    public function disable_block_editor(bool $use_block_editor, string $post_type): bool
+    {
         if ($post_type === $this->postType) {
             return false;
         }
         return $use_block_editor;
     }
-    
+
     /**
      * Adds custom columns to the post type admin list.
      * Should be implemented by child classes.
@@ -112,7 +119,7 @@ abstract class AbstractPostType {
      * @return array Modified columns
      */
     abstract public function add_columns(array $columns): array;
-    
+
     /**
      * Renders content for custom columns in the post type admin list.
      * Should be implemented by child classes.
@@ -122,34 +129,37 @@ abstract class AbstractPostType {
      * @return void
      */
     abstract public function render_columns(string $column, int $post_id): void;
-    
+
     /**
      * Sanitizes an integer value.
      * 
      * @param mixed $value The value to sanitize
      * @return int Sanitized value
      */
-    public function sanitize_integer($value): int {
+    public function sanitize_integer($value): int
+    {
         return absint($value);
     }
-    
+
     /**
      * Sanitizes a float value.
      * 
      * @param mixed $value The value to sanitize
      * @return float Sanitized value
      */
-    public function sanitize_float($value): float {
+    public function sanitize_float($value): float
+    {
         return floatval($value);
     }
-    
+
     /**
      * Sanitizes a boolean value.
      * 
      * @param mixed $value The value to sanitize
      * @return bool Sanitized value
      */
-    public function sanitize_boolean($value): bool {
+    public function sanitize_boolean($value): bool
+    {
         return (bool) $value;
     }
 }

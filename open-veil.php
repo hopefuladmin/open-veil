@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 /**
  * Plugin Name: Open Veil
  * Plugin URI: https://carmelosantana.org/openveil
  * Description: A WordPress plugin designed to structure, collect, and share experimental protocol data and community-submitted trials.
- * Version: 0.1.5
+ * Version: 0.1.6
  * Author: Carmelo Santana
  * Author URI: https://carmelosantana.org
  * License: GPL-3.0
@@ -22,7 +23,7 @@ if (!defined('WPINC')) {
 }
 
 // Define plugin constants
-define('OPEN_VEIL_VERSION', '0.1.5');
+define('OPEN_VEIL_VERSION', '0.1.6');
 define('OPEN_VEIL_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('OPEN_VEIL_PLUGIN_URL', plugin_dir_url(__FILE__));
 
@@ -35,11 +36,12 @@ require_once OPEN_VEIL_PLUGIN_DIR . 'vendor/autoload.php';
  *
  * @return void
  */
-function open_veil_init(): void {
+function open_veil_init(): void
+{
     // Register post types
     new \OpenVeil\PostType\Protocol();
     new \OpenVeil\PostType\Trial();
-    
+
     // Register taxonomies
     new \OpenVeil\Taxonomy\Equipment();
     new \OpenVeil\Taxonomy\LaserClass();
@@ -48,25 +50,24 @@ function open_veil_init(): void {
     new \OpenVeil\Taxonomy\AdministrationMethod();
     new \OpenVeil\Taxonomy\AdministrationProtocol();
     new \OpenVeil\Taxonomy\ProjectionSurface();
-    
+
     // Register REST API
     new \OpenVeil\API\Rest();
-    
+
     // Register ACF fields
     if (class_exists('ACF')) {
         new \OpenVeil\ACF\Fields();
         new \OpenVeil\ACF\Options();
     }
-    
+
     // Register JSON-LD and CSL-JSON support
     new \OpenVeil\Template\Loader();
 
     // Register block editor support
     if (function_exists('register_block_type')) {
         new \OpenVeil\BlockEditor\TemplateSupport();
-        new \OpenVeil\BlockEditor\TemplateParts();
     }
-    
+
     // Register shortcodes
     new \OpenVeil\Shortcode\Shortcodes();
 
@@ -76,11 +77,11 @@ function open_veil_init(): void {
 add_action('plugins_loaded', 'open_veil_init');
 
 // Activation hook
-register_activation_hook(__FILE__, function(): void {
+register_activation_hook(__FILE__, function (): void {
     // Create custom post types
     new \OpenVeil\PostType\Protocol();
     new \OpenVeil\PostType\Trial();
-    
+
     // Create taxonomies
     new \OpenVeil\Taxonomy\Equipment();
     new \OpenVeil\Taxonomy\LaserClass();
@@ -89,13 +90,13 @@ register_activation_hook(__FILE__, function(): void {
     new \OpenVeil\Taxonomy\AdministrationMethod();
     new \OpenVeil\Taxonomy\AdministrationProtocol();
     new \OpenVeil\Taxonomy\ProjectionSurface();
-    
+
     // Flush rewrite rules
     flush_rewrite_rules();
 });
 
 // Deactivation hook
-register_deactivation_hook(__FILE__, function(): void {
+register_deactivation_hook(__FILE__, function (): void {
     // Flush rewrite rules
     flush_rewrite_rules();
 });

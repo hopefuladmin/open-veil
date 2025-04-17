@@ -42,7 +42,12 @@
               "maximum": 20
             }
           },
-          "required": ["laser_wavelength", "laser_power", "substance_dose", "projection_distance"]
+          "required": [
+            "laser_wavelength",
+            "laser_power",
+            "substance_dose",
+            "projection_distance"
+          ]
         },
         "tax_input": {
           "type": "object",
@@ -144,7 +149,13 @@
               "description": "Whether there were additional observers"
             }
           },
-          "required": ["protocol_id", "laser_wavelength", "laser_power", "substance_dose", "projection_distance"]
+          "required": [
+            "protocol_id",
+            "laser_wavelength",
+            "laser_power",
+            "substance_dose",
+            "projection_distance"
+          ]
         },
         "tax_input": {
           "type": "object",
