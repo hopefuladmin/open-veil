@@ -70,24 +70,6 @@
   flex-direction: column;
 }
 
-.protocol-header,
-.trial-header {
-  margin-bottom: 1rem;
-}
-
-.protocol-title,
-.trial-title {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.5rem;
-}
-
-.protocol-meta,
-.trial-meta {
-  font-size: 0.875rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
 .protocol-content,
 .trial-content {
   margin-bottom: 1rem;
@@ -208,10 +190,6 @@
 
 .comparison-table th {
   background: #f0f0f0;
-}
-
-.trial-comments {
-  margin-top: 2rem;
 }
 
 /* Questionnaire Styles */
