@@ -6,26 +6,14 @@ $protocol = $protocol_id ? get_post($protocol_id) : null;
 <div class="open-veil-single trial-single">
     <div class="container">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <header class="trial-header">
-                <h1 class="trial-title"><?php the_title(); ?></h1>
-                <div class="trial-meta">
-                    <span class="trial-author"><?php _e('By', 'open-veil'); ?> <?php the_author(); ?></span>
-                    <span class="trial-date"><?php echo get_the_date(); ?></span>
-                    <span class="trial-citation">
-                        <a href="<?php the_permalink(); ?>?format=csl" target="_blank"><?php _e('Cite', 'open-veil'); ?></a>
-                    </span>
+            <?php if ($protocol) : ?>
+                <div class="protocol-link">
+                    <span><?php _e('Based on protocol:', 'open-veil'); ?></span>
+                    <a href="<?php echo get_permalink($protocol_id); ?>"><?php echo get_the_title($protocol_id); ?></a>
                 </div>
-
-                <?php if ($protocol) : ?>
-                    <div class="protocol-link">
-                        <span><?php _e('Based on protocol:', 'open-veil'); ?></span>
-                        <a href="<?php echo get_permalink($protocol_id); ?>"><?php echo get_the_title($protocol_id); ?></a>
-                    </div>
-                <?php endif; ?>
-            </header>
+            <?php endif; ?>
 
             <div class="trial-content">
-                <h2><?php _e('Trial Description', 'open-veil'); ?></h2>
                 <?php the_content(); ?>
             </div>
 
@@ -469,13 +457,6 @@ $protocol = $protocol_id ? get_post($protocol_id) : null;
                     </div>
                 </div>
             </div>
-
-            <?php if (comments_open() || get_comments_number()) : ?>
-                <div class="trial-comments">
-                    <h2><?php _e('Discussion', 'open-veil'); ?></h2>
-                    <?php comments_template(); ?>
-                </div>
-            <?php endif; ?>
         </article>
     </div>
 </div>

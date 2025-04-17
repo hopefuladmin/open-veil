@@ -1,16 +1,6 @@
 <div class="open-veil-single protocol-single">
     <div class="container">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <header class="protocol-header">
-                <h1 class="protocol-title"><?php the_title(); ?></h1>
-                <div class="protocol-meta">
-                    <span class="protocol-author"><?php _e('By', 'open-veil'); ?> <?php the_author(); ?></span>
-                    <span class="protocol-date"><?php echo get_the_date(); ?></span>
-                    <span class="protocol-citation">
-                        <a href="<?php the_permalink(); ?>?format=csl" target="_blank"><?php _e('Cite', 'open-veil'); ?></a>
-                    </span>
-                </div>
-            </header>
 
             <div class="protocol-specs">
                 <h2><?php _e('Protocol Specifications', 'open-veil'); ?></h2>
@@ -204,10 +194,6 @@
                         <?php foreach ($trials as $trial) : ?>
                             <div class="trial-item">
                                 <h3><a href="<?php echo get_permalink($trial->ID); ?>"><?php echo get_the_title($trial->ID); ?></a></h3>
-                                <div class="trial-meta">
-                                    <span class="trial-author"><?php _e('By', 'open-veil'); ?> <?php echo get_the_author_meta('display_name', $trial->post_author); ?></span>
-                                    <span class="trial-date"><?php echo get_the_date('', $trial->ID); ?></span>
-                                </div>
                                 <div class="trial-excerpt">
                                     <?php echo get_the_excerpt($trial->ID); ?>
                                 </div>
@@ -250,12 +236,7 @@
                 </div>
             </div>
 
-            <?php if (comments_open() || get_comments_number()) : ?>
-                <div class="protocol-comments">
-                    <h2><?php _e('Discussion', 'open-veil'); ?></h2>
-                    <?php comments_template(); ?>
-                </div>
-            <?php endif; ?>
+            <!-- Comment section removed -->
         </article>
     </div>
 </div>
