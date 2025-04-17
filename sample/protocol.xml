@@ -32,77 +32,6 @@
             <wp:cat_name><![CDATA[Uncategorized]]></wp:cat_name>
         </wp:category>
 
-        <!-- Taxonomy Terms -->
-        <wp:term>
-            <wp:term_id>100</wp:term_id>
-            <wp:term_taxonomy>laser_class</wp:term_taxonomy>
-            <wp:term_slug>class-2</wp:term_slug>
-            <wp:term_name><![CDATA[Class 2]]></wp:term_name>
-        </wp:term>
-
-        <wp:term>
-            <wp:term_id>101</wp:term_id>
-            <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
-            <wp:term_slug>standard</wp:term_slug>
-            <wp:term_name><![CDATA[Standard]]></wp:term_name>
-        </wp:term>
-
-        <wp:term>
-            <wp:term_id>102</wp:term_id>
-            <wp:term_taxonomy>equipment</wp:term_taxonomy>
-            <wp:term_slug>laser</wp:term_slug>
-            <wp:term_name><![CDATA[Laser]]></wp:term_name>
-        </wp:term>
-
-        <wp:term>
-            <wp:term_id>103</wp:term_id>
-            <wp:term_taxonomy>equipment</wp:term_taxonomy>
-            <wp:term_slug>tripod</wp:term_slug>
-            <wp:term_name><![CDATA[Tripod]]></wp:term_name>
-        </wp:term>
-
-        <wp:term>
-            <wp:term_id>104</wp:term_id>
-            <wp:term_taxonomy>equipment</wp:term_taxonomy>
-            <wp:term_slug>diffraction-grating</wp:term_slug>
-            <wp:term_name><![CDATA[Diffraction Grating]]></wp:term_name>
-        </wp:term>
-
-        <wp:term>
-            <wp:term_id>105</wp:term_id>
-            <wp:term_taxonomy>equipment</wp:term_taxonomy>
-            <wp:term_slug>vape-pen</wp:term_slug>
-            <wp:term_name><![CDATA[Vape Pen]]></wp:term_name>
-        </wp:term>
-
-        <wp:term>
-            <wp:term_id>106</wp:term_id>
-            <wp:term_taxonomy>substance</wp:term_taxonomy>
-            <wp:term_slug>nn-dmt</wp:term_slug>
-            <wp:term_name><![CDATA[N,N-DMT]]></wp:term_name>
-        </wp:term>
-
-        <wp:term>
-            <wp:term_id>107</wp:term_id>
-            <wp:term_taxonomy>administration_method</wp:term_taxonomy>
-            <wp:term_slug>inhalation</wp:term_slug>
-            <wp:term_name><![CDATA[Inhalation]]></wp:term_name>
-        </wp:term>
-
-        <wp:term>
-            <wp:term_id>108</wp:term_id>
-            <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
-            <wp:term_slug>two-inhales</wp:term_slug>
-            <wp:term_name><![CDATA[Two inhales]]></wp:term_name>
-        </wp:term>
-
-        <wp:term>
-            <wp:term_id>109</wp:term_id>
-            <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
-            <wp:term_slug>flat-non-reflective</wp:term_slug>
-            <wp:term_name><![CDATA[Flat non-reflective]]></wp:term_name>
-        </wp:term>
-
         <!-- Initial Protocol -->
         <item>
             <title><![CDATA[Code of Reality Protocol]]></title>
@@ -157,6 +86,16 @@
             <wp:post_type>protocol</wp:post_type>
             <wp:post_password></wp:post_password>
             <wp:is_sticky>0</wp:is_sticky>
+            <category domain="laser_class" nicename="class-2"><![CDATA[Class 2]]></category>
+            <category domain="diffraction_grating_spec" nicename="standard"><![CDATA[Standard]]></category>
+            <category domain="equipment" nicename="laser"><![CDATA[Laser]]></category>
+            <category domain="equipment" nicename="tripod"><![CDATA[Tripod]]></category>
+            <category domain="equipment" nicename="diffraction-grating"><![CDATA[Diffraction Grating]]></category>
+            <category domain="equipment" nicename="vape-pen"><![CDATA[Vape Pen]]></category>
+            <category domain="substance" nicename="nn-dmt"><![CDATA[N,N-DMT]]></category>
+            <category domain="administration_method" nicename="inhalation"><![CDATA[Inhalation]]></category>
+            <category domain="administration_protocol" nicename="two-inhales"><![CDATA[Two inhales]]></category>
+            <category domain="projection_surface" nicename="flat-non-reflective"><![CDATA[Flat non-reflective]]></category>
 
             <wp:postmeta>
                 <wp:meta_key>laser_wavelength</wp:meta_key>
@@ -174,47 +113,6 @@
                 <wp:meta_key>projection_distance</wp:meta_key>
                 <wp:meta_value><![CDATA[5]]></wp:meta_value>
             </wp:postmeta>
-
-            <wp:term_relationship>
-                <wp:term_taxonomy>laser_class</wp:term_taxonomy>
-                <wp:term_slug>class-2</wp:term_slug>
-            </wp:term_relationship>
-            <wp:term_relationship>
-                <wp:term_taxonomy>diffraction_grating_spec</wp:term_taxonomy>
-                <wp:term_slug>standard</wp:term_slug>
-            </wp:term_relationship>
-            <wp:term_relationship>
-                <wp:term_taxonomy>equipment</wp:term_taxonomy>
-                <wp:term_slug>laser</wp:term_slug>
-            </wp:term_relationship>
-            <wp:term_relationship>
-                <wp:term_taxonomy>equipment</wp:term_taxonomy>
-                <wp:term_slug>tripod</wp:term_slug>
-            </wp:term_relationship>
-            <wp:term_relationship>
-                <wp:term_taxonomy>equipment</wp:term_taxonomy>
-                <wp:term_slug>diffraction-grating</wp:term_slug>
-            </wp:term_relationship>
-            <wp:term_relationship>
-                <wp:term_taxonomy>equipment</wp:term_taxonomy>
-                <wp:term_slug>vape-pen</wp:term_slug>
-            </wp:term_relationship>
-            <wp:term_relationship>
-                <wp:term_taxonomy>substance</wp:term_taxonomy>
-                <wp:term_slug>nn-dmt</wp:term_slug>
-            </wp:term_relationship>
-            <wp:term_relationship>
-                <wp:term_taxonomy>administration_method</wp:term_taxonomy>
-                <wp:term_slug>inhalation</wp:term_slug>
-            </wp:term_relationship>
-            <wp:term_relationship>
-                <wp:term_taxonomy>administration_protocol</wp:term_taxonomy>
-                <wp:term_slug>two-inhales</wp:term_slug>
-            </wp:term_relationship>
-            <wp:term_relationship>
-                <wp:term_taxonomy>projection_surface</wp:term_taxonomy>
-                <wp:term_slug>flat-non-reflective</wp:term_slug>
-            </wp:term_relationship>
         </item>
     </channel>
 </rss>
