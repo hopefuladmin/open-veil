@@ -27,6 +27,9 @@
 
     // Trial submission form
     initTrialForm()
+    
+    // View toggle
+    initViewToggle()
   })
 
   /**
@@ -106,6 +109,38 @@
           })
         }
       })
+    }
+  }
+
+  /**
+   * Initialize view toggle functionality
+   */
+  function initViewToggle() {
+    $('.view-toggle-button').on('click', function() {
+      const viewType = $(this).data('view');
+      const container = $(this).closest('.container').find('.view-container');
+      
+      // Update active button state
+      $(this).siblings('.view-toggle-button').removeClass('active');
+      $(this).addClass('active');
+      
+      // Update view container classes
+      if (viewType === 'grid') {
+        container.removeClass('list-view-active').addClass('grid-view-active');
+      } else {
+        container.removeClass('grid-view-active').addClass('list-view-active');
+      }
+      
+      // Store preference in localStorage if available
+      if (typeof(Storage) !== "undefined") {
+        localStorage.setItem('openVeilViewPreference', viewType);
+      }
+    });
+    
+    // Apply saved preference if available
+    if (typeof(Storage) !== "undefined" && localStorage.getItem('openVeilViewPreference')) {
+      const savedView = localStorage.getItem('openVeilViewPreference');
+      $(`.view-toggle-button[data-view="${savedView}"]`).trigger('click');
     }
   }
 })(jQuery)

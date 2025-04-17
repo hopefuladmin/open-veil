@@ -7,10 +7,22 @@ use OpenVeil\Utility\PostTypeUtility;
 
 // Define taxonomies and meta fields to filter by
 $taxonomies = ['substance'];
-$meta_fields = ['protocol_id', 'additional_observers'];
+$meta_fields = [
+    'protocol_id' => [
+        'label' => __('Protocol', 'open-veil'),
+        'post_type' => 'protocol'
+    ],
+    'additional_observers' => [
+        'label' => __('Additional Observers', 'open-veil'),
+        'options' => [
+            '1' => __('Yes', 'open-veil'),
+            '0' => __('No', 'open-veil')
+        ]
+    ]
+];
 
 // Build query args with filters
-$args = PostTypeUtility::post_filter($taxonomies, $meta_fields, 'trial', $posts_per_page);
+$args = PostTypeUtility::post_filter($taxonomies, array_keys($meta_fields), 'trial', $posts_per_page);
 
 // Run the query
 $trials_query = new WP_Query($args);
@@ -31,32 +43,22 @@ $trials_query = new WP_Query($args);
             'substance' => __('Substance', 'open-veil')
         ];
         
-        $meta_fields_config = [
-            'protocol_id' => [
-                'label' => __('Protocol', 'open-veil'),
-                'post_type' => 'protocol'
-            ],
-            'additional_observers' => [
-                'label' => __('Additional Observers', 'open-veil'),
-                'options' => [
-                    '1' => __('Yes', 'open-veil'),
-                    '0' => __('No', 'open-veil')
-                ]
-            ]
-        ];
+        echo PostTypeUtility::generate_filter_form('trial', $taxonomy_labels, $meta_fields);
         
-        echo PostTypeUtility::generate_filter_form('trial', $taxonomy_labels, $meta_fields_config);
+        // Generate the view toggle
+        echo PostTypeUtility::generate_view_toggle();
         ?>
 
         <?php if ($trials_query->have_posts()) : ?>
-            <div class="trials-grid">
+            <div class="trials-grid view-container grid-view-active">
                 <?php while ($trials_query->have_posts()) : $trials_query->the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('trial-card'); ?>>
                         <div class="trial-content">
+                            <h3><?php the_title(); ?></h3>
                             <?php the_excerpt(); ?>
                         </div>
 
-                        <div class="trial-specs">
+                        <div class="trial-specs spec-container">
                             <?php
                             $protocol_id = get_post_meta(get_the_ID(), 'protocol_id', true);
                             $protocol = $protocol_id ? get_post($protocol_id) : null;
@@ -64,15 +66,12 @@ $trials_query = new WP_Query($args);
 
                             <?php if ($protocol) : ?>
                                 <div class="spec-item">
-                                    <span class="spec-label"><?php _e('Protocol:', 'open-veil'); ?></span>
-                                    <span class="spec-value"><a href="<?php echo get_permalink($protocol_id); ?>"><?php echo get_the_title($protocol_id); ?></a></span>
+                                    <span class="spec-label"><?php _e('Protocol:', 'open-veil'); ?></span><span class="spec-value"><a href="<?php echo get_permalink($protocol_id); ?>"><?php echo get_the_title($protocol_id); ?></a></span>
                                 </div>
                             <?php endif; ?>
 
                             <div class="spec-item">
-                                <span class="spec-label"><?php _e('Substance:', 'open-veil'); ?></span>
-                                <span class="spec-value">
-                                    <?php
+                                <span class="spec-label"><?php _e('Substance:', 'open-veil'); ?></span><span class="spec-value"><?php
                                     $substances = get_the_terms(get_the_ID(), 'substance');
                                     if (!empty($substances) && !is_wp_error($substances)) {
                                         $substance_names = [];
@@ -88,9 +87,7 @@ $trials_query = new WP_Query($args);
                             </div>
 
                             <div class="spec-item">
-                                <span class="spec-label"><?php _e('Additional Observers:', 'open-veil'); ?></span>
-                                <span class="spec-value">
-                                    <?php
+                                <span class="spec-label"><?php _e('Additional Observers:', 'open-veil'); ?></span><span class="spec-value"><?php
                                     $additional_observers = get_post_meta(get_the_ID(), 'additional_observers', true);
                                     echo $additional_observers ? __('Yes', 'open-veil') : __('No', 'open-veil');
                                     ?>

@@ -21,6 +21,18 @@ class PostTypeUtility
     private static $post_types = ['protocol', 'trial'];
 
     /**
+     * Sorting options for Open Veil post types
+     *
+     * @var array
+     */
+    private static $sort_options = [
+        'date_desc' => ['label' => 'Newest First', 'orderby' => 'date', 'order' => 'DESC'],
+        'date_asc' => ['label' => 'Oldest First', 'orderby' => 'date', 'order' => 'ASC'],
+        'title_asc' => ['label' => 'Title (A-Z)', 'orderby' => 'title', 'order' => 'ASC'],
+        'title_desc' => ['label' => 'Title (Z-A)', 'orderby' => 'title', 'order' => 'DESC'],
+    ];
+
+    /**
      * Checks if the current page is a front-end Open Veil page.
      * 
      * This includes single protocol/trial posts and their archive pages.
@@ -112,6 +124,88 @@ class PostTypeUtility
             }
         }
         
+        // Add special filter for protocols with trials
+        if ($post_type === 'protocol' && isset($_GET['has_trials']) && $_GET['has_trials'] !== '') {
+            // Handle the "has_trials" filter with multiple options
+            if ($_GET['has_trials'] === 'yes') {
+                // Get all protocol IDs that have associated trials
+                $protocols_with_trials = [];
+                $trials = get_posts([
+                    'post_type' => 'trial',
+                    'posts_per_page' => -1,
+                    'fields' => 'ids',
+                    'post_status' => 'publish',
+                    'meta_query' => [
+                        [
+                            'key' => 'protocol_id',
+                            'compare' => 'EXISTS',
+                        ],
+                    ],
+                ]);
+                
+                if (!empty($trials)) {
+                    foreach ($trials as $trial_id) {
+                        $protocol_id = get_post_meta($trial_id, 'protocol_id', true);
+                        if (!empty($protocol_id)) {
+                            $protocols_with_trials[$protocol_id] = true;
+                        }
+                    }
+                    
+                    if (!empty($protocols_with_trials)) {
+                        $args['post__in'] = array_keys($protocols_with_trials);
+                    } else {
+                        // No protocols with trials found, force no results
+                        $args['post__in'] = [0];
+                    }
+                } else {
+                    // No trials found, so no protocols will match
+                    $args['post__in'] = [0]; // Force no results
+                }
+            } elseif ($_GET['has_trials'] === 'no') {
+                // Get protocols that do NOT have associated trials
+                $protocols_with_trials = [];
+                $trials = get_posts([
+                    'post_type' => 'trial',
+                    'posts_per_page' => -1,
+                    'fields' => 'ids',
+                    'post_status' => 'publish',
+                    'meta_query' => [
+                        [
+                            'key' => 'protocol_id',
+                            'compare' => 'EXISTS',
+                        ],
+                    ],
+                ]);
+                
+                if (!empty($trials)) {
+                    foreach ($trials as $trial_id) {
+                        $protocol_id = get_post_meta($trial_id, 'protocol_id', true);
+                        if (!empty($protocol_id)) {
+                            $protocols_with_trials[$protocol_id] = true;
+                        }
+                    }
+                    
+                    if (!empty($protocols_with_trials)) {
+                        // Exclude protocols that have trials
+                        $args['post__not_in'] = array_keys($protocols_with_trials);
+                    }
+                }
+                // If no trials exist at all, all protocols qualify as "not yet having trials"
+                // so we don't need to add any additional filtering
+            }
+            // If has_trials is empty or "any", we don't need to add any filtering
+        }
+        
+        // Handle sorting
+        if (isset($_GET['sort']) && !empty($_GET['sort'])) {
+            $sort_key = sanitize_text_field($_GET['sort']);
+            if (isset(self::$sort_options[$sort_key])) {
+                $sort_config = self::$sort_options[$sort_key];
+                $args['orderby'] = $sort_config['orderby'];
+                $args['order'] = $sort_config['order'];
+            }
+        }
+        
         return $args;
     }
     
@@ -181,7 +275,6 @@ class PostTypeUtility
                 // If this is a select with options
                 if (isset($meta_config['options']) && is_array($meta_config['options'])) {
                     $output .= '<select name="' . esc_attr($meta_key) . '" id="' . esc_attr($meta_key) . '">';
-                    $output .= '<option value="">' . sprintf(__('Any', 'open-veil')) . '</option>';
                     
                     foreach ($meta_config['options'] as $value => $option_label) {
                         $selected = isset($_GET[$meta_key]) && $_GET[$meta_key] == $value ? 'selected' : '';
@@ -210,6 +303,13 @@ class PostTypeUtility
                         $output .= '</select>';
                     }
                 }
+                // Checkbox type
+                elseif (isset($meta_config['type']) && $meta_config['type'] === 'checkbox') {
+                    $checked = isset($_GET[$meta_key]) && $_GET[$meta_key] === '1' ? 'checked' : '';
+                    $output .= '<div class="checkbox-wrapper">';
+                    $output .= '<input type="checkbox" name="' . esc_attr($meta_key) . '" id="' . esc_attr($meta_key) . '" value="1" ' . $checked . '>';
+                    $output .= '</div>';
+                }
                 // Default to text input
                 else {
                     $current_value = isset($_GET[$meta_key]) ? esc_attr($_GET[$meta_key]) : '';
@@ -220,14 +320,46 @@ class PostTypeUtility
             }
         }
         
+        // Add sort options
+        $output .= '<div class="filter-group">';
+        $output .= '<label for="sort">' . __('Sort By', 'open-veil') . '</label>';
+        $output .= '<select name="sort" id="sort">';
+        
+        foreach (self::$sort_options as $value => $sort_config) {
+            $selected = isset($_GET['sort']) && $_GET['sort'] === $value ? 'selected' : '';
+            $output .= '<option value="' . esc_attr($value) . '" ' . $selected . '>' . esc_html($sort_config['label']) . '</option>';
+        }
+        
+        $output .= '</select>';
+        $output .= '</div>';
+        
         $output .= '</div>';
         
         $output .= '<div class="filter-actions">';
-        $output .= '<button type="submit" class="button">' . __('Filter', 'open-veil') . '</button>';
+        $output .= '<button type="submit" class="button">' . __('Apply Filters', 'open-veil') . '</button>';
         $output .= '<a href="' . esc_url(get_post_type_archive_link($post_type)) . '" class="button button-secondary">' . __('Reset', 'open-veil') . '</a>';
         $output .= '</div>';
         
         $output .= '</form>';
+        $output .= '</div>';
+        
+        return $output;
+    }
+    
+    /**
+     * Generate view toggle buttons
+     *
+     * @return string HTML for view toggle buttons
+     */
+    public static function generate_view_toggle(): string
+    {
+        $output = '<div class="view-toggle">';
+        $output .= '<button type="button" class="button view-toggle-button grid-view active" data-view="grid">';
+        $output .= '<span class="dashicons dashicons-grid-view"></span> ' . __('Grid', 'open-veil');
+        $output .= '</button>';
+        $output .= '<button type="button" class="button view-toggle-button list-view" data-view="list">';
+        $output .= '<span class="dashicons dashicons-list-view"></span> ' . __('List', 'open-veil');
+        $output .= '</button>';
         $output .= '</div>';
         
         return $output;

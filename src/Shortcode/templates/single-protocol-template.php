@@ -10,19 +10,15 @@
                         <h3><?php _e('Laser', 'open-veil'); ?></h3>
 
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Wavelength:', 'open-veil'); ?></span>
-                            <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'laser_wavelength', true); ?> nm</span>
+                            <span class="spec-label"><?php _e('Wavelength:', 'open-veil'); ?></span><span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'laser_wavelength', true); ?> nm</span>
                         </div>
 
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Power:', 'open-veil'); ?></span>
-                            <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'laser_power', true); ?> mW</span>
+                            <span class="spec-label"><?php _e('Power:', 'open-veil'); ?></span><span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'laser_power', true); ?> mW</span>
                         </div>
 
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Class:', 'open-veil'); ?></span>
-                            <span class="spec-value">
-                                <?php
+                            <span class="spec-label"><?php _e('Class:', 'open-veil'); ?></span><span class="spec-value"><?php
                                 $laser_classes = get_the_terms(get_the_ID(), 'laser_class');
                                 if (!empty($laser_classes) && !is_wp_error($laser_classes)) {
                                     $laser_class_names = [];
@@ -42,9 +38,7 @@
                         <h3><?php _e('Substance', 'open-veil'); ?></h3>
 
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Substance:', 'open-veil'); ?></span>
-                            <span class="spec-value">
-                                <?php
+                            <span class="spec-label"><?php _e('Substance:', 'open-veil'); ?></span><span class="spec-value"><?php
                                 $substances = get_the_terms(get_the_ID(), 'substance');
                                 if (!empty($substances) && !is_wp_error($substances)) {
                                     $substance_names = [];
@@ -60,14 +54,11 @@
                         </div>
 
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Dose:', 'open-veil'); ?></span>
-                            <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'substance_dose', true); ?> g</span>
+                            <span class="spec-label"><?php _e('Dose:', 'open-veil'); ?></span><span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'substance_dose', true); ?> g</span>
                         </div>
 
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Administration Method:', 'open-veil'); ?></span>
-                            <span class="spec-value">
-                                <?php
+                            <span class="spec-label"><?php _e('Administration Method:', 'open-veil'); ?></span><span class="spec-value"><?php
                                 $administration_methods = get_the_terms(get_the_ID(), 'administration_method');
                                 if (!empty($administration_methods) && !is_wp_error($administration_methods)) {
                                     $method_names = [];
@@ -84,8 +75,7 @@
 
                         <div class="spec-item">
                             <span class="spec-label"><?php _e('Administration Protocol:', 'open-veil'); ?></span>
-                            <span class="spec-value">
-                                <?php
+                            <span class="spec-value"><?php
                                 $administration_protocols = get_the_terms(get_the_ID(), 'administration_protocol');
                                 if (!empty($administration_protocols) && !is_wp_error($administration_protocols)) {
                                     $protocol_names = [];
@@ -105,16 +95,15 @@
                         <h3><?php _e('Equipment', 'open-veil'); ?></h3>
 
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Equipment:', 'open-veil'); ?></span>
-                            <span class="spec-value">
-                                <?php
+                            <!-- <span class="spec-label"><?php _e('Equipment:', 'open-veil'); ?></span> -->
+                            <span class="spec-value"><?php
                                 $equipment = get_the_terms(get_the_ID(), 'equipment');
                                 if (!empty($equipment) && !is_wp_error($equipment)) {
-                                    echo '<ul class="equipment-list">';
-                                    foreach ($equipment as $item) {
-                                        echo '<li>' . esc_html($item->name) . '</li>';
+                                    $equipment_names = [];
+                                    foreach ($equipment as $equip) {
+                                        $equipment_names[] = $equip->name;
                                     }
-                                    echo '</ul>';
+                                    echo implode(', ', $equipment_names);
                                 } else {
                                     _e('No equipment specified', 'open-veil');
                                 }
@@ -123,9 +112,7 @@
                         </div>
 
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Diffraction Grating:', 'open-veil'); ?></span>
-                            <span class="spec-value">
-                                <?php
+                            <span class="spec-label"><?php _e('Diffraction Grating:', 'open-veil'); ?></span><span class="spec-value"><?php
                                 $diffraction_gratings = get_the_terms(get_the_ID(), 'diffraction_grating_spec');
                                 if (!empty($diffraction_gratings) && !is_wp_error($diffraction_gratings)) {
                                     $grating_names = [];
@@ -141,14 +128,11 @@
                         </div>
 
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Projection Distance:', 'open-veil'); ?></span>
-                            <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'projection_distance', true); ?> feet</span>
+                            <span class="spec-label"><?php _e('Projection Distance:', 'open-veil'); ?></span><span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'projection_distance', true); ?> feet</span>
                         </div>
 
                         <div class="spec-item">
-                            <span class="spec-label"><?php _e('Projection Surface:', 'open-veil'); ?></span>
-                            <span class="spec-value">
-                                <?php
+                            <span class="spec-label"><?php _e('Projection Surface:', 'open-veil'); ?></span><span class="spec-value"><?php
                                 $projection_surfaces = get_the_terms(get_the_ID(), 'projection_surface');
                                 if (!empty($projection_surfaces) && !is_wp_error($projection_surfaces)) {
                                     $surface_names = [];
@@ -235,8 +219,6 @@
                     <a href="<?php echo add_query_arg(['protocol_id' => get_the_ID()], get_permalink(get_page_by_path('submit-trial'))); ?>" class="button"><?php _e('Submit Trial', 'open-veil'); ?></a>
                 </div>
             </div>
-
-            <!-- Comment section removed -->
         </article>
     </div>
 </div>

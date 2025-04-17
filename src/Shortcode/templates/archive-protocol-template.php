@@ -8,8 +8,23 @@ use OpenVeil\Utility\PostTypeUtility;
 // Define taxonomies to filter by
 $taxonomies = ['substance', 'laser_class', 'administration_method'];
 
+// Define meta fields to filter by
+$meta_fields = [];
+
+// Add has_trials filter as a select instead of checkbox
+$special_filters = [
+    'has_trials' => [
+        'label' => __('Trials', 'open-veil'),
+        'options' => [
+            '' => __('All Trials', 'open-veil'),
+            'yes' => __('Yes', 'open-veil'),
+            'no' => __('No', 'open-veil')
+        ]
+    ]
+];
+
 // Build query args with filters
-$args = PostTypeUtility::post_filter($taxonomies, [], 'protocol', $posts_per_page);
+$args = PostTypeUtility::post_filter($taxonomies, array_keys($meta_fields), 'protocol', $posts_per_page);
 
 // Run the query
 $protocols_query = new WP_Query($args);
@@ -29,30 +44,31 @@ $protocols_query = new WP_Query($args);
         $taxonomy_labels = [
             'substance' => __('Substance', 'open-veil'),
             'laser_class' => __('Laser Class', 'open-veil'),
-            'administration_method' => __('Administration Method', 'open-veil')
+            'administration_method' => __('Administration', 'open-veil')
         ];
         
-        echo PostTypeUtility::generate_filter_form('protocol', $taxonomy_labels);
+        echo PostTypeUtility::generate_filter_form('protocol', $taxonomy_labels, $special_filters);
+        
+        // Generate the view toggle
+        echo PostTypeUtility::generate_view_toggle();
         ?>
 
         <?php if ($protocols_query->have_posts()) : ?>
-            <div class="protocols-grid">
+            <div class="protocols-grid view-container grid-view-active">
                 <?php while ($protocols_query->have_posts()) : $protocols_query->the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('protocol-card'); ?>>
                         <div class="protocol-content">
+                            <h3><?php the_title(); ?></h3>
                             <?php the_excerpt(); ?>
                         </div>
 
-                        <div class="protocol-specs">
+                        <div class="protocol-specs spec-container">
                             <div class="spec-item">
-                                <span class="spec-label"><?php _e('Laser:', 'open-veil'); ?></span>
-                                <span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'laser_wavelength', true); ?> nm</span>
+                                <span class="spec-label"><?php _e('Laser:', 'open-veil'); ?></span><span class="spec-value"><?php echo get_post_meta(get_the_ID(), 'laser_wavelength', true); ?> nm</span>
                             </div>
 
                             <div class="spec-item">
-                                <span class="spec-label"><?php _e('Substance:', 'open-veil'); ?></span>
-                                <span class="spec-value">
-                                    <?php
+                                <span class="spec-label"><?php _e('Substance:', 'open-veil'); ?></span><span class="spec-value"><?php
                                     $substances = get_the_terms(get_the_ID(), 'substance');
                                     if (!empty($substances) && !is_wp_error($substances)) {
                                         $substance_names = [];
@@ -63,14 +79,11 @@ $protocols_query = new WP_Query($args);
                                     } else {
                                         _e('Not specified', 'open-veil');
                                     }
-                                    ?>
-                                </span>
+                                    ?></span>
                             </div>
 
                             <div class="spec-item">
-                                <span class="spec-label"><?php _e('Trials:', 'open-veil'); ?></span>
-                                <span class="spec-value">
-                                    <?php
+                                <span class="spec-label"><?php _e('Trials:', 'open-veil'); ?></span><span class="spec-value"><?php
                                     $trials = get_posts([
                                         'post_type' => 'trial',
                                         'meta_query' => [
@@ -85,8 +98,7 @@ $protocols_query = new WP_Query($args);
                                     ]);
 
                                     echo count($trials);
-                                    ?>
-                                </span>
+                                    ?></span>
                             </div>
                         </div>
 
