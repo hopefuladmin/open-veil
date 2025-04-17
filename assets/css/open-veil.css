@@ -86,7 +86,7 @@
 /* List View Styles */
 .protocols-grid.list-view-active,
 .trials-grid.list-view-active {
-  /* display: block; */
+  display: block;
 }
 
 .list-view-active .protocol-card,
@@ -108,12 +108,19 @@
   flex: 1;
   margin-right: 1.5rem;
   margin-bottom: 0;
+  background: #f5f5f5;
 }
 
 .list-view-active .protocol-footer,
 .list-view-active .trial-footer {
   flex: 0 0 auto;
   margin-top: 0;
+}
+
+/* Make spec items display in a row in list view */
+.list-view-active .spec-item {
+  display: inline-flex;
+  margin-right: 1rem;
 }
 
 /* Grid View Styles - default behavior */
@@ -150,11 +157,11 @@
 .spec-label {
   font-weight: bold;
   margin-right: 0.5rem;
-  /* display: inline-block; */
+  display: inline-block;
 }
 
 .spec-value {
-  /* display: inline-block; */
+  display: inline-block;
 }
 
 .protocol-footer,
