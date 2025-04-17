@@ -66,7 +66,6 @@ function open_veil_init(): void
     // Register block editor support
     if (function_exists('register_block_type')) {
         new \OpenVeil\BlockEditor\TemplateSupport();
-        new \OpenVeil\BlockEditor\TemplateParts();
     }
 
     // Register shortcodes
