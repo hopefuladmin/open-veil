@@ -49,7 +49,7 @@
             "projection_distance"
           ]
         },
-        "tax_input": {
+        "taxonomies": {
           "type": "object",
           "properties": {
             "laser_class": {
@@ -164,7 +164,7 @@
             "projection_distance"
           ]
         },
-        "tax_input": {
+        "taxonomies": {
           "type": "object",
           "properties": {
             "laser_class": {

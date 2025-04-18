@@ -355,8 +355,8 @@ class V1 extends AbstractAPI
         }
         
         // Update taxonomies if provided
-        if (isset($params['tax_input']) && is_array($params['tax_input'])) {
-            foreach ($params['tax_input'] as $taxonomy => $terms) {
+        if (isset($params['taxonomies']) && is_array($params['taxonomies'])) {
+            foreach ($params['taxonomies'] as $taxonomy => $terms) {
                 wp_set_object_terms($protocol_id, $terms, $taxonomy);
                 $updated = true;
             }
@@ -466,8 +466,8 @@ class V1 extends AbstractAPI
         }
         
         // Update taxonomies if provided
-        if (isset($params['tax_input']) && is_array($params['tax_input'])) {
-            foreach ($params['tax_input'] as $taxonomy => $terms) {
+        if (isset($params['taxonomies']) && is_array($params['taxonomies'])) {
+            foreach ($params['taxonomies'] as $taxonomy => $terms) {
                 wp_set_object_terms($trial_id, $terms, $taxonomy);
                 $updated = true;
             }
@@ -677,8 +677,8 @@ class V1 extends AbstractAPI
         }
 
         // Save taxonomies
-        if (isset($params['tax_input']) && is_array($params['tax_input'])) {
-            foreach ($params['tax_input'] as $taxonomy => $terms) {
+        if (isset($params['taxonomies']) && is_array($params['taxonomies'])) {
+            foreach ($params['taxonomies'] as $taxonomy => $terms) {
                 wp_set_object_terms($protocol_id, $terms, $taxonomy);
             }
         }
@@ -826,8 +826,8 @@ class V1 extends AbstractAPI
         }
 
         // Save taxonomies
-        if (isset($params['tax_input']) && is_array($params['tax_input'])) {
-            foreach ($params['tax_input'] as $taxonomy => $terms) {
+        if (isset($params['taxonomies']) && is_array($params['taxonomies'])) {
+            foreach ($params['taxonomies'] as $taxonomy => $terms) {
                 wp_set_object_terms($trial_id, $terms, $taxonomy);
             }
         }
