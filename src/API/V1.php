@@ -37,6 +37,34 @@ class V1 extends AbstractAPI
             },
         ]);
 
+        register_rest_route($this->namespace, '/protocol/(?P<id>\d+)', [
+            'methods' => 'PUT',
+            'callback' => [$this, 'update_protocol'],
+            'permission_callback' => [$this, 'can_edit_protocol'],
+            'args' => [
+                'id' => [
+                    'required' => true,
+                    'validate_callback' => function($param) {
+                        return is_numeric($param) && $param > 0;
+                    }
+                ]
+            ]
+        ]);
+
+        register_rest_route($this->namespace, '/protocol/(?P<id>\d+)', [
+            'methods' => 'DELETE',
+            'callback' => [$this, 'delete_protocol'],
+            'permission_callback' => [$this, 'can_delete_protocol'],
+            'args' => [
+                'id' => [
+                    'required' => true,
+                    'validate_callback' => function($param) {
+                        return is_numeric($param) && $param > 0;
+                    }
+                ]
+            ]
+        ]);
+
         register_rest_route($this->namespace, '/protocol/name/(?P<slug>[a-zA-Z0-9-]+)', [
             'methods' => 'GET',
             'callback' => [$this, 'get_protocol_by_slug'],
@@ -110,6 +138,34 @@ class V1 extends AbstractAPI
             },
         ]);
 
+        register_rest_route($this->namespace, '/trial/(?P<id>\d+)', [
+            'methods' => 'PUT',
+            'callback' => [$this, 'update_trial'],
+            'permission_callback' => [$this, 'can_edit_trial'],
+            'args' => [
+                'id' => [
+                    'required' => true,
+                    'validate_callback' => function($param) {
+                        return is_numeric($param) && $param > 0;
+                    }
+                ]
+            ]
+        ]);
+
+        register_rest_route($this->namespace, '/trial/(?P<id>\d+)', [
+            'methods' => 'DELETE',
+            'callback' => [$this, 'delete_trial'],
+            'permission_callback' => [$this, 'can_delete_trial'],
+            'args' => [
+                'id' => [
+                    'required' => true,
+                    'validate_callback' => function($param) {
+                        return is_numeric($param) && $param > 0;
+                    }
+                ]
+            ]
+        ]);
+
         register_rest_route($this->namespace, '/trial', [
             'methods' => 'POST',
             'callback' => [$this, 'create_trial'],
@@ -143,6 +199,320 @@ class V1 extends AbstractAPI
                 return true; // Public access
             },
         ]);
+    }
+
+    /**
+     * Checks if the current user can edit a protocol.
+     *
+     * @param \WP_REST_Request $request
+     * @return bool|\WP_Error
+     */
+    public function can_edit_protocol(\WP_REST_Request $request)
+    {
+        $protocol_id = $request['id'];
+        $protocol = get_post($protocol_id);
+
+        if (!$protocol || $protocol->post_type !== 'protocol') {
+            return new \WP_Error('protocol_not_found', __('Protocol not found', 'open-veil'), ['status' => 404]);
+        }
+
+        // Admin can edit any protocol
+        if (current_user_can('manage_options')) {
+            return true;
+        }
+
+        // Authors can edit their own protocols
+        if (is_user_logged_in() && get_current_user_id() === (int)$protocol->post_author) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Checks if the current user can delete a protocol.
+     *
+     * @param \WP_REST_Request $request
+     * @return bool|\WP_Error
+     */
+    public function can_delete_protocol(\WP_REST_Request $request)
+    {
+        // Use the same permissions as editing for now
+        return $this->can_edit_protocol($request);
+    }
+
+    /**
+     * Checks if the current user can edit a trial.
+     *
+     * @param \WP_REST_Request $request
+     * @return bool|\WP_Error
+     */
+    public function can_edit_trial(\WP_REST_Request $request)
+    {
+        $trial_id = $request['id'];
+        $trial = get_post($trial_id);
+
+        if (!$trial || $trial->post_type !== 'trial') {
+            return new \WP_Error('trial_not_found', __('Trial not found', 'open-veil'), ['status' => 404]);
+        }
+
+        // Admin can edit any trial
+        if (current_user_can('manage_options')) {
+            return true;
+        }
+
+        // Authors can edit their own trials
+        if (is_user_logged_in() && get_current_user_id() === (int)$trial->post_author) {
+            return true;
+        }
+
+        // Check for claim token for guest submissions
+        $claim_token = isset($_GET['claim_token']) ? sanitize_text_field($_GET['claim_token']) : '';
+        if (!empty($claim_token)) {
+            $stored_token = get_post_meta($trial_id, '_claim_token', true);
+            $expiry = (int)get_post_meta($trial_id, '_claim_token_expiry', true);
+
+            if ($claim_token === $stored_token && time() < $expiry) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Checks if the current user can delete a trial.
+     *
+     * @param \WP_REST_Request $request
+     * @return bool|\WP_Error
+     */
+    public function can_delete_trial(\WP_REST_Request $request)
+    {
+        // Use the same permissions as editing for now, but without claim token support
+        $trial_id = $request['id'];
+        $trial = get_post($trial_id);
+
+        if (!$trial || $trial->post_type !== 'trial') {
+            return new \WP_Error('trial_not_found', __('Trial not found', 'open-veil'), ['status' => 404]);
+        }
+
+        // Admin can delete any trial
+        if (current_user_can('manage_options')) {
+            return true;
+        }
+
+        // Authors can delete their own trials
+        if (is_user_logged_in() && get_current_user_id() === (int)$trial->post_author) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Updates an existing protocol.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array|\WP_Error Updated protocol or error
+     */
+    public function update_protocol(\WP_REST_Request $request)
+    {
+        $protocol_id = $request['id'];
+        $protocol = get_post($protocol_id);
+        
+        if (!$protocol || $protocol->post_type !== 'protocol') {
+            return new \WP_Error('protocol_not_found', __('Protocol not found', 'open-veil'), ['status' => 404]);
+        }
+        
+        $params = $request->get_params();
+        $updated = false;
+        
+        // Update post fields if provided
+        $post_data = [];
+        
+        if (isset($params['title'])) {
+            $post_data['post_title'] = sanitize_text_field($params['title']);
+            $updated = true;
+        }
+        
+        if (isset($params['content'])) {
+            $post_data['post_content'] = wp_kses_post($params['content']);
+            $updated = true;
+        }
+        
+        // Update post if changes are requested
+        if (!empty($post_data)) {
+            $post_data['ID'] = $protocol_id;
+            wp_update_post($post_data);
+        }
+        
+        // Update meta fields if provided
+        if (isset($params['meta']) && is_array($params['meta'])) {
+            foreach ($params['meta'] as $key => $value) {
+                update_post_meta($protocol_id, $key, $value);
+                $updated = true;
+            }
+        }
+        
+        // Update taxonomies if provided
+        if (isset($params['tax_input']) && is_array($params['tax_input'])) {
+            foreach ($params['tax_input'] as $taxonomy => $terms) {
+                wp_set_object_terms($protocol_id, $terms, $taxonomy);
+                $updated = true;
+            }
+        }
+        
+        if (!$updated) {
+            return new \WP_Error('no_changes', __('No changes were provided', 'open-veil'), ['status' => 400]);
+        }
+        
+        // Return the updated protocol
+        $protocol = get_post($protocol_id);
+        return $this->prepare_protocol_response($protocol);
+    }
+    
+    /**
+     * Deletes a protocol.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return \WP_REST_Response|\WP_Error Success response or error
+     */
+    public function delete_protocol(\WP_REST_Request $request)
+    {
+        $protocol_id = $request['id'];
+        $protocol = get_post($protocol_id);
+        
+        if (!$protocol || $protocol->post_type !== 'protocol') {
+            return new \WP_Error('protocol_not_found', __('Protocol not found', 'open-veil'), ['status' => 404]);
+        }
+        
+        // Check if there are trials associated with this protocol
+        $trials = get_posts([
+            'post_type' => 'trial',
+            'post_status' => 'any',
+            'posts_per_page' => 1,
+            'meta_query' => [
+                [
+                    'key' => 'protocol_id',
+                    'value' => $protocol_id,
+                    'compare' => '=',
+                ]
+            ],
+        ]);
+        
+        if (!empty($trials)) {
+            return new \WP_Error(
+                'protocol_has_trials',
+                __('Cannot delete protocol with associated trials', 'open-veil'),
+                ['status' => 400]
+            );
+        }
+        
+        $result = wp_delete_post($protocol_id, true);
+        
+        if (!$result) {
+            return new \WP_Error('delete_failed', __('Failed to delete protocol', 'open-veil'), ['status' => 500]);
+        }
+        
+        return new \WP_REST_Response(
+            ['message' => __('Protocol deleted successfully', 'open-veil')],
+            200
+        );
+    }
+    
+    /**
+     * Updates an existing trial.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return array|\WP_Error Updated trial or error
+     */
+    public function update_trial(\WP_REST_Request $request)
+    {
+        $trial_id = $request['id'];
+        $trial = get_post($trial_id);
+        
+        if (!$trial || $trial->post_type !== 'trial') {
+            return new \WP_Error('trial_not_found', __('Trial not found', 'open-veil'), ['status' => 404]);
+        }
+        
+        $params = $request->get_params();
+        $updated = false;
+        
+        // Update post fields if provided
+        $post_data = [];
+        
+        if (isset($params['title'])) {
+            $post_data['post_title'] = sanitize_text_field($params['title']);
+            $updated = true;
+        }
+        
+        if (isset($params['content'])) {
+            $post_data['post_content'] = wp_kses_post($params['content']);
+            $updated = true;
+        }
+        
+        // Update post if changes are requested
+        if (!empty($post_data)) {
+            $post_data['ID'] = $trial_id;
+            wp_update_post($post_data);
+        }
+        
+        // Update meta fields if provided
+        if (isset($params['meta']) && is_array($params['meta'])) {
+            foreach ($params['meta'] as $key => $value) {
+                update_post_meta($trial_id, $key, $value);
+                $updated = true;
+            }
+        }
+        
+        // Update taxonomies if provided
+        if (isset($params['tax_input']) && is_array($params['tax_input'])) {
+            foreach ($params['tax_input'] as $taxonomy => $terms) {
+                wp_set_object_terms($trial_id, $terms, $taxonomy);
+                $updated = true;
+            }
+        }
+        
+        // Update questionnaire data if provided
+        if (isset($params['questionnaire']) && is_array($params['questionnaire'])) {
+            $this->save_questionnaire_data($trial_id, $params['questionnaire']);
+            $updated = true;
+        }
+        
+        if (!$updated) {
+            return new \WP_Error('no_changes', __('No changes were provided', 'open-veil'), ['status' => 400]);
+        }
+        
+        // Return the updated trial
+        $trial = get_post($trial_id);
+        return $this->prepare_trial_response($trial);
+    }
+    
+    /**
+     * Deletes a trial.
+     *
+     * @param \WP_REST_Request $request REST API request
+     * @return \WP_REST_Response|\WP_Error Success response or error
+     */
+    public function delete_trial(\WP_REST_Request $request)
+    {
+        $trial_id = $request['id'];
+        $trial = get_post($trial_id);
+        
+        if (!$trial || $trial->post_type !== 'trial') {
+            return new \WP_Error('trial_not_found', __('Trial not found', 'open-veil'), ['status' => 404]);
+        }
+        
+        $result = wp_delete_post($trial_id, true);
+        
+        if (!$result) {
+            return new \WP_Error('delete_failed', __('Failed to delete trial', 'open-veil'), ['status' => 500]);
+        }
+        
+        return new \WP_REST_Response(
+            ['message' => __('Trial deleted successfully', 'open-veil')],
+            200
+        );
     }
 
     /**
