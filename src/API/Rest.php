@@ -19,7 +19,10 @@ class Rest
      */
     public function __construct()
     {
-        // Initialize the versioned API implementations
+        // Initialize the versioned API implementation
         new V1();
+        
+        // Future versions can be added here as they are developed
+        // Example: new V2();
     }
 }
