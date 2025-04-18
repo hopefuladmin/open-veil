@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OpenVeil\API;
+namespace OpenVeil\API\V1;
 
 /**
  * REST API V1
@@ -11,7 +11,7 @@ namespace OpenVeil\API;
  * 
  * @package OpenVeil\API
  */
-class V1
+class Api
 {
     /**
      * API namespace
