@@ -112,9 +112,10 @@ abstract class AbstractAPI
      * Formats trial data for API response.
      *
      * @param \WP_Post $trial Trial post object
+     * @param bool $include_full_protocol Whether to include full protocol data (defaults to false)
      * @return array Formatted trial data
      */
-    protected function prepare_trial_response(\WP_Post $trial): array
+    protected function prepare_trial_response(\WP_Post $trial, bool $include_full_protocol = false): array
     {
         $protocol_id = get_post_meta($trial->ID, 'protocol_id', true);
         $protocol = $protocol_id ? get_post($protocol_id) : null;
@@ -130,11 +131,15 @@ abstract class AbstractAPI
                 'name' => get_the_author_meta('display_name', $trial->post_author),
             ],
             'permalink' => get_permalink($trial->ID),
-            'protocol' => $protocol ? [
-                'id' => $protocol->ID,
-                'title' => $protocol->post_title,
-                'permalink' => get_permalink($protocol->ID),
-            ] : null,
+            'protocol' => $protocol 
+                ? ($include_full_protocol 
+                    ? $this->prepare_protocol_response($protocol) 
+                    : [
+                        'id' => $protocol->ID,
+                        'title' => $protocol->post_title,
+                        'permalink' => get_permalink($protocol->ID),
+                      ])
+                : null,
             'meta' => [
                 'protocol_id' => $protocol_id,
                 'laser_wavelength' => get_post_meta($trial->ID, 'laser_wavelength', true),

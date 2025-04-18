@@ -746,8 +746,12 @@ class V1 extends AbstractAPI
         $trials = get_posts($args);
         $response = [];
 
+        // Check if we should include full protocol data (accepting any truthy value)
+        $include_protocol = isset($request['include_protocol']) && 
+                           filter_var($request['include_protocol'], FILTER_VALIDATE_BOOLEAN);
+
         foreach ($trials as $trial) {
-            $response[] = $this->prepare_trial_response($trial);
+            $response[] = $this->prepare_trial_response($trial, $include_protocol);
         }
 
         return $response;
@@ -768,7 +772,11 @@ class V1 extends AbstractAPI
             return new \WP_Error('trial_not_found', __('Trial not found', 'open-veil'), ['status' => 404]);
         }
 
-        return $this->prepare_trial_response($trial);
+        // Check if we should include full protocol data (accepting any truthy value)
+        $include_protocol = isset($request['include_protocol']) && 
+                           filter_var($request['include_protocol'], FILTER_VALIDATE_BOOLEAN);
+
+        return $this->prepare_trial_response($trial, $include_protocol);
     }
 
     /**
