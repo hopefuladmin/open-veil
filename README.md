@@ -19,11 +19,15 @@ A WordPress plugin designed to structure, collect, and share experimental protoc
     - [Get Protocols by Author](#get-protocols-by-author)
     - [Get Protocol CSL](#get-protocol-csl)
     - [Create Protocol](#create-protocol)
+    - [Update Protocol](#update-protocol)
+    - [Delete Protocol](#delete-protocol)
   - [Trial Endpoints](#trial-endpoints)
     - [Get All Trials](#get-all-trials)
     - [Get Trial by ID](#get-trial-by-id)
     - [Get Trial CSL](#get-trial-csl)
     - [Create Trial](#create-trial)
+    - [Update Trial](#update-trial)
+    - [Delete Trial](#delete-trial)
   - [Schema Endpoint](#schema-endpoint)
     - [Get Schema](#get-schema)
 - [Postman Collection](#postman-collection)
@@ -100,7 +104,7 @@ For endpoints that create or modify data, you'll need to include a WordPress non
 #### Get All Protocols
 
 ```plaintext
-GET /protocol
+GET /wp-json/open-veil/v1/protocol
 ```
 
 Returns an array of all published protocols.
@@ -108,7 +112,7 @@ Returns an array of all published protocols.
 #### Get Protocol by ID
 
 ```plaintext
-GET /protocol/{id}
+GET /wp-json/open-veil/v1/protocol/{id}
 ```
 
 Returns a single protocol by its ID.
@@ -116,7 +120,7 @@ Returns a single protocol by its ID.
 #### Get Protocol by Slug
 
 ```plaintext
-GET /protocol/name/{slug}
+GET /wp-json/open-veil/v1/protocol/name/{slug}
 ```
 
 Returns a single protocol by its slug.
@@ -124,7 +128,7 @@ Returns a single protocol by its slug.
 #### Get Protocol Trials
 
 ```plaintext
-GET /protocol/trials/{id}
+GET /wp-json/open-veil/v1/protocol/trials/{id}
 ```
 
 Returns all trials associated with a specific protocol.
@@ -132,7 +136,7 @@ Returns all trials associated with a specific protocol.
 #### Get Protocols by Author
 
 ```plaintext
-GET /protocol/author/{author_id}
+GET /wp-json/open-veil/v1/protocol/author/{author_id}
 ```
 
 Returns all protocols created by a specific author.
@@ -140,7 +144,7 @@ Returns all protocols created by a specific author.
 #### Get Protocol CSL
 
 ```plaintext
-GET /protocol/{id}/csl
+GET /wp-json/open-veil/v1/protocol/{id}/csl
 ```
 
 Returns citation data for a protocol in CSL-JSON format.
@@ -148,7 +152,7 @@ Returns citation data for a protocol in CSL-JSON format.
 #### Create Protocol
 
 ```plaintext
-POST /protocol
+POST /wp-json/open-veil/v1/protocol
 ```
 
 Creates a new protocol. Required fields:
@@ -189,12 +193,54 @@ Example request:
 }
 ```
 
+#### Update Protocol
+
+```plaintext
+PUT /wp-json/open-veil/v1/protocol/{id}
+```
+
+Updates an existing protocol by its ID. You only need to include the fields you want to update.
+
+Permission: Protocol author or administrator.
+
+Example request (updating just the title and laser power):
+
+```json
+{
+  "title": "Updated Protocol Title",
+  "meta": {
+    "laser_power": 1.2
+  }
+}
+```
+
+Example request (updating taxonomies):
+
+```json
+{
+  "tax_input": {
+    "laser_class": ["Class 3R"],
+    "equipment": ["Laser", "Tripod", "Diffuser"]
+  }
+}
+```
+
+#### Delete Protocol
+
+```plaintext
+DELETE /wp-json/open-veil/v1/protocol/{id}
+```
+
+Deletes a protocol by its ID. This operation will fail if there are trials associated with the protocol.
+
+Permission: Protocol author or administrator.
+
 ### Trial Endpoints
 
 #### Get All Trials
 
 ```plaintext
-GET /trial
+GET /wp-json/open-veil/v1/trial
 ```
 
 Returns an array of all published trials.
@@ -202,7 +248,7 @@ Returns an array of all published trials.
 #### Get Trial by ID
 
 ```plaintext
-GET /trial/{id}
+GET /wp-json/open-veil/v1/trial/{id}
 ```
 
 Returns a single trial by its ID.
@@ -210,7 +256,7 @@ Returns a single trial by its ID.
 #### Get Trial CSL
 
 ```plaintext
-GET /trial/{id}/csl
+GET /wp-json/open-veil/v1/trial/{id}/csl
 ```
 
 Returns citation data for a trial in CSL-JSON format.
@@ -218,7 +264,7 @@ Returns citation data for a trial in CSL-JSON format.
 #### Create Trial
 
 ```plaintext
-POST /trial
+POST /wp-json/open-veil/v1/trial
 ```
 
 Creates a new trial. Required fields:
@@ -238,8 +284,9 @@ Optional fields:
   - `administration_notes`: Notes about the administration method
   - `additional_observers`: Whether there were additional observers (boolean)
 - `tax_input`: Object containing taxonomy terms to assign
+- `questionnaire`: Object containing questionnaire responses organized by section
 
-Example request:
+Example request with questionnaire data:
 
 ```json
 {
@@ -262,19 +309,111 @@ Example request:
     "administration_method": ["Inhalation"],
     "administration_protocol": ["Two inhales"],
     "projection_surface": ["Flat non-reflective"]
+  },
+  "questionnaire": {
+    "about_you": {
+      "participant_name": "Anonymous Researcher",
+      "participant_email": "anonymous@example.com",
+      "psychedelic_experience_level": "Experienced",
+      "dmt_experience_level": "Intermediate",
+      "simulation_theory_interest": "Very interested",
+      "how_found_us": "Online search"
+    },
+    "experiment_setup": {
+      "received_laser_from_us": false,
+      "beam_shape": "Point",
+      "laser_power_source": "Battery",
+      "accessories_used": "Diffraction grating",
+      "set_and_setting": "Quiet room, low light",
+      "experiment_datetime": "2025-04-01 20:00",
+      "lighting_conditions": "Dim",
+      "surfaces_used": "White wall",
+      "additional_setup_info": "Room temperature approximately 72°F"
+    },
+    "substances_used": {
+      "other_substances": "None",
+      "intoxication_level": "Strong",
+      "visual_mental_effects": "Strong geometric visuals, sense of presence",
+      "additional_substance_info": "N,N-DMT from reputable source"
+    },
+    "visual_effects": {
+      "beam_changed": true,
+      "beam_changes_description": "Beam appeared to split into multiple paths",
+      "saw_code_of_reality": true,
+      "symbols_seen": "Geometric, Alphabetic",
+      "symbols_description": "Appeared similar to ancient symbols",
+      "code_moving": true,
+      "movement_direction": "Flowing downward",
+      "characters_tiny": true,
+      "size_changed": true,
+      "code_clarity": "Very clear",
+      "code_behaved_like_object": true,
+      "could_influence_code": false,
+      "influence_description": "",
+      "code_persisted_without_laser": true,
+      "persisted_when_looked_away": false,
+      "persisted_after_turning_off": true,
+      "where_else_seen": "Closed eye visuals"
+    },
+    "other_phenomena": {
+      "noticed_anything_else": "Strong sense of meaning in the symbols",
+      "experiment_duration": "15 minutes",
+      "questions_comments_suggestions": "Would be interesting to try with different colored lasers"
+    }
   }
 }
 ```
+
+#### Update Trial
+
+```plaintext
+PUT /wp-json/open-veil/v1/trial/{id}
+```
+
+Updates an existing trial by its ID. You only need to include the fields you want to update.
+
+Permission: Trial author, administrator, or a user with a valid claim token for anonymous submissions.
+
+Example request (updating specific questionnaire fields):
+
+```json
+{
+  "questionnaire": {
+    "visual_effects": {
+      "beam_changed": true,
+      "beam_changes_description": "Updated description of beam changes"
+    },
+    "other_phenomena": {
+      "experiment_duration": "20 minutes"
+    }
+  }
+}
+```
+
+#### Delete Trial
+
+```plaintext
+DELETE /wp-json/open-veil/v1/trial/{id}
+```
+
+Deletes a trial by its ID.
+
+Permission: Trial author or administrator.
 
 ### Schema Endpoint
 
 #### Get Schema
 
 ```plaintext
-GET /schema
+GET /wp-json/open-veil/v1/schema
 ```
 
-Returns schema information including available taxonomies and metadata fields.
+Returns schema information including:
+- Available taxonomies and their terms
+- Metadata fields for protocols and trials
+- Questionnaire structure with field definitions
+
+This endpoint is useful for dynamically building forms and understanding the data structure.
 
 ## Postman Collection
 

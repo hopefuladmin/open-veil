@@ -49,50 +49,57 @@
             "projection_distance"
           ]
         },
-        "tax_input": {
+        "taxonomies": {
           "type": "object",
           "properties": {
             "laser_class": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Classes of lasers used"
             },
             "diffraction_grating_spec": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Diffraction grating specifications"
             },
             "equipment": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Equipment used in protocol"
             },
             "substance": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Substances used in protocol"
             },
             "administration_method": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Substance administration methods"
             },
             "administration_protocol": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Substance administration protocols"
             },
             "projection_surface": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Surfaces used for projection"
             }
           }
         }
@@ -157,49 +164,242 @@
             "projection_distance"
           ]
         },
-        "tax_input": {
+        "taxonomies": {
           "type": "object",
           "properties": {
             "laser_class": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Classes of lasers used"
             },
             "diffraction_grating_spec": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Diffraction grating specifications"
             },
             "equipment": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Equipment used in trial"
             },
             "substance": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Substances used in trial"
             },
             "administration_method": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Substance administration methods"
             },
             "administration_protocol": {
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Substance administration protocols"
             },
             "projection_surface": {
               "type": "array",
               "items": {
                 "type": "string"
+              },
+              "description": "Surfaces used for projection"
+            }
+          }
+        },
+        "questionnaire": {
+          "type": "object",
+          "properties": {
+            "about_you": {
+              "type": "object",
+              "properties": {
+                "participant_name": {
+                  "type": "string",
+                  "description": "Participant name"
+                },
+                "participant_email": {
+                  "type": "string",
+                  "description": "Participant email"
+                },
+                "psychedelic_experience_level": {
+                  "type": "string",
+                  "description": "Psychedelic experience level"
+                },
+                "dmt_experience_level": {
+                  "type": "string",
+                  "description": "DMT experience level"
+                },
+                "simulation_theory_interest": {
+                  "type": "string",
+                  "description": "Interest in simulation theory"
+                },
+                "how_found_us": {
+                  "type": "string",
+                  "description": "How participant found the project"
+                }
+              }
+            },
+            "experiment_setup": {
+              "type": "object",
+              "properties": {
+                "received_laser_from_us": {
+                  "type": "boolean",
+                  "description": "Whether the participant received laser from project"
+                },
+                "beam_shape": {
+                  "type": "string",
+                  "description": "Shape of the laser beam"
+                },
+                "laser_power_source": {
+                  "type": "string",
+                  "description": "Power source for the laser"
+                },
+                "accessories_used": {
+                  "type": "string",
+                  "description": "Accessories used with the laser"
+                },
+                "set_and_setting": {
+                  "type": "string",
+                  "description": "Set and setting for the experiment"
+                },
+                "experiment_datetime": {
+                  "type": "string",
+                  "description": "Date and time of the experiment"
+                },
+                "lighting_conditions": {
+                  "type": "string",
+                  "description": "Lighting conditions during experiment"
+                },
+                "surfaces_used": {
+                  "type": "string",
+                  "description": "Surfaces used for projection"
+                },
+                "additional_setup_info": {
+                  "type": "string",
+                  "description": "Additional setup information"
+                }
+              }
+            },
+            "substances_used": {
+              "type": "object",
+              "properties": {
+                "other_substances": {
+                  "type": "string",
+                  "description": "Other substances used"
+                },
+                "intoxication_level": {
+                  "type": "string",
+                  "description": "Level of intoxication"
+                },
+                "visual_mental_effects": {
+                  "type": "string",
+                  "description": "Visual and mental effects"
+                },
+                "additional_substance_info": {
+                  "type": "string",
+                  "description": "Additional information about substances"
+                }
+              }
+            },
+            "visual_effects": {
+              "type": "object",
+              "properties": {
+                "beam_changed": {
+                  "type": "boolean",
+                  "description": "Whether the beam changed visually"
+                },
+                "beam_changes_description": {
+                  "type": "string",
+                  "description": "Description of beam changes"
+                },
+                "saw_code_of_reality": {
+                  "type": "boolean",
+                  "description": "Whether participant saw code of reality"
+                },
+                "symbols_seen": {
+                  "type": "string",
+                  "description": "Types of symbols seen"
+                },
+                "symbols_description": {
+                  "type": "string",
+                  "description": "Description of symbols seen"
+                },
+                "code_moving": {
+                  "type": "boolean",
+                  "description": "Whether the code was moving"
+                },
+                "movement_direction": {
+                  "type": "string",
+                  "description": "Direction of code movement"
+                },
+                "characters_tiny": {
+                  "type": "boolean",
+                  "description": "Whether characters were tiny"
+                },
+                "size_changed": {
+                  "type": "boolean",
+                  "description": "Whether size of characters changed"
+                },
+                "code_clarity": {
+                  "type": "string",
+                  "description": "Clarity of the code"
+                },
+                "code_behaved_like_object": {
+                  "type": "boolean",
+                  "description": "Whether code behaved like physical object"
+                },
+                "could_influence_code": {
+                  "type": "boolean",
+                  "description": "Whether participant could influence code"
+                },
+                "influence_description": {
+                  "type": "string",
+                  "description": "Description of how code was influenced"
+                },
+                "code_persisted_without_laser": {
+                  "type": "boolean",
+                  "description": "Whether code persisted without laser"
+                },
+                "persisted_when_looked_away": {
+                  "type": "boolean",
+                  "description": "Whether code persisted when looked away"
+                },
+                "persisted_after_turning_off": {
+                  "type": "boolean",
+                  "description": "Whether code persisted after turning off laser"
+                },
+                "where_else_seen": {
+                  "type": "string",
+                  "description": "Where else code was seen"
+                }
+              }
+            },
+            "other_phenomena": {
+              "type": "object",
+              "properties": {
+                "noticed_anything_else": {
+                  "type": "string",
+                  "description": "Other phenomena noticed"
+                },
+                "experiment_duration": {
+                  "type": "string",
+                  "description": "Duration of the experiment"
+                },
+                "questions_comments_suggestions": {
+                  "type": "string",
+                  "description": "Questions, comments, or suggestions"
+                }
               }
             }
           }

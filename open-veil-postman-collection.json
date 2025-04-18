@@ -27,9 +27,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/protocol",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "protocol"]
+              "path": ["wp-json", "open-veil", "v1", "protocol"]
             },
             "description": "Get all protocols"
           },
@@ -41,9 +41,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/protocol/1001",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/1001",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "protocol", "1001"]
+              "path": ["wp-json", "open-veil", "v1", "protocol", "1001"]
             },
             "description": "Get a protocol by ID"
           },
@@ -55,11 +55,12 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/protocol/name/code-of-reality-protocol",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/name/code-of-reality-protocol",
               "host": ["{{base_url}}"],
               "path": [
                 "wp-json",
                 "open-veil",
+                "v1",
                 "protocol",
                 "name",
                 "code-of-reality-protocol"
@@ -75,9 +76,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/protocol/trials/1001",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/trials/1001",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "protocol", "trials", "1001"]
+              "path": ["wp-json", "open-veil", "v1", "protocol", "trials", "1001"]
             },
             "description": "Get all trials for a protocol"
           },
@@ -89,9 +90,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/protocol/author/1",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/author/1",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "protocol", "author", "1"]
+              "path": ["wp-json", "open-veil", "v1", "protocol", "author", "1"]
             },
             "description": "Get protocols by author ID"
           },
@@ -103,9 +104,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/protocol/1001/csl",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/1001/csl",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "protocol", "1001", "csl"]
+              "path": ["wp-json", "open-veil", "v1", "protocol", "1001", "csl"]
             },
             "description": "Get CSL-JSON for a protocol"
           },
@@ -127,14 +128,87 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"New Protocol Test\",\n  \"content\": \"This is a test protocol created via the API.\",\n  \"meta\": {\n    \"laser_wavelength\": 650,\n    \"laser_power\": 1.0,\n    \"substance_dose\": 1.0,\n    \"projection_distance\": 5\n  },\n  \"tax_input\": {\n    \"laser_class\": [\"Class 2\"],\n    \"diffraction_grating_spec\": [\"Standard\"],\n    \"equipment\": [\"Laser\", \"Tripod\"],\n    \"substance\": [\"N,N-DMT\"],\n    \"administration_method\": [\"Inhalation\"],\n    \"administration_protocol\": [\"Two inhales\"],\n    \"projection_surface\": [\"Flat non-reflective\"]\n  }\n}"
+              "raw": "{\n  \"title\": \"New Protocol Test\",\n  \"content\": \"This is a test protocol created via the API.\",\n  \"meta\": {\n    \"laser_wavelength\": 650,\n    \"laser_power\": 1.0,\n    \"substance_dose\": 1.0,\n    \"projection_distance\": 5\n  },\n  \"taxonomies\": {\n    \"laser_class\": [\"Class 2\"],\n    \"diffraction_grating_spec\": [\"Standard\"],\n    \"equipment\": [\"Laser\", \"Tripod\"],\n    \"substance\": [\"N,N-DMT\"],\n    \"administration_method\": [\"Inhalation\"],\n    \"administration_protocol\": [\"Two inhales\"],\n    \"projection_surface\": [\"Flat non-reflective\"]\n  }\n}"
             },
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/protocol",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "protocol"]
+              "path": ["wp-json", "open-veil", "v1", "protocol"]
             },
             "description": "Create a new protocol"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Protocol",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-WP-Nonce",
+                "value": "{{wp_nonce}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Protocol Title\",\n  \"content\": \"This protocol has been updated via the API.\",\n  \"meta\": {\n    \"laser_wavelength\": 635,\n    \"laser_power\": 1.2,\n    \"substance_dose\": 0.9,\n    \"projection_distance\": 6\n  },\n  \"taxonomies\": {\n    \"laser_class\": [\"Class 3R\"],\n    \"diffraction_grating_spec\": [\"Standard\"],\n    \"equipment\": [\"Laser\", \"Tripod\", \"Diffuser\"],\n    \"substance\": [\"N,N-DMT\"],\n    \"administration_method\": [\"Inhalation\"],\n    \"administration_protocol\": [\"Three inhales\"],\n    \"projection_surface\": [\"Flat non-reflective\"]\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/1001",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol", "1001"]
+            },
+            "description": "Update an existing protocol (only parameters provided will be updated)"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Protocol (Single Field)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-WP-Nonce",
+                "value": "{{wp_nonce}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"meta\": {\n    \"laser_wavelength\": 650\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/1001",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol", "1001"]
+            },
+            "description": "Update just the laser_wavelength field of a protocol"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Protocol",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-WP-Nonce",
+                "value": "{{wp_nonce}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/1001",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol", "1001"]
+            },
+            "description": "Delete a protocol (only if it has no associated trials)"
           },
           "response": []
         }
@@ -150,9 +224,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/trial",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "trial"]
+              "path": ["wp-json", "open-veil", "v1", "trial"]
             },
             "description": "Get all trials"
           },
@@ -164,9 +238,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/trial/1002",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial/1002",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "trial", "1002"]
+              "path": ["wp-json", "open-veil", "v1", "trial", "1002"]
             },
             "description": "Get a trial by ID"
           },
@@ -178,9 +252,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/trial/1002/csl",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial/1002/csl",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "trial", "1002", "csl"]
+              "path": ["wp-json", "open-veil", "v1", "trial", "1002", "csl"]
             },
             "description": "Get CSL-JSON for a trial"
           },
@@ -202,14 +276,87 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Trial – 2025-04-01\",\n  \"content\": \"Felt presence and geometric visuals after two inhales.\",\n  \"meta\": {\n    \"protocol_id\": 1001,\n    \"laser_wavelength\": 650,\n    \"laser_power\": 0.8,\n    \"substance_dose\": 1.1,\n    \"projection_distance\": 6,\n    \"administration_notes\": \"Deep inhale using a quartz pipe.\",\n    \"additional_observers\": true\n  },\n  \"tax_input\": {\n    \"laser_class\": [\"Class 2\"],\n    \"diffraction_grating_spec\": [\"Standard\"],\n    \"equipment\": [\"Laser\", \"Tripod\"],\n    \"substance\": [\"N,N-DMT\"],\n    \"administration_method\": [\"Inhalation\"],\n    \"administration_protocol\": [\"Two inhales\"],\n    \"projection_surface\": [\"Flat non-reflective\"]\n  }\n}"
+              "raw": "{\n  \"title\": \"Trial – 2025-04-01\",\n  \"content\": \"Felt presence and geometric visuals after two inhales.\",\n  \"meta\": {\n    \"protocol_id\": 1001,\n    \"laser_wavelength\": 650,\n    \"laser_power\": 0.8,\n    \"substance_dose\": 1.1,\n    \"projection_distance\": 6,\n    \"administration_notes\": \"Deep inhale using a quartz pipe.\",\n    \"additional_observers\": true\n  },\n  \"taxonomies\": {\n    \"laser_class\": [\"Class 2\"],\n    \"diffraction_grating_spec\": [\"Standard\"],\n    \"equipment\": [\"Laser\", \"Tripod\"],\n    \"substance\": [\"N,N-DMT\"],\n    \"administration_method\": [\"Inhalation\"],\n    \"administration_protocol\": [\"Two inhales\"],\n    \"projection_surface\": [\"Flat non-reflective\"]\n  },\n  \"questionnaire\": {\n    \"about_you\": {\n      \"participant_name\": \"Anonymous Researcher\",\n      \"participant_email\": \"anonymous@example.com\",\n      \"psychedelic_experience_level\": \"Experienced\",\n      \"dmt_experience_level\": \"Intermediate\",\n      \"simulation_theory_interest\": \"Very interested\",\n      \"how_found_us\": \"Online search\"\n    },\n    \"experiment_setup\": {\n      \"received_laser_from_us\": false,\n      \"beam_shape\": \"Point\",\n      \"laser_power_source\": \"Battery\",\n      \"accessories_used\": \"Diffraction grating\",\n      \"set_and_setting\": \"Quiet room, low light\",\n      \"experiment_datetime\": \"2025-04-01 20:00\",\n      \"lighting_conditions\": \"Dim\",\n      \"surfaces_used\": \"White wall\",\n      \"additional_setup_info\": \"Room temperature approximately 72°F\"\n    },\n    \"substances_used\": {\n      \"other_substances\": \"None\",\n      \"intoxication_level\": \"Strong\",\n      \"visual_mental_effects\": \"Strong geometric visuals, sense of presence\",\n      \"additional_substance_info\": \"N,N-DMT from reputable source\"\n    },\n    \"visual_effects\": {\n      \"beam_changed\": true,\n      \"beam_changes_description\": \"Beam appeared to split into multiple paths\",\n      \"saw_code_of_reality\": true,\n      \"symbols_seen\": \"Geometric, Alphabetic\",\n      \"symbols_description\": \"Appeared similar to ancient symbols\",\n      \"code_moving\": true,\n      \"movement_direction\": \"Flowing downward\",\n      \"characters_tiny\": true,\n      \"size_changed\": true,\n      \"code_clarity\": \"Very clear\",\n      \"code_behaved_like_object\": true,\n      \"could_influence_code\": false,\n      \"influence_description\": \"\",\n      \"code_persisted_without_laser\": true,\n      \"persisted_when_looked_away\": false,\n      \"persisted_after_turning_off\": true,\n      \"where_else_seen\": \"Closed eye visuals\"\n    },\n    \"other_phenomena\": {\n      \"noticed_anything_else\": \"Strong sense of meaning in the symbols\",\n      \"experiment_duration\": \"15 minutes\",\n      \"questions_comments_suggestions\": \"Would be interesting to try with different colored lasers\"\n    }\n  }\n}"
             },
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/trial",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "trial"]
+              "path": ["wp-json", "open-veil", "v1", "trial"]
             },
-            "description": "Create a new trial"
+            "description": "Create a new trial with full questionnaire data"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Trial",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-WP-Nonce",
+                "value": "{{wp_nonce}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Trial – 2025-04-01\",\n  \"content\": \"This trial has been updated via the API.\",\n  \"meta\": {\n    \"laser_wavelength\": 635,\n    \"laser_power\": 1.0,\n    \"substance_dose\": 1.2,\n    \"projection_distance\": 7,\n    \"administration_notes\": \"Updated admin notes\",\n    \"additional_observers\": false\n  },\n  \"taxonomies\": {\n    \"laser_class\": [\"Class 3R\"],\n    \"equipment\": [\"Laser\", \"Tripod\", \"Diffuser\"]\n  },\n  \"questionnaire\": {\n    \"visual_effects\": {\n      \"beam_changed\": true,\n      \"beam_changes_description\": \"Updated description of beam changes\",\n      \"saw_code_of_reality\": true,\n      \"code_moving\": false\n    },\n    \"other_phenomena\": {\n      \"noticed_anything_else\": \"Updated additional observations\",\n      \"experiment_duration\": \"20 minutes\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial/1002",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial", "1002"]
+            },
+            "description": "Update an existing trial (only parameters provided will be updated)"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Trial (Single Field)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-WP-Nonce",
+                "value": "{{wp_nonce}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"questionnaire\": {\n    \"visual_effects\": {\n      \"beam_changed\": true\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial/1002",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial", "1002"]
+            },
+            "description": "Update just a single field in the questionnaire"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Trial",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-WP-Nonce",
+                "value": "{{wp_nonce}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial/1002",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial", "1002"]
+            },
+            "description": "Delete a trial"
           },
           "response": []
         }
@@ -225,9 +372,9 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/schema",
+              "raw": "{{base_url}}/wp-json/open-veil/v1/schema",
               "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "schema"]
+              "path": ["wp-json", "open-veil", "v1", "schema"]
             },
             "description": "Get schema information"
           },
