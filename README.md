@@ -14,9 +14,6 @@ A WordPress plugin designed to structure, collect, and share experimental protoc
   - [Protocol Endpoints](#protocol-endpoints)
     - [Get All Protocols](#get-all-protocols)
     - [Get Protocol by ID](#get-protocol-by-id)
-    - [Get Protocol by Slug](#get-protocol-by-slug)
-    - [Get Protocol Trials](#get-protocol-trials)
-    - [Get Protocols by Author](#get-protocols-by-author)
     - [Get Protocol CSL](#get-protocol-csl)
     - [Create Protocol](#create-protocol)
     - [Update Protocol](#update-protocol)
@@ -118,30 +115,6 @@ GET /wp-json/open-veil/v1/protocol/{id}
 ```
 
 Returns a single protocol by its ID.
-
-#### Get Protocol by Slug
-
-```plaintext
-GET /wp-json/open-veil/v1/protocol/name/{slug}
-```
-
-Returns a single protocol by its slug.
-
-#### Get Protocol Trials
-
-```plaintext
-GET /wp-json/open-veil/v1/protocol/trials/{id}
-```
-
-Returns all trials associated with a specific protocol.
-
-#### Get Protocols by Author
-
-```plaintext
-GET /wp-json/open-veil/v1/protocol/author/{author_id}
-```
-
-Returns all protocols created by a specific author.
 
 #### Get Protocol CSL
 

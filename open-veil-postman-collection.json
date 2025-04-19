@@ -50,55 +50,6 @@
           "response": []
         },
         {
-          "name": "Get Protocol by Slug",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/name/code-of-reality-protocol",
-              "host": ["{{base_url}}"],
-              "path": [
-                "wp-json",
-                "open-veil",
-                "v1",
-                "protocol",
-                "name",
-                "code-of-reality-protocol"
-              ]
-            },
-            "description": "Get a protocol by slug"
-          },
-          "response": []
-        },
-        {
-          "name": "Get Protocol Trials",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/trials/1001",
-              "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "v1", "protocol", "trials", "1001"]
-            },
-            "description": "Get all trials for a protocol"
-          },
-          "response": []
-        },
-        {
-          "name": "Get Protocols by Author",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/author/1",
-              "host": ["{{base_url}}"],
-              "path": ["wp-json", "open-veil", "v1", "protocol", "author", "1"]
-            },
-            "description": "Get protocols by author ID"
-          },
-          "response": []
-        },
-        {
           "name": "Get Protocol CSL",
           "request": {
             "method": "GET",

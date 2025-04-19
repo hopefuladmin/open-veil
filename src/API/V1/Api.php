@@ -83,33 +83,9 @@ class Api
             ]
         ]);
 
-        register_rest_route($this->namespace, '/protocol/name/(?P<slug>[a-zA-Z0-9-]+)', [
-            'methods' => 'GET',
-            'callback' => [$this, 'get_protocol_by_slug'],
-            'permission_callback' => function () {
-                return true; // Public access
-            },
-        ]);
-
         register_rest_route($this->namespace, '/protocol', [
             'methods' => 'GET',
             'callback' => [$this, 'get_protocols'],
-            'permission_callback' => function () {
-                return true; // Public access
-            },
-        ]);
-
-        register_rest_route($this->namespace, '/protocol/trials/(?P<id>\d+)', [
-            'methods' => 'GET',
-            'callback' => [$this, 'get_protocol_trials'],
-            'permission_callback' => function () {
-                return true; // Public access
-            },
-        ]);
-
-        register_rest_route($this->namespace, '/protocol/author/(?P<author_id>\d+)', [
-            'methods' => 'GET',
-            'callback' => [$this, 'get_protocols_by_author'],
             'permission_callback' => function () {
                 return true; // Public access
             },
@@ -752,24 +728,6 @@ class Api
     }
 
     /**
-     * Retrieves a protocol by its slug.
-     *
-     * @param \WP_REST_Request $request REST API request
-     * @return array|\WP_Error Protocol data or error
-     */
-    public function get_protocol_by_slug(\WP_REST_Request $request)
-    {
-        $protocol_slug = $request['slug'];
-        $protocol = get_page_by_path($protocol_slug, OBJECT, 'protocol');
-
-        if (!$protocol) {
-            return new \WP_Error('protocol_not_found', __('Protocol not found', 'open-veil'), ['status' => 404]);
-        }
-
-        return $this->prepare_protocol_response($protocol);
-    }
-
-    /**
      * Retrieves all published protocols.
      *
      * @param \WP_REST_Request $request REST API request
@@ -781,71 +739,6 @@ class Api
             'post_type' => 'protocol',
             'posts_per_page' => -1,
             'post_status' => 'publish',
-        ];
-
-        $protocols = get_posts($args);
-        $response = [];
-
-        foreach ($protocols as $protocol) {
-            $response[] = $this->prepare_protocol_response($protocol);
-        }
-
-        return $response;
-    }
-
-    /**
-     * Retrieves all trials associated with a specific protocol.
-     *
-     * @param \WP_REST_Request $request REST API request
-     * @return array|\WP_Error Array of trials or error
-     */
-    public function get_protocol_trials($request)
-    {
-        $protocol_id = $request['id'];
-        $protocol = get_post($protocol_id);
-
-        if (!$protocol || $protocol->post_type !== 'protocol') {
-            return new \WP_Error('protocol_not_found', __('Protocol not found', 'open-veil'), ['status' => 404]);
-        }
-
-        $args = [
-            'post_type' => 'trial',
-            'posts_per_page' => -1,
-            'post_status' => 'publish',
-            'meta_query' => [
-                [
-                    'key' => 'protocol_id',
-                    'value' => $protocol_id,
-                    'compare' => '=',
-                ]
-            ],
-        ];
-
-        $trials = get_posts($args);
-        $response = [];
-
-        foreach ($trials as $trial) {
-            $response[] = $this->prepare_trial_response($trial);
-        }
-
-        return $response;
-    }
-
-    /**
-     * Retrieves all protocols created by a specific author.
-     *
-     * @param \WP_REST_Request $request REST API request
-     * @return array Array of protocols
-     */
-    public function get_protocols_by_author($request)
-    {
-        $author_id = $request['author_id'];
-
-        $args = [
-            'post_type' => 'protocol',
-            'posts_per_page' => -1,
-            'post_status' => 'publish',
-            'author' => $author_id,
         ];
 
         $protocols = get_posts($args);
