@@ -8,12 +8,17 @@
   "variable": [
     {
       "key": "base_url",
-      "value": "http://localhost:9000",
+      "value": "http://localhost:8080",
       "type": "string"
     },
     {
-      "key": "wp_nonce",
-      "value": "your_wp_nonce_here",
+      "key": "username",
+      "value": "admin",
+      "type": "string"
+    },
+    {
+      "key": "password",
+      "value": "password",
       "type": "string"
     }
   ],
@@ -36,6 +41,230 @@
           "response": []
         },
         {
+          "name": "Get Protocols (Paginated)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol?page=1&per_page=10",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "per_page",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Get protocols with pagination. Response includes X-WP-Total and X-WP-TotalPages headers."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocols (Sorted)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol?orderby=title&order=asc",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol"],
+              "query": [
+                {
+                  "key": "orderby",
+                  "value": "title"
+                },
+                {
+                  "key": "order",
+                  "value": "asc"
+                }
+              ]
+            },
+            "description": "Get protocols sorted by title in ascending order. Valid orderby values: id, title, date, modified, author, or meta.field_name (e.g., meta.laser_power)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocols (Meta Field Sorting)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol?orderby=meta.laser_power&order=desc",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol"],
+              "query": [
+                {
+                  "key": "orderby",
+                  "value": "meta.laser_power"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            },
+            "description": "Get protocols sorted by a meta field (laser_power) in descending order"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocols (Taxonomy Filtered)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol?substance=N,N-DMT&laser_class=Class 2,Class 3R",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol"],
+              "query": [
+                {
+                  "key": "substance",
+                  "value": "N,N-DMT"
+                },
+                {
+                  "key": "laser_class",
+                  "value": "Class 2,Class 3R"
+                }
+              ]
+            },
+            "description": "Get protocols with taxonomy filtering. Comma-separated values use OR logic. Multiple parameters use AND logic."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocols (Taxonomy Filtered by Slug)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol?substance_slug=dmt&laser_class_slug=class-2",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol"],
+              "query": [
+                {
+                  "key": "substance_slug",
+                  "value": "dmt"
+                },
+                {
+                  "key": "laser_class_slug",
+                  "value": "class-2"
+                }
+              ]
+            },
+            "description": "Get protocols with taxonomy filtering by slug"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocols (With Trials Embedded)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol?_embed=trials",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol"],
+              "query": [
+                {
+                  "key": "_embed",
+                  "value": "trials"
+                }
+              ]
+            },
+            "description": "Get protocols with trial data embedded in the response"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocols (Field Selection)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol?_fields=id,title,meta.laser_power,taxonomies.laser_class",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol"],
+              "query": [
+                {
+                  "key": "_fields",
+                  "value": "id,title,meta.laser_power,taxonomies.laser_class"
+                }
+              ]
+            },
+            "description": "Get protocols with only specific fields returned. Supports dot notation for nested fields."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocols (Search)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol?search=laser experiment",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol"],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "laser experiment"
+                }
+              ]
+            },
+            "description": "Search protocols by text in title and content"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocols (Combined Parameters)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol?page=1&per_page=5&orderby=date&order=desc&substance=N,N-DMT&_fields=id,title,meta&_embed=trials",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "per_page",
+                  "value": "5"
+                },
+                {
+                  "key": "orderby",
+                  "value": "date"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                },
+                {
+                  "key": "substance",
+                  "value": "N,N-DMT"
+                },
+                {
+                  "key": "_fields",
+                  "value": "id,title,meta"
+                },
+                {
+                  "key": "_embed",
+                  "value": "trials"
+                }
+              ]
+            },
+            "description": "Get protocols using multiple query parameters: pagination, sorting, filtering, field selection, and embedding"
+          },
+          "response": []
+        },
+        {
           "name": "Get Protocol by ID",
           "request": {
             "method": "GET",
@@ -46,6 +275,46 @@
               "path": ["wp-json", "open-veil", "v1", "protocol", "1001"]
             },
             "description": "Get a protocol by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocol by ID (With Trials Embedded)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/1001?_embed=trials",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol", "1001"],
+              "query": [
+                {
+                  "key": "_embed",
+                  "value": "trials"
+                }
+              ]
+            },
+            "description": "Get a protocol by ID with trial data embedded"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Protocol by ID (Field Selection)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/1001?_fields=id,title,meta,_links",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "protocol", "1001"],
+              "query": [
+                {
+                  "key": "_fields",
+                  "value": "id,title,meta,_links"
+                }
+              ]
+            },
+            "description": "Get a protocol by ID with only specific fields returned"
           },
           "response": []
         },
@@ -66,15 +335,26 @@
         {
           "name": "Create Protocol",
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "application/json"
-              },
-              {
-                "key": "X-WP-Nonce",
-                "value": "{{wp_nonce}}"
               }
             ],
             "body": {
@@ -93,15 +373,26 @@
         {
           "name": "Update Protocol",
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "PUT",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "application/json"
-              },
-              {
-                "key": "X-WP-Nonce",
-                "value": "{{wp_nonce}}"
               }
             ],
             "body": {
@@ -120,15 +411,26 @@
         {
           "name": "Update Protocol (Single Field)",
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "PUT",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "application/json"
-              },
-              {
-                "key": "X-WP-Nonce",
-                "value": "{{wp_nonce}}"
               }
             ],
             "body": {
@@ -147,13 +449,23 @@
         {
           "name": "Delete Protocol",
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "DELETE",
-            "header": [
-              {
-                "key": "X-WP-Nonce",
-                "value": "{{wp_nonce}}"
-              }
-            ],
+            "header": [],
             "url": {
               "raw": "{{base_url}}/wp-json/open-veil/v1/protocol/1001",
               "host": ["{{base_url}}"],
@@ -184,6 +496,246 @@
           "response": []
         },
         {
+          "name": "Get Trials (Paginated)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial?page=1&per_page=10",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "per_page",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Get trials with pagination. Response includes X-WP-Total and X-WP-TotalPages headers."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trials (Offset Pagination)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial?offset=10&per_page=10",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial"],
+              "query": [
+                {
+                  "key": "offset",
+                  "value": "10"
+                },
+                {
+                  "key": "per_page",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Get trials with offset-based pagination"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trials (Sorted)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial?orderby=date&order=desc",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial"],
+              "query": [
+                {
+                  "key": "orderby",
+                  "value": "date"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ]
+            },
+            "description": "Get trials sorted by date in descending order"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trials by Protocol ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial?protocol_id=1001",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial"],
+              "query": [
+                {
+                  "key": "protocol_id",
+                  "value": "1001"
+                }
+              ]
+            },
+            "description": "Get all trials associated with a specific protocol"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trials (Taxonomy Filtered)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial?substance=N,N-DMT&laser_class=Class 2",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial"],
+              "query": [
+                {
+                  "key": "substance",
+                  "value": "N,N-DMT"
+                },
+                {
+                  "key": "laser_class",
+                  "value": "Class 2"
+                }
+              ]
+            },
+            "description": "Get trials with taxonomy filtering"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trials (With Protocol Embedded)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial?_embed=protocol",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial"],
+              "query": [
+                {
+                  "key": "_embed",
+                  "value": "protocol"
+                }
+              ]
+            },
+            "description": "Get trials with protocol data embedded (replaces legacy include_protocol=1)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trials (Legacy Protocol Include)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial?include_protocol=1",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial"],
+              "query": [
+                {
+                  "key": "include_protocol",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get trials with protocol data using legacy parameter (for backward compatibility)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trials (Field Selection)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial?_fields=id,title,questionnaire.visual_effects",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial"],
+              "query": [
+                {
+                  "key": "_fields",
+                  "value": "id,title,questionnaire.visual_effects"
+                }
+              ]
+            },
+            "description": "Get trials with only specific fields returned"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trials (Search)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial?search=geometric visuals",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial"],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "geometric visuals"
+                }
+              ]
+            },
+            "description": "Search trials by text in title and content"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trials (Combined Parameters)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial?page=1&per_page=5&orderby=date&order=desc&substance=N,N-DMT&_fields=id,title,questionnaire.visual_effects&_embed=protocol",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "per_page",
+                  "value": "5"
+                },
+                {
+                  "key": "orderby",
+                  "value": "date"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                },
+                {
+                  "key": "substance",
+                  "value": "N,N-DMT"
+                },
+                {
+                  "key": "_fields",
+                  "value": "id,title,questionnaire.visual_effects"
+                },
+                {
+                  "key": "_embed",
+                  "value": "protocol"
+                }
+              ]
+            },
+            "description": "Get trials using multiple query parameters"
+          },
+          "response": []
+        },
+        {
           "name": "Get Trial by ID",
           "request": {
             "method": "GET",
@@ -194,6 +746,46 @@
               "path": ["wp-json", "open-veil", "v1", "trial", "1002"]
             },
             "description": "Get a trial by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trial by ID (With Protocol Embedded)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial/1002?_embed=protocol",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial", "1002"],
+              "query": [
+                {
+                  "key": "_embed",
+                  "value": "protocol"
+                }
+              ]
+            },
+            "description": "Get a trial by ID with protocol data embedded"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trial by ID (Field Selection)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wp-json/open-veil/v1/trial/1002?_fields=id,title,questionnaire.visual_effects,_links",
+              "host": ["{{base_url}}"],
+              "path": ["wp-json", "open-veil", "v1", "trial", "1002"],
+              "query": [
+                {
+                  "key": "_fields",
+                  "value": "id,title,questionnaire.visual_effects,_links"
+                }
+              ]
+            },
+            "description": "Get a trial by ID with only specific fields returned"
           },
           "response": []
         },
@@ -214,15 +806,26 @@
         {
           "name": "Create Trial",
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "application/json"
-              },
-              {
-                "key": "X-WP-Nonce",
-                "value": "{{wp_nonce}}"
               }
             ],
             "body": {
@@ -241,15 +844,26 @@
         {
           "name": "Update Trial",
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "PUT",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "application/json"
-              },
-              {
-                "key": "X-WP-Nonce",
-                "value": "{{wp_nonce}}"
               }
             ],
             "body": {
@@ -268,15 +882,26 @@
         {
           "name": "Update Trial (Single Field)",
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "PUT",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "application/json"
-              },
-              {
-                "key": "X-WP-Nonce",
-                "value": "{{wp_nonce}}"
               }
             ],
             "body": {
@@ -295,13 +920,23 @@
         {
           "name": "Delete Trial",
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "DELETE",
-            "header": [
-              {
-                "key": "X-WP-Nonce",
-                "value": "{{wp_nonce}}"
-              }
-            ],
+            "header": [],
             "url": {
               "raw": "{{base_url}}/wp-json/open-veil/v1/trial/1002",
               "host": ["{{base_url}}"],
@@ -327,7 +962,7 @@
               "host": ["{{base_url}}"],
               "path": ["wp-json", "open-veil", "v1", "schema"]
             },
-            "description": "Get schema information"
+            "description": "Get schema information including available taxonomies, metadata fields, and questionnaire structure"
           },
           "response": []
         }
