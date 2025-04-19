@@ -259,10 +259,9 @@ class Api
      * Formats trial data for API response.
      *
      * @param \WP_Post $trial Trial post object
-     * @param bool $include_full_protocol Whether to include full protocol data (defaults to false)
      * @return array Formatted trial data
      */
-    protected function prepare_trial_response(\WP_Post $trial, bool $include_full_protocol = false): array
+    protected function prepare_trial_response(\WP_Post $trial): array
     {
         $protocol_id = get_post_meta($trial->ID, 'protocol_id', true);
         $protocol = $protocol_id ? get_post($protocol_id) : null;
@@ -279,13 +278,11 @@ class Api
             ],
             'permalink' => get_permalink($trial->ID),
             'protocol' => $protocol 
-                ? ($include_full_protocol 
-                    ? $this->prepare_protocol_response($protocol) 
-                    : [
-                        'id' => $protocol->ID,
-                        'title' => $protocol->post_title,
-                        'permalink' => get_permalink($protocol->ID),
-                      ])
+                ? [
+                    'id' => $protocol->ID,
+                    'title' => $protocol->post_title,
+                    'permalink' => get_permalink($protocol->ID),
+                  ]
                 : null,
             'meta' => [
                 'protocol_id' => $protocol_id,
@@ -857,12 +854,8 @@ class Api
         $trials = get_posts($args);
         $response = [];
 
-        // Check if we should include full protocol data (accepting any truthy value)
-        $include_protocol = isset($request['include_protocol']) && 
-                           filter_var($request['include_protocol'], FILTER_VALIDATE_BOOLEAN);
-
         foreach ($trials as $trial) {
-            $response[] = $this->prepare_trial_response($trial, $include_protocol);
+            $response[] = $this->prepare_trial_response($trial);
         }
 
         return $response;
@@ -883,11 +876,7 @@ class Api
             return new \WP_Error('trial_not_found', __('Trial not found', 'open-veil'), ['status' => 404]);
         }
 
-        // Check if we should include full protocol data (accepting any truthy value)
-        $include_protocol = isset($request['include_protocol']) && 
-                           filter_var($request['include_protocol'], FILTER_VALIDATE_BOOLEAN);
-
-        return $this->prepare_trial_response($trial, $include_protocol);
+        return $this->prepare_trial_response($trial);
     }
 
     /**
