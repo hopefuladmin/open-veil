@@ -14,9 +14,6 @@ A WordPress plugin designed to structure, collect, and share experimental protoc
   - [Protocol Endpoints](#protocol-endpoints)
     - [Get All Protocols](#get-all-protocols)
     - [Get Protocol by ID](#get-protocol-by-id)
-    - [Get Protocol by Slug](#get-protocol-by-slug)
-    - [Get Protocol Trials](#get-protocol-trials)
-    - [Get Protocols by Author](#get-protocols-by-author)
     - [Get Protocol CSL](#get-protocol-csl)
     - [Create Protocol](#create-protocol)
     - [Update Protocol](#update-protocol)
@@ -24,8 +21,6 @@ A WordPress plugin designed to structure, collect, and share experimental protoc
   - [Trial Endpoints](#trial-endpoints)
     - [Get All Trials](#get-all-trials)
     - [Get Trial by ID](#get-trial-by-id)
-    - [Get Trial by ID with Protocol Details](#get-trial-by-id-with-protocol-details)
-    - [Get All Trials with Protocol Details](#get-all-trials-with-protocol-details)
     - [Get Trial CSL](#get-trial-csl)
     - [Create Trial](#create-trial)
     - [Update Trial](#update-trial)
@@ -118,30 +113,6 @@ GET /wp-json/open-veil/v1/protocol/{id}
 ```
 
 Returns a single protocol by its ID.
-
-#### Get Protocol by Slug
-
-```plaintext
-GET /wp-json/open-veil/v1/protocol/name/{slug}
-```
-
-Returns a single protocol by its slug.
-
-#### Get Protocol Trials
-
-```plaintext
-GET /wp-json/open-veil/v1/protocol/trials/{id}
-```
-
-Returns all trials associated with a specific protocol.
-
-#### Get Protocols by Author
-
-```plaintext
-GET /wp-json/open-veil/v1/protocol/author/{author_id}
-```
-
-Returns all protocols created by a specific author.
 
 #### Get Protocol CSL
 
@@ -254,22 +225,6 @@ GET /wp-json/open-veil/v1/trial/{id}
 ```
 
 Returns a single trial by its ID.
-
-#### Get Trial by ID with Protocol Details
-
-```plaintext
-GET /wp-json/open-veil/v1/trial/{id}?include_protocol=1
-```
-
-Returns a single trial by its ID, with complete details of the associated protocol.
-
-#### Get All Trials with Protocol Details
-
-```plaintext
-GET /wp-json/open-veil/v1/trial?include_protocol=1
-```
-
-Returns all trials, each including the complete details of its associated protocol.
 
 #### Get Trial CSL
 

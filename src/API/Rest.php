@@ -19,7 +19,6 @@ class Rest
      */
     public function __construct()
     {
-        // Initialize the versioned API implementations
-        new V1();
+        new V1\Api();
     }
 }
