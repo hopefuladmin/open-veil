@@ -1,7 +1,7 @@
 {
   "name": "carmelosantana/open-veil",
   "description": "A WordPress plugin designed to structure, collect, and share experimental protocol data and community-submitted trials.",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "type": "wordpress-plugin",
   "license": "GPL-3.0-or-later",
   "authors": [
